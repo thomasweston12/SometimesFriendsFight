@@ -26,6 +26,7 @@ public class FPSControllerG : MonoBehaviour {
 
         transform.Translate(strafe, 0, ForwardBack);
         anim.SetFloat("speed", ForwardBack);
+        anim.SetFloat("strafeSpeed", strafe);
         Debug.Log(ForwardBack);
         AnimatorStateInfo stateInfo = anim.GetCurrentAnimatorStateInfo(0);
 
