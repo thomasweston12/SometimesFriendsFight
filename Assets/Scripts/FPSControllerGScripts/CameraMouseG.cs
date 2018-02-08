@@ -9,6 +9,8 @@ public class CameraMouseG : MonoBehaviour {
 
     public float sensitivity = 5.0f;
     public float smoothing = 2.0f;
+    public float maxAngleY = 90.0f;
+    public float minAngleY = 0.0f;
 
     GameObject character;
 
@@ -20,6 +22,7 @@ public class CameraMouseG : MonoBehaviour {
 	
 	void Update ()
     {
+        //rotationY = 
         var md = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
 
         md = Vector2.Scale(md, new Vector2(sensitivity * smoothing, sensitivity * smoothing));
@@ -27,7 +30,10 @@ public class CameraMouseG : MonoBehaviour {
         smoothV.y = Mathf.Lerp(smoothV.y, md.y, 1f / smoothing);
         mouseLook += smoothV;
 
-        transform.localRotation = Quaternion.AngleAxis(-mouseLook.y, Vector3.right);
+        //if (mouseLook.y < maxAngleY && mouseLook.y > minAngleY)
+            transform.localRotation = Quaternion.AngleAxis(-mouseLook.y, Vector3.right);
+            mouseLook.y = Mathf.Clamp(mouseLook.y, minAngleY, maxAngleY);
+
         character.transform.localRotation = Quaternion.AngleAxis(mouseLook.x, character.transform.up);
 	}
 }
