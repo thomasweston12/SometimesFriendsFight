@@ -29,8 +29,9 @@ public class MouseLook : MonoBehaviour {
 	public float maximumY = 60F;
 
 	float rotationY = 0F;
+    GameObject character;
 
-	void Update ()
+    void Update ()
 	{
 		if (axes == RotationAxes.MouseXAndY)
 		{
@@ -40,7 +41,10 @@ public class MouseLook : MonoBehaviour {
 			rotationY = Mathf.Clamp (rotationY, minimumY, maximumY);
 			
 			transform.localEulerAngles = new Vector3(-rotationY, rotationX, 0);
-		}
+
+            // TODO: FIX CHARACTER TURNING NOT ENOUGH COMPARED TO CAMERA
+            character.transform.localRotation = Quaternion.AngleAxis(rotationX * sensitivityX, character.transform.up);
+        }
 		else if (axes == RotationAxes.MouseX)
 		{
 			transform.Rotate(0, Input.GetAxis("Mouse X") * sensitivityX, 0);
@@ -59,5 +63,7 @@ public class MouseLook : MonoBehaviour {
 		// Make the rigid body not change rotation
 		if (GetComponent<Rigidbody>())
 			GetComponent<Rigidbody>().freezeRotation = true;
-	}
+
+        character = this.transform.parent.gameObject;
+    }
 }
