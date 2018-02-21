@@ -4,26 +4,35 @@ using UnityEngine;
 
 public class FPSControllerG : MonoBehaviour {
     
-    public float speed = 0.3f;
+    public float defaultSpeed = 0.09f;
+    private float speed;
     Animator anim;
     private bool isJumping;
     public Rigidbody rb;
     public Vector3 jumpForce;
+    private float waitTime = 0.9f;
+    float timer;
+    bool isTimerRunning;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 
         rb = GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
         anim = GetComponent<Animator>();
-        Invoke("resetIsJumping", 0);
+        Invoke("ResetIsJumping", 0);
+        Invoke("ResetIsPickingUp", 0);
+        speed = defaultSpeed;
+    }
 
+    // Update is called once per frame
+    void Update() {
 
-	}
-	
-	// Update is called once per frame
-	void Update () {
+        if (isTimerRunning == true) { 
+            PickupTimer();
+        }
 
+        
         float ForwardBack = Input.GetAxis("Vertical") * speed;
         float strafe = Input.GetAxis("Horizontal") * speed;
         //ForwardBack *= Time.deltaTime;
@@ -39,30 +48,63 @@ public class FPSControllerG : MonoBehaviour {
 
         // Multiplied the second argument as a quick fix to solve the difference between the speeds in the Animator Controller,
         // and the speed of the actual character model. Makes the transition between different animations actually work. - Thomas Weston.
+
+        // Also I messed something up in the animator and I don't know how to fix it, so assume ForwardBack is strafe speed and
+        // strafe is forwards and backwards speed, sorry! - Thomas Weston.
+
         anim.SetFloat("speed", strafe*6);
         anim.SetFloat("strafeSpeed", ForwardBack*6);
-        Debug.Log(ForwardBack);
         AnimatorStateInfo stateInfo = anim.GetCurrentAnimatorStateInfo(0);
 
-        if (Input.GetButton("Jump") && isJumping == false)
+        if (Input.GetButton("Jump") && anim.GetBool("isJumping") == false)
         {
             rb.AddForce(0.0f, 600.0f, 0.0f, ForceMode.Impulse);
             isJumping = true;
             anim.SetBool("isJumping", true);
-            Invoke("resetIsJumping", 1.0f);
+            Invoke("ResetIsJumping", 1.0f);
 
         }
 
-        Debug.Log(isJumping);
+        if (Input.GetButton("Action") && anim.GetBool("isPickingUp") == false && anim.GetBool("isJumping") == false)
+        {
+            anim.SetBool("isPickingUp", true);
+            speed = 0f;
+            Invoke("ResetIsPickingUp", 0.9f);
+            //isTimerRunning = true;
+            
+        }
 
 
         if (Input.GetKeyDown("escape"))
             Cursor.lockState = CursorLockMode.None;		
 	}
 
-    private void resetIsJumping()
+    private void ResetIsJumping()
     {
-        isJumping = false;
         anim.SetBool("isJumping", false);
     }
+
+    private void ResetIsPickingUp()
+    {
+        anim.SetBool("isPickingUp", false);
+        speed = defaultSpeed;
+
+
+    }
+
+    void PickupTimer()
+    {
+        timer += Time.deltaTime;
+        if (timer > waitTime)
+        {
+
+            timer = 0f;
+            speed = defaultSpeed;
+            anim.SetBool("isPickingUp", false);
+            isTimerRunning = false;
+        }
+
+
+    }
+
 }
