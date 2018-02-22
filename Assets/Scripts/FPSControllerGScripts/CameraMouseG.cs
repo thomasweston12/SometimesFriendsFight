@@ -22,7 +22,6 @@ public class CameraMouseG : MonoBehaviour {
 	
 	void Update ()
     {
-        //rotationY = 
         var md = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
 
         md = Vector2.Scale(md, new Vector2(sensitivity * smoothing, sensitivity * smoothing));
@@ -30,7 +29,7 @@ public class CameraMouseG : MonoBehaviour {
         smoothV.y = Mathf.Lerp(smoothV.y, md.y, 1f / smoothing);
         mouseLook += smoothV;
 
-        //if (mouseLook.y < maxAngleY && mouseLook.y > minAngleY)
+        
             transform.localRotation = Quaternion.AngleAxis(-mouseLook.y, Vector3.right);
             mouseLook.y = Mathf.Clamp(mouseLook.y, minAngleY, maxAngleY);
 
