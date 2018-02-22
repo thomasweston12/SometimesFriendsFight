@@ -65,13 +65,19 @@ public class FPSControllerG : MonoBehaviour {
 
         }
 
-        if (Input.GetButton("Action") && anim.GetBool("isPickingUp") == false && anim.GetBool("isJumping") == false)
+        if (Input.GetButton("Action") && anim.GetBool("isPickingUp") == false && anim.GetBool("isJumping") == false && anim.GetBool("hasItem") == false)
+        { 
+            PickUpItem();   
+        }
+
+        if (Input.GetButton("Drop") && anim.GetBool("isPickingUp") == false)
         {
-            anim.SetBool("isPickingUp", true);
-            speed = 0f;
-            Invoke("ResetIsPickingUp", 0.9f);
-            //isTimerRunning = true;
-            
+            DropItem();
+        }
+
+        if (Input.GetButton("Fire1") && anim.GetBool("hasItem") == true && anim.GetBool("isPickingUp") == false)
+        {
+            ThrowObject();
         }
 
 
@@ -87,9 +93,26 @@ public class FPSControllerG : MonoBehaviour {
     private void ResetIsPickingUp()
     {
         anim.SetBool("isPickingUp", false);
-        speed = defaultSpeed;
 
 
+    }
+
+    private void PickUpItem()
+    {
+        anim.SetBool("isPickingUp", true);
+        anim.SetBool("hasItem", true);
+        Invoke("ResetIsPickingUp", 0.4f);
+    }
+
+    private void DropItem()
+    {
+        anim.SetBool("hasItem", false);
+    }
+
+    private void ThrowObject()
+    {
+        anim.SetTrigger("throw");
+        anim.SetBool("hasItem", false);
     }
 
     void PickupTimer()
