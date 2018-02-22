@@ -13,6 +13,11 @@ public class FPSControllerG : MonoBehaviour {
     private float waitTime = 0.9f;
     float timer;
     bool isTimerRunning;
+    public float dist = 25.0f;
+    private bool isNear;
+    private Camera cam;
+    Vector3 screenCentre = new Vector3(Screen.width / 2, Screen.height / 2);
+
 
     // Use this for initialization
     void Start () {
@@ -23,6 +28,8 @@ public class FPSControllerG : MonoBehaviour {
         Invoke("ResetIsJumping", 0);
         Invoke("ResetIsPickingUp", 0);
         speed = defaultSpeed;
+        cam = GetComponentInChildren<Camera>();
+
     }
 
     // Update is called once per frame
@@ -99,9 +106,31 @@ public class FPSControllerG : MonoBehaviour {
 
     private void PickUpItem()
     {
-        anim.SetBool("isPickingUp", true);
-        anim.SetBool("hasItem", true);
-        Invoke("ResetIsPickingUp", 0.4f);
+        RaycastHit hit;
+        Ray ray = cam.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
+        Debug.DrawRay(ray.origin, ray.direction * 1000, Color.red, 20, true);
+        //Debug.Log("drawing ray!");
+
+        if (Physics.Raycast(ray, out hit, dist))
+        {
+            if (hit.collider.GetComponentInParent<Transform>().parent.tag == "PhysicsObject" || hit.collider.tag == "PhysicsObject")
+            {
+                Debug.Log("found an object!");
+
+                anim.SetBool("isPickingUp", true);
+                anim.SetBool("hasItem", true);
+                Invoke("ResetIsPickingUp", 0.4f);
+                hit.collider.GetComponentInParent<ThrowObjectG>().PickedUp();
+            }
+            else
+            {
+                Debug.Log("Found a non physics object");
+            }
+        }
+        else
+        {
+            Debug.Log("Found nothing!");
+        }
     }
 
     private void DropItem()

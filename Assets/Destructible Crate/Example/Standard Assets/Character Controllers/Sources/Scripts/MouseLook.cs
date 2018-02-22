@@ -43,7 +43,7 @@ public class MouseLook : MonoBehaviour {
 			transform.localEulerAngles = new Vector3(-rotationY, rotationX, 0);
 
             // TODO: FIX CHARACTER TURNING NOT ENOUGH COMPARED TO CAMERA
-            character.transform.localRotation = Quaternion.AngleAxis(rotationX * sensitivityX, character.transform.up);
+            //character.transform.localRotation = Quaternion.AngleAxis(rotationX * sensitivityX, character.transform.up);
         }
 		else if (axes == RotationAxes.MouseX)
 		{
