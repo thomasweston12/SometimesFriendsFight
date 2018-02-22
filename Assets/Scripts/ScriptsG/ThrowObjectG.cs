@@ -8,7 +8,7 @@ public class ThrowObjectG : MonoBehaviour {
     public GameObject playerCam;
     public float throwforce = 800;
     bool hasPlayer = false;
-    bool beingCarried = false;
+    public bool beingCarried = false;
     public int dmg;
     private bool touched = false;
 	
@@ -22,21 +22,21 @@ public class ThrowObjectG : MonoBehaviour {
 	void Update ()
     {
 
-        float dist = Vector3.Distance(gameObject.transform.position, player.transform.position);
-        if (dist <= 2.5f)
-        {
-            hasPlayer = true;
-        }
-        else
-        {
-            hasPlayer = false;
-        }
-        if (hasPlayer && Input.GetKeyDown(KeyCode.E))
-        {
-            GetComponent<Rigidbody>().isKinematic = true;
-            transform.parent = playerCam.transform;
-            beingCarried = true;
-        }
+        //float dist = Vector3.Distance(gameObject.transform.position, player.transform.position);
+       // if (dist <= 2.5f)
+        //{
+       //     hasPlayer = true;
+       // }
+       // else
+       // {
+       //     hasPlayer = false;
+       // }
+        //if (hasPlayer && Input.GetKeyDown(KeyCode.E))
+       // {
+        //    GetComponent<Rigidbody>().isKinematic = true;
+        //    transform.parent = playerCam.transform;
+        //    beingCarried = true;
+        //}
         if (beingCarried)
         {
             if(touched)
@@ -63,6 +63,12 @@ public class ThrowObjectG : MonoBehaviour {
         }
 	}
 
+    public void PickedUp()
+    {
+        GetComponent<Rigidbody>().isKinematic = true;
+        transform.parent = playerCam.transform;
+        beingCarried = true;
+    }
 
     void OnTriggerEnter()
     {
