@@ -17,6 +17,7 @@ public class FPSControllerG : MonoBehaviour {
     private bool isNear;
     private Camera cam;
     Vector3 screenCentre = new Vector3(Screen.width / 2, Screen.height / 2);
+    public int playerHealth = 100;
 
 
     // Use this for initialization
