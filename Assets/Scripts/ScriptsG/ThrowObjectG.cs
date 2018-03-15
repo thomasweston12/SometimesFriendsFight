@@ -6,21 +6,29 @@ public class ThrowObjectG : MonoBehaviour {
 
     public GameObject player;
     public GameObject playerCam;
-    public float throwforce = 800;
+    public float throwforce; //throw force should be calculated by dividing mass by the strength of the player by a factor of " "
     bool hasPlayer = false;
     public bool beingCarried = false;
-    public int dmg;
+    public int dmg; //damage value of the parent object -G
     private bool touched = false;
+    public GameObject getMass; //Getting mass of physics objects -G
+    public int playerStrengthfactor; //Player's Strength -G
 	
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         playerCam = GameObject.FindGameObjectWithTag("MainCamera");
+        getMass = GameObject.FindGameObjectWithTag("PhysicsObject");
+        
     }
 
 	// Update is called once per frame
 	void Update ()
     {
+        /* method to factor in player's strength for mass per object but not sure where to put it
+        destructibleV2 massOfObject = getMass.GetComponent<destructibleV2>();
+        throwforce = massOfObject.rb.mass / playerStrengthfactor;
+        */
 
         //float dist = Vector3.Distance(gameObject.transform.position, player.transform.position);
        // if (dist <= 2.5f)
