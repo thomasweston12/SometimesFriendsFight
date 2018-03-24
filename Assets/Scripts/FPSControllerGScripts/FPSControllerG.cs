@@ -114,15 +114,24 @@ public class FPSControllerG : MonoBehaviour {
 
         if (Physics.Raycast(ray, out hit, dist))
         {
-            if (hit.collider.GetComponentInParent<Transform>().parent.tag == "PhysicsObject" || hit.collider.tag == "PhysicsObject")
-            {
-                Debug.Log("found an object!");
+			if (hit.collider.GetComponentInParent<Transform> ().parent.tag == "PhysicsObject") //|| hit.collider.tag == "PhysicsObject") {
+			{
+				Debug.Log ("found an object!");
 
-                anim.SetBool("isPickingUp", true);
-                anim.SetBool("hasItem", true);
-                Invoke("ResetIsPickingUp", 0.4f);
-                hit.collider.GetComponentInParent<ThrowObjectG>().PickedUp();
-            }
+				anim.SetBool ("isPickingUp", true);
+				anim.SetBool ("hasItem", true);
+				Invoke ("ResetIsPickingUp", 0.4f);
+				hit.collider.GetComponentInParent<ThrowObjectG> ().PickedUp ();
+			} 
+			else if (hit.collider.GetComponent<Transform>().parent.tag == "PhysicsObject")
+			{
+				Debug.Log ("found an object!");
+
+				anim.SetBool ("isPickingUp", true);
+				anim.SetBool ("hasItem", true);
+				Invoke ("ResetIsPickingUp", 0.4f);
+				hit.collider.GetComponent<ThrowObjectG> ().PickedUp ();
+			}
             else
             {
                 Debug.Log("Found a non physics object");
