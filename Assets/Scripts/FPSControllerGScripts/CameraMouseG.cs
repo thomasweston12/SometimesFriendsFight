@@ -39,8 +39,8 @@ public class CameraMouseG : MonoBehaviour {
         mouseLook += smoothV;
 
 		spine.transform.localRotation = Quaternion.AngleAxis (-mouseLook.y, Vector3.right);
-		armLeft.transform.localRotation = Quaternion.AngleAxis (mouseLook.y+100, Vector3.right);
 		armRight.transform.localRotation = Quaternion.AngleAxis (mouseLook.y+100, Vector3.right);
+		armLeft.transform.localRotation = Quaternion.AngleAxis (mouseLook.y+100, Vector3.right);
 
         transform.localRotation = Quaternion.AngleAxis(-mouseLook.y, Vector3.right);
         mouseLook.y = Mathf.Clamp(mouseLook.y, minAngleY, maxAngleY);
