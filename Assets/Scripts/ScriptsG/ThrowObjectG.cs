@@ -10,6 +10,7 @@ public class ThrowObjectG : MonoBehaviour {
     bool hasPlayer = false;
     public bool beingCarried = false;
     public int dmg; //damage value of the parent object -G
+    public int objectHealth; //health value of object to break apart -G
     private bool touched = false;
     public GameObject getMass; //Getting mass of physics objects -G
     public int playerStrengthfactor; //Player's Strength -G
@@ -49,22 +50,22 @@ public class ThrowObjectG : MonoBehaviour {
         {
             if(touched)
             {
-                GetComponent<Rigidbody>().isKinematic = false;
+                GetComponent<BoxCollider>().attachedRigidbody.isKinematic = false; //change this to effect box colliders instead of rigidbody
                 transform.parent = null;
                 beingCarried = false;
                 touched = false;
             }
             if(Input.GetMouseButtonDown(0))
             {
-                GetComponent<Rigidbody>().isKinematic = false;
+                GetComponent<BoxCollider>().attachedRigidbody.isKinematic = false;
                 transform.parent = null;
                 beingCarried = false;
                 touched = false;
-                GetComponent<Rigidbody>().AddForce(playerCam.transform.forward * throwforce);
+                GetComponent<BoxCollider>().attachedRigidbody.AddForce(playerCam.transform.forward * throwforce);
             }
             else if(Input.GetMouseButtonDown(1))
             {
-                GetComponent<Rigidbody>().isKinematic = false;
+                GetComponent<BoxCollider>().attachedRigidbody.isKinematic = false;
                 transform.parent = null;
                 beingCarried = false;
             }
@@ -73,7 +74,7 @@ public class ThrowObjectG : MonoBehaviour {
 
     public void PickedUp()
     {
-        GetComponent<Rigidbody>().isKinematic = true;
+        GetComponent<BoxCollider>().attachedRigidbody.isKinematic = true;
         transform.parent = playerCam.transform;
         beingCarried = true;
     }
