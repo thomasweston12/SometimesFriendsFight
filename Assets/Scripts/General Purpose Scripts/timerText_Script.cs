@@ -19,6 +19,6 @@ public class timerText_Script : MonoBehaviour {
     // Update is called once per frame
     void Update () {
         timerText.text = ("Time Left: " + (int)(gm.getGameTimer() - gm.getGameCurrentTime()));
-        Debug.Log(gm.getGameCurrentTime().ToString());
+        //Debug.Log(gm.getGameCurrentTime().ToString());
 	}
 }
