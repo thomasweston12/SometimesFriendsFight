@@ -6,6 +6,36 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
 
+
+public class timer
+{
+
+   
+
+
+
+    // Use this for initialization
+    void Start()
+    {
+        
+
+    }
+
+    // Update is called once per frame
+    void FixedUpdate()
+    {
+
+
+
+    }
+
+    
+
+}
+
+
+
+
 // PlayerManager class. This class handles all of the information about a player when they are created.
 // PlayerNumber denotes where on the split-screen this player should be. Max health shows how much health
 // this player should start with. Useful if a "handicap" system were put in place or for players to create
@@ -19,7 +49,6 @@ public class PlayerManager {
     private int currentScore = 0;
     private string playerName = "tERRance";
     private Color playerColour = new Color(1, 1, 1);
-
     public PlayerManager(int playerNo, int newMaxHealth, int damageMod)
     {
         this.playerNumber = playerNo;
@@ -84,6 +113,9 @@ public class PlayerManager {
 }
 
 
+
+
+
 // Game Manager class. This is attached to a game object which never unloads, even when the scene it is attached to
 // is switched. This class handles all game functionality for setting up a game, starting the game, and ending the game 
 // appropriately. This class also handles adding players to the game up to a maximum of four players split-screen.
@@ -95,9 +127,14 @@ public class GameManager : MonoBehaviour {
     private int numberOfPlayers = 0;
 	private string mapChosen = "Map 1";
     private bool isGameTimed = true;
-    private int gameTimer = 120;
+    //private int gameTimer = 120;
     private bool isScoreLimited = false;
     private int scoreLimit = 0;
+
+    private bool isTimerRunning;
+    private float waitTime;
+    private float timerCurrent;
+
 
     public TextMeshProUGUI p1MaxHealthLabel;
     public TextMeshProUGUI p2MaxHealthLabel;
@@ -168,6 +205,9 @@ public class GameManager : MonoBehaviour {
         currentScene = SceneManager.GetActiveScene();
         string currentSceneName = currentScene.name;
 
+        timerCurrent = 0;
+        waitTime = 0;
+        isTimerRunning = false;
 
         Debug.Log(currentState.ToString());
     }
@@ -180,6 +220,7 @@ public class GameManager : MonoBehaviour {
     void Update ()
     {
 
+
         if (currentScene.name != "mainMenu_Scene")
         {
             switch (players.Count)
@@ -188,16 +229,16 @@ public class GameManager : MonoBehaviour {
                     Destroy(GameObject.Find("Player 2"));
                     Destroy(GameObject.Find("Player 3"));
                     Destroy(GameObject.Find("Player 4"));
-                    Debug.Log("Destroying 2, 3, 4!");
+                    //Debug.Log("Destroying 2, 3, 4!");
                     break;
                 case 2:
                     Destroy(GameObject.Find("Player 3"));
                     Destroy(GameObject.Find("Player 4"));
-                    Debug.Log("Destroying 3, 4!");
+                    //Debug.Log("Destroying 3, 4!");
                     break;
                 case 3:
                     Destroy(GameObject.Find("Player 4"));
-                    Debug.Log("Destroying 4!");
+                    //Debug.Log("Destroying 4!");
                     break;
                 default:
                     Debug.Log("Destroying none because this is an error!");
@@ -205,10 +246,31 @@ public class GameManager : MonoBehaviour {
             }
         }
 
+
+
+
+    }
+
+    void FixedUpdate()
+    {
+        if (isTimerRunning == true)
+            timerCurrent += Time.deltaTime;
+
+        if (currentScene.name == "test_level_with_assets" && isGameTimed == true)
+            isTimerRunning = true;
+
+        if (isTimerRunning == true && timerCurrent > waitTime)
+        {
+            isTimerRunning = false;
+            waitTime = 0;
+            timerCurrent = 0;
+            SceneManager.LoadScene("endGame_Scene", LoadSceneMode.Single);
+
+        }
     }
 
     // Used to decide how many players to add to the game when starting the game.
-	public void AddPlayer() {
+    public void AddPlayer() {
         players.Add(new PlayerManager(players.Count, 100, 1));  
 	}
 
@@ -241,12 +303,27 @@ public class GameManager : MonoBehaviour {
 
     public void SetGameTimer(int timer)
     {
-        this.gameTimer = timer;
+        this.waitTime = timer;
     }
 
-    public int getGameTimer()
+    public float getGameTimer()
     {
-        return this.gameTimer;
+        return this.waitTime;
+    }
+
+    public float getGameCurrentTime()
+    {
+        return this.timerCurrent;
+    }
+
+    public bool getIsTimerRunning()
+    {
+        return this.isTimerRunning;
+    }
+
+    public void setIsTimerRunning(bool running)
+    {
+        this.isTimerRunning = running;
     }
     
     public void setIsScoreLimited(bool scoreLimited)

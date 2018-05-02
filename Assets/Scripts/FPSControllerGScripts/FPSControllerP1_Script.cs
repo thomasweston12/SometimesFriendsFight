@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FPSControllerG : MonoBehaviour {
-    
+public class FPSControllerP1_Script : MonoBehaviour {
+
     public float defaultSpeed = 0.09f;
     private float speed;
     Animator anim;
@@ -22,7 +22,8 @@ public class FPSControllerG : MonoBehaviour {
 
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
 
         rb = GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
@@ -35,9 +36,11 @@ public class FPSControllerG : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update() {
+    void Update()
+    {
 
-        if (isTimerRunning == true) { 
+        if (isTimerRunning == true)
+        {
             PickupTimer();
         }
 
@@ -60,8 +63,8 @@ public class FPSControllerG : MonoBehaviour {
         // Also I messed something up in the animator and I don't know how to fix it, so assume ForwardBack is strafe speed and
         // strafe is forwards and backwards speed, sorry! - Thomas Weston.
 
-        anim.SetFloat("speed", strafe*6);
-        anim.SetFloat("strafeSpeed", ForwardBack*6);
+        anim.SetFloat("speed", strafe * 6);
+        anim.SetFloat("strafeSpeed", ForwardBack * 6);
         AnimatorStateInfo stateInfo = anim.GetCurrentAnimatorStateInfo(0);
 
         if (Input.GetButton("P1GameJump") && anim.GetBool("isJumping") == false)
@@ -74,8 +77,8 @@ public class FPSControllerG : MonoBehaviour {
         }
 
         if (Input.GetButton("P1GamePickup") && anim.GetBool("isPickingUp") == false && anim.GetBool("isJumping") == false && anim.GetBool("hasItem") == false)
-        { 
-            PickUpItem();   
+        {
+            PickUpItem();
         }
 
         if (Input.GetButton("P1GameDropItem") && anim.GetBool("isPickingUp") == false)
@@ -90,8 +93,8 @@ public class FPSControllerG : MonoBehaviour {
 
 
         if (Input.GetKeyDown("escape"))
-            Cursor.lockState = CursorLockMode.None;		
-	}
+            Cursor.lockState = CursorLockMode.None;
+    }
 
     private void ResetIsJumping()
     {
@@ -114,24 +117,24 @@ public class FPSControllerG : MonoBehaviour {
 
         if (Physics.Raycast(ray, out hit, dist))
         {
-			if (hit.collider.GetComponentInParent<BoxCollider>().tag == "PhysicsObject") //|| hit.collider.tag == "PhysicsObject") {
-			{
-				Debug.Log ("found an object!");
-
-				anim.SetBool ("isPickingUp", true);
-				anim.SetBool ("hasItem", true);
-				Invoke ("ResetIsPickingUp", 0.4f);
-				hit.collider.GetComponentInParent<ThrowObjectG> ().PickedUp ();
-			} 
-			else if (hit.collider.GetComponent<BoxCollider>().tag == "PhysicsObject") //hit.collider.GetComponent<Transform>().parent.tag
+            if (hit.collider.GetComponentInParent<MeshCollider>().tag == "PhysicsObject") //|| hit.collider.tag == "PhysicsObject") {
             {
-				Debug.Log ("found an object!");
+                Debug.Log("found an object!");
 
-				anim.SetBool ("isPickingUp", true);
-				anim.SetBool ("hasItem", true);
-				Invoke ("ResetIsPickingUp", 0.4f);
-				hit.collider.GetComponent<ThrowObjectG> ().PickedUp ();
-			}
+                anim.SetBool("isPickingUp", true);
+                anim.SetBool("hasItem", true);
+                Invoke("ResetIsPickingUp", 0.4f);
+                hit.collider.GetComponentInParent<ThrowObjectG>().PickedUp();
+            }
+            else if (hit.collider.GetComponent<MeshCollider>().tag == "PhysicsObject") //hit.collider.GetComponent<Transform>().parent.tag
+            {
+                Debug.Log("found an object!");
+
+                anim.SetBool("isPickingUp", true);
+                anim.SetBool("hasItem", true);
+                Invoke("ResetIsPickingUp", 0.4f);
+                hit.collider.GetComponent<ThrowObjectG>().PickedUp();
+            }
             else
             {
                 Debug.Log("Found a non physics object");

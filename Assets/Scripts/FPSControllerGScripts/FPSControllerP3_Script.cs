@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FPSControllerG : MonoBehaviour {
-    
+public class FPSControllerP3_Script : MonoBehaviour
+{
+
     public float defaultSpeed = 0.09f;
     private float speed;
     Animator anim;
@@ -22,7 +23,8 @@ public class FPSControllerG : MonoBehaviour {
 
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
 
         rb = GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
@@ -35,14 +37,16 @@ public class FPSControllerG : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update() {
+    void Update()
+    {
 
-        if (isTimerRunning == true) { 
+        if (isTimerRunning == true)
+        {
             PickupTimer();
         }
 
-        float ForwardBack = Input.GetAxis("P1GameForwardsBackwards") * speed;
-        float strafe = Input.GetAxis("P1GameStrafeRightLeft") * speed;
+        float ForwardBack = Input.GetAxis("P3GameForwardsBackwards") * speed;
+        float strafe = Input.GetAxis("P3GameStrafeRightLeft") * speed;
         //ForwardBack *= Time.deltaTime;
         //strafe *= Time.deltaTime;
 
@@ -60,11 +64,11 @@ public class FPSControllerG : MonoBehaviour {
         // Also I messed something up in the animator and I don't know how to fix it, so assume ForwardBack is strafe speed and
         // strafe is forwards and backwards speed, sorry! - Thomas Weston.
 
-        anim.SetFloat("speed", strafe*6);
-        anim.SetFloat("strafeSpeed", ForwardBack*6);
+        anim.SetFloat("speed", strafe * 6);
+        anim.SetFloat("strafeSpeed", ForwardBack * 6);
         AnimatorStateInfo stateInfo = anim.GetCurrentAnimatorStateInfo(0);
 
-        if (Input.GetButton("P1GameJump") && anim.GetBool("isJumping") == false)
+        if (Input.GetButton("P3GameJump") && anim.GetBool("isJumping") == false)
         {
             rb.AddForce(0.0f, 600.0f, 0.0f, ForceMode.Impulse);
             isJumping = true;
@@ -73,25 +77,22 @@ public class FPSControllerG : MonoBehaviour {
 
         }
 
-        if (Input.GetButton("P1GamePickup") && anim.GetBool("isPickingUp") == false && anim.GetBool("isJumping") == false && anim.GetBool("hasItem") == false)
-        { 
-            PickUpItem();   
+        if (Input.GetButton("P3GamePickup") && anim.GetBool("isPickingUp") == false && anim.GetBool("isJumping") == false && anim.GetBool("hasItem") == false)
+        {
+            PickUpItem();
         }
 
-        if (Input.GetButton("P1GameDropItem") && anim.GetBool("isPickingUp") == false)
+        if (Input.GetButton("P3GameDropItem") && anim.GetBool("isPickingUp") == false)
         {
             DropItem();
         }
 
-        if (Input.GetButton("P1GameThrowItem") && anim.GetBool("hasItem") == true && anim.GetBool("isPickingUp") == false)
+        if (Input.GetButton("P3GameThrowItem") && anim.GetBool("hasItem") == true && anim.GetBool("isPickingUp") == false)
         {
             ThrowObject();
         }
 
-
-        if (Input.GetKeyDown("escape"))
-            Cursor.lockState = CursorLockMode.None;		
-	}
+    }
 
     private void ResetIsJumping()
     {
@@ -114,24 +115,24 @@ public class FPSControllerG : MonoBehaviour {
 
         if (Physics.Raycast(ray, out hit, dist))
         {
-			if (hit.collider.GetComponentInParent<BoxCollider>().tag == "PhysicsObject") //|| hit.collider.tag == "PhysicsObject") {
-			{
-				Debug.Log ("found an object!");
-
-				anim.SetBool ("isPickingUp", true);
-				anim.SetBool ("hasItem", true);
-				Invoke ("ResetIsPickingUp", 0.4f);
-				hit.collider.GetComponentInParent<ThrowObjectG> ().PickedUp ();
-			} 
-			else if (hit.collider.GetComponent<BoxCollider>().tag == "PhysicsObject") //hit.collider.GetComponent<Transform>().parent.tag
+            if (hit.collider.GetComponentInParent<BoxCollider>().tag == "PhysicsObject") //|| hit.collider.tag == "PhysicsObject") {
             {
-				Debug.Log ("found an object!");
+                Debug.Log("found an object!");
 
-				anim.SetBool ("isPickingUp", true);
-				anim.SetBool ("hasItem", true);
-				Invoke ("ResetIsPickingUp", 0.4f);
-				hit.collider.GetComponent<ThrowObjectG> ().PickedUp ();
-			}
+                anim.SetBool("isPickingUp", true);
+                anim.SetBool("hasItem", true);
+                Invoke("ResetIsPickingUp", 0.4f);
+                hit.collider.GetComponentInParent<ThrowObjectG>().PickedUp();
+            }
+            else if (hit.collider.GetComponent<BoxCollider>().tag == "PhysicsObject") //hit.collider.GetComponent<Transform>().parent.tag
+            {
+                Debug.Log("found an object!");
+
+                anim.SetBool("isPickingUp", true);
+                anim.SetBool("hasItem", true);
+                Invoke("ResetIsPickingUp", 0.4f);
+                hit.collider.GetComponent<ThrowObjectG>().PickedUp();
+            }
             else
             {
                 Debug.Log("Found a non physics object");
