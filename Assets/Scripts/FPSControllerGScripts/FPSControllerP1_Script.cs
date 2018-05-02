@@ -19,6 +19,7 @@ public class FPSControllerP1_Script : MonoBehaviour {
     Vector3 screenCentre = new Vector3(Screen.width / 2, Screen.height / 2);
     public int playerHealth = 100;
     private GameObject currentPlayer;
+    private GameObject itemPickedUp;
 
 
     // Use this for initialization
@@ -60,8 +61,8 @@ public class FPSControllerP1_Script : MonoBehaviour {
         // Multiplied the second argument as a quick fix to solve the difference between the speeds in the Animator Controller,
         // and the speed of the actual character model. Makes the transition between different animations actually work. - Thomas Weston.
 
-        // Also I messed something up in the animator and I don't know how to fix it, so assume ForwardBack is strafe speed and
-        // strafe is forwards and backwards speed, sorry! - Thomas Weston.
+        // Also I messed something up in the animator and I don't know how to fix it, so assume speed is strafe speed and
+        // strafeSpeed is forwards and backwards speed, sorry! - Thomas Weston.
 
         anim.SetFloat("speed", strafe * 6);
         anim.SetFloat("strafeSpeed", ForwardBack * 6);
@@ -86,7 +87,7 @@ public class FPSControllerP1_Script : MonoBehaviour {
             DropItem();
         }
 
-        if (Input.GetButton("P1GameThrowItem") && anim.GetBool("hasItem") == true && anim.GetBool("isPickingUp") == false)
+        if (Input.GetAxisRaw("P1GameThrowItem") > 0.1 && anim.GetBool("hasItem") == true && anim.GetBool("isPickingUp") == false)
         {
             ThrowObject();
         }
@@ -94,6 +95,9 @@ public class FPSControllerP1_Script : MonoBehaviour {
 
         if (Input.GetKeyDown("escape"))
             Cursor.lockState = CursorLockMode.None;
+
+        if (anim.GetBool("hasItem") == true)
+            HoldingItem();
     }
 
     private void ResetIsJumping()
@@ -117,23 +121,20 @@ public class FPSControllerP1_Script : MonoBehaviour {
 
         if (Physics.Raycast(ray, out hit, dist))
         {
-            if (hit.collider.GetComponentInParent<MeshCollider>().tag == "PhysicsObject") //|| hit.collider.tag == "PhysicsObject") {
+            if (hit.collider.gameObject.tag == "PhysicsObject") //hit.collider.GetComponent<Transform>().parent.tag
             {
                 Debug.Log("found an object!");
 
                 anim.SetBool("isPickingUp", true);
                 anim.SetBool("hasItem", true);
                 Invoke("ResetIsPickingUp", 0.4f);
-                hit.collider.GetComponentInParent<ThrowObjectG>().PickedUp();
-            }
-            else if (hit.collider.GetComponent<MeshCollider>().tag == "PhysicsObject") //hit.collider.GetComponent<Transform>().parent.tag
-            {
-                Debug.Log("found an object!");
+                //hit.collider.GetComponent<ThrowObjectG>().PickedUp();
+                if(hit.collider.GetComponentInParent<Rigidbody>() != null)
+                    hit.collider.GetComponentInParent<Rigidbody>().isKinematic = true;
+                else if (hit.collider.GetComponent<Rigidbody>() != null)
+                    hit.collider.GetComponent<Rigidbody>().isKinematic = true;
 
-                anim.SetBool("isPickingUp", true);
-                anim.SetBool("hasItem", true);
-                Invoke("ResetIsPickingUp", 0.4f);
-                hit.collider.GetComponent<ThrowObjectG>().PickedUp();
+                itemPickedUp = hit.collider.gameObject.transform.parent.gameObject;
             }
             else
             {
@@ -146,15 +147,48 @@ public class FPSControllerP1_Script : MonoBehaviour {
         }
     }
 
+    private void HoldingItem()
+    {
+        itemPickedUp.transform.parent = cam.transform;
+    }
+
     private void DropItem()
     {
         anim.SetBool("hasItem", false);
+
+        if (itemPickedUp.GetComponentInParent<Rigidbody>() != null)
+            itemPickedUp.GetComponentInParent<Rigidbody>().isKinematic = false;
+        else if (itemPickedUp.GetComponent<Rigidbody>() != false)
+            itemPickedUp.GetComponent<Rigidbody>().isKinematic = false;
+
+        itemPickedUp.transform.parent = null;
+        itemPickedUp = null;
+
+
     }
 
     private void ThrowObject()
     {
         anim.SetTrigger("throw");
         anim.SetBool("hasItem", false);
+
+        if (itemPickedUp.GetComponentInParent<Rigidbody>() != null)
+        {
+            itemPickedUp.GetComponentInParent<Rigidbody>().isKinematic = false;
+            itemPickedUp.transform.parent = null;
+            itemPickedUp.GetComponentInParent<Rigidbody>().AddForce(cam.transform.forward * 5000);
+
+        }
+        else if (itemPickedUp.GetComponent<Rigidbody>() != false)
+        {
+            itemPickedUp.GetComponent<Rigidbody>().isKinematic = false;
+            itemPickedUp.transform.parent = null;
+            itemPickedUp.GetComponent<Rigidbody>().AddForce(cam.transform.forward * 5000);
+
+        }
+
+        itemPickedUp = null;
+
     }
 
     void PickupTimer()

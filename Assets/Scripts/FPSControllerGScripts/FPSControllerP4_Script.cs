@@ -20,6 +20,7 @@ public class FPSControllerP4_Script : MonoBehaviour
     Vector3 screenCentre = new Vector3(Screen.width / 2, Screen.height / 2);
     public int playerHealth = 100;
     private GameObject currentPlayer;
+    private GameObject itemPickedUp;
 
 
     // Use this for initialization
@@ -87,10 +88,14 @@ public class FPSControllerP4_Script : MonoBehaviour
             DropItem();
         }
 
-        if (Input.GetButton("P4GameThrowItem") && anim.GetBool("hasItem") == true && anim.GetBool("isPickingUp") == false)
+        if (Input.GetAxisRaw("P4GameThrowItem") > 0.1 && anim.GetBool("hasItem") == true && anim.GetBool("isPickingUp") == false)
         {
             ThrowObject();
         }
+
+        if (anim.GetBool("hasItem") == true)
+            HoldingItem();
+
 
     }
 
@@ -115,23 +120,20 @@ public class FPSControllerP4_Script : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, dist))
         {
-            if (hit.collider.GetComponentInParent<BoxCollider>().tag == "PhysicsObject") //|| hit.collider.tag == "PhysicsObject") {
+            if (hit.collider.gameObject.tag == "PhysicsObject") //hit.collider.GetComponent<Transform>().parent.tag
             {
                 Debug.Log("found an object!");
 
                 anim.SetBool("isPickingUp", true);
                 anim.SetBool("hasItem", true);
                 Invoke("ResetIsPickingUp", 0.4f);
-                hit.collider.GetComponentInParent<ThrowObjectG>().PickedUp();
-            }
-            else if (hit.collider.GetComponent<BoxCollider>().tag == "PhysicsObject") //hit.collider.GetComponent<Transform>().parent.tag
-            {
-                Debug.Log("found an object!");
+                //hit.collider.GetComponent<ThrowObjectG>().PickedUp();
+                if (hit.collider.GetComponentInParent<Rigidbody>() != null)
+                    hit.collider.GetComponentInParent<Rigidbody>().isKinematic = true;
+                else if (hit.collider.GetComponent<Rigidbody>() != null)
+                    hit.collider.GetComponent<Rigidbody>().isKinematic = true;
 
-                anim.SetBool("isPickingUp", true);
-                anim.SetBool("hasItem", true);
-                Invoke("ResetIsPickingUp", 0.4f);
-                hit.collider.GetComponent<ThrowObjectG>().PickedUp();
+                itemPickedUp = hit.collider.gameObject.transform.parent.gameObject;
             }
             else
             {
@@ -144,16 +146,50 @@ public class FPSControllerP4_Script : MonoBehaviour
         }
     }
 
+    private void HoldingItem()
+    {
+        itemPickedUp.transform.parent = cam.transform;
+    }
+
     private void DropItem()
     {
         anim.SetBool("hasItem", false);
+
+        if (itemPickedUp.GetComponentInParent<Rigidbody>() != null)
+            itemPickedUp.GetComponentInParent<Rigidbody>().isKinematic = false;
+        else if (itemPickedUp.GetComponent<Rigidbody>() != false)
+            itemPickedUp.GetComponent<Rigidbody>().isKinematic = false;
+
+        itemPickedUp.transform.parent = null;
+        itemPickedUp = null;
+
+
     }
 
     private void ThrowObject()
     {
         anim.SetTrigger("throw");
         anim.SetBool("hasItem", false);
+
+        if (itemPickedUp.GetComponentInParent<Rigidbody>() != null)
+        {
+            itemPickedUp.GetComponentInParent<Rigidbody>().isKinematic = false;
+            itemPickedUp.transform.parent = null;
+            itemPickedUp.GetComponentInParent<Rigidbody>().AddForce(cam.transform.forward * 5000);
+
+        }
+        else if (itemPickedUp.GetComponent<Rigidbody>() != false)
+        {
+            itemPickedUp.GetComponent<Rigidbody>().isKinematic = false;
+            itemPickedUp.transform.parent = null;
+            itemPickedUp.GetComponent<Rigidbody>().AddForce(cam.transform.forward * 5000);
+
+        }
+
+        itemPickedUp = null;
+
     }
+
 
     void PickupTimer()
     {
