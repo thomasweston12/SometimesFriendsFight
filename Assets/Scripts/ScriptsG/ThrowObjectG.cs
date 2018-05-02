@@ -21,9 +21,9 @@ public class ThrowObjectG : MonoBehaviour {
     {
         player = GameObject.FindGameObjectWithTag("Player");
         playerCam = GameObject.FindGameObjectWithTag("MainCamera");
-        getMass = GameObject.FindGameObjectWithTag("PhysicsObject");
-        playerStrengthfactor = 1.0f; //sets the strength of the player at start. This value is public 
-        throwforce = rb.mass * playerStrengthfactor; //throw force is always based on the mass of the object multiplied by the strength
+        //getMass = GameObject.FindGameObjectWithTag("PhysicsObject");
+        //playerStrengthfactor = 1.0f; //sets the strength of the player at start. This value is public 
+        //throwforce = rb.mass * playerStrengthfactor; //throw force is always based on the mass of the object multiplied by the strength
                                                      //Note: Need to test how this reacts with objects of high weight and high strength of player
     }
 
@@ -33,20 +33,21 @@ public class ThrowObjectG : MonoBehaviour {
         //method to factor in player's strength for mass per object but not sure where to put it
         
         //float dist = Vector3.Distance(gameObject.transform.position, player.transform.position);
-        // if (dist <= 2.5f)
+        //if (dist <= 2.5f)
         //{
         //     hasPlayer = true;
-        // }
-        // else
-        // {
-        //     hasPlayer = false;
-        // }
-        //if (hasPlayer && Input.GetKeyDown(KeyCode.E))
-        // {
-        //    GetComponent<Rigidbody>().isKinematic = true;
-        //    transform.parent = playerCam.transform;
-        //    beingCarried = true;
         //}
+        //else
+        //{
+        //    hasPlayer = false;
+        //}
+        //if (hasPlayer && Input.GetKeyDown(KeyCode.E))
+        //{
+        //   GetComponent<Rigidbody>().isKinematic = true;
+        //   transform.parent = playerCam.transform;
+        //   beingCarried = true;
+        //}
+
         if (beingCarried)
         {
             if(touched)

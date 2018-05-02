@@ -5,13 +5,13 @@ using UnityEngine;
 //using System;
 using System.Collections.Specialized;
 
-public class CameraMouseG : MonoBehaviour {
+public class ThumbstickLookP1_Script : MonoBehaviour {
 
     Vector2 mouseLook;
     Vector2 smoothV;
-	private GameObject spine;
-	private GameObject armLeft;
-	private GameObject armRight;
+    private GameObject spine;
+    private GameObject armLeft;
+    private GameObject armRight;
     public float sensitivity = 5.0f;
     public float smoothing = 2.0f;
     public float maxAngleY = 90.0f;
@@ -19,17 +19,17 @@ public class CameraMouseG : MonoBehaviour {
 
     GameObject character;
 
-	void Start ()
+    void Start()
     {
         character = this.transform.parent.gameObject;
-		//spine = GameObject.FindGameObjectWithTag("spineRotator");
-		//armLeft = GameObject.FindGameObjectWithTag ("armRotatorL");
-		//armRight = GameObject.FindGameObjectWithTag ("armRotatorR");
-		Debug.Log (spine);
-	}
-	
-	
-	void LateUpdate ()
+        //spine = GameObject.FindGameObjectWithTag("spineRotator");
+        //armLeft = GameObject.FindGameObjectWithTag ("armRotatorL");
+        //armRight = GameObject.FindGameObjectWithTag ("armRotatorR");
+        //Debug.Log(spine);
+    }
+
+
+    void LateUpdate()
     {
         var md = new Vector2(Input.GetAxisRaw("P1GameLookHorizontal"), Input.GetAxisRaw("P1GameLookVertical"));
 
@@ -38,14 +38,15 @@ public class CameraMouseG : MonoBehaviour {
         smoothV.y = Mathf.Lerp(smoothV.y, md.y, 1f / smoothing);
         mouseLook += smoothV;
 
-		//spine.transform.localRotation = Quaternion.AngleAxis (-mouseLook.y, Vector3.right);
-		//armRight.transform.localRotation = Quaternion.AngleAxis (mouseLook.y+100, Vector3.right);
-		//armLeft.transform.localRotation = Quaternion.AngleAxis (mouseLook.y+100, Vector3.right);
+        //spine.transform.localRotation = Quaternion.AngleAxis (-mouseLook.y, Vector3.right);
+        //armRight.transform.localRotation = Quaternion.AngleAxis (mouseLook.y+100, Vector3.right);
+        //armLeft.transform.localRotation = Quaternion.AngleAxis (mouseLook.y+100, Vector3.right);
 
         transform.localRotation = Quaternion.AngleAxis(-mouseLook.y, Vector3.right);
         mouseLook.y = Mathf.Clamp(mouseLook.y, minAngleY, maxAngleY);
 
         character.transform.localRotation = Quaternion.AngleAxis(mouseLook.x, character.transform.up);
 
-	}
+    }
 }
+
