@@ -21,6 +21,13 @@ public class FPSControllerP1_Script : MonoBehaviour {
     private GameObject currentPlayer;
     private GameObject itemPickedUp;
 
+    public GameObject getMass;
+    public float rbOfObject;
+    public float playerStrengthValue;
+    public float throwForce;
+    public float totalDmg;
+    public float baseDmg;
+    public int currentPlayerNum;
 
     // Use this for initialization
     void Start()
@@ -33,6 +40,11 @@ public class FPSControllerP1_Script : MonoBehaviour {
         Invoke("ResetIsPickingUp", 0);
         speed = defaultSpeed;
         cam = GetComponentInChildren<Camera>();
+
+
+        //throw stuff -G
+        playerStrengthValue = 500.0f;
+        
 
     }
 
@@ -163,8 +175,6 @@ public class FPSControllerP1_Script : MonoBehaviour {
 
         itemPickedUp.transform.parent = null;
         itemPickedUp = null;
-
-
     }
 
     private void ThrowObject()
@@ -176,14 +186,22 @@ public class FPSControllerP1_Script : MonoBehaviour {
         {
             itemPickedUp.GetComponentInParent<Rigidbody>().isKinematic = false;
             itemPickedUp.transform.parent = null;
-            itemPickedUp.GetComponentInParent<Rigidbody>().AddForce(cam.transform.forward * 5000);
-
+            rbOfObject = itemPickedUp.GetComponentInParent<Rigidbody>().mass;
+            throwForce = rbOfObject * playerStrengthValue;
+            currentPlayerNum = itemPickedUp.GetComponent<objectManager>().playerNumThrown;
+            currentPlayerNum = 1; 
+            itemPickedUp.GetComponentInParent<Rigidbody>().AddForce(cam.transform.forward * throwForce);
+         
         }
         else if (itemPickedUp.GetComponent<Rigidbody>() != false)
         {
             itemPickedUp.GetComponent<Rigidbody>().isKinematic = false;
             itemPickedUp.transform.parent = null;
-            itemPickedUp.GetComponent<Rigidbody>().AddForce(cam.transform.forward * 5000);
+            rbOfObject = itemPickedUp.GetComponentInParent<Rigidbody>().mass;
+            throwForce = rbOfObject * playerStrengthValue;
+            currentPlayerNum = itemPickedUp.GetComponent<objectManager>().playerNumThrown;
+            currentPlayerNum = 1;
+            itemPickedUp.GetComponent<Rigidbody>().AddForce(cam.transform.forward * throwForce);
 
         }
 
