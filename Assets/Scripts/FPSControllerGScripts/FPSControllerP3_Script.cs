@@ -38,7 +38,7 @@ public class FPSControllerP3_Script : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
 
         if (isTimerRunning == true)
