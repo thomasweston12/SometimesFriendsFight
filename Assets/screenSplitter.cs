@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class screenSplitter : MonoBehaviour {
 
@@ -17,17 +18,15 @@ public class screenSplitter : MonoBehaviour {
 		pCam2 = GameObject.Find ("playerCharacterCamera2").GetComponent<Camera> ();
 		pCam3 = GameObject.Find ("playerCharacterCamera3").GetComponent<Camera> ();
 		pCam4 = GameObject.Find ("playerCharacterCamera4").GetComponent<Camera> ();
-		//playerCharacterCamera = GameObject.Find ("platerCharacterCamera").getComponent<playerCharacterCamera> ();
+        //playerCharacterCamera = GameObject.Find ("platerCharacterCamera").getComponent<playerCharacterCamera> ();
 
-		//cam = Camera.playerCharacterCamera;
-		//int numbPlayers = gm.players.Count ();
-
+        //cam = Camera.playerCharacterCamera;
+        //int numbPlayers = gm.players.Count ();
 	
 		if (gm.players.Count == 1) {
 
 			Debug.Log ("found playerCamera 1");
-			pCam1.rect = new Rect (0, 0, 1, 1);
-				
+			pCam1.rect = new Rect (0, 0, 1, 1);				
 		}		
 		else if (gm.players.Count  == 2){
 			
@@ -35,10 +34,9 @@ public class screenSplitter : MonoBehaviour {
 			Debug.Log ("found playerCamera 2");
 			pCam1.rect = new Rect (0, 0.5f, 1, 1);
 			pCam2.rect = new Rect (0, 0, 1, 0.5f);
-			
-		}
+        }
 
-		else if (gm.players.Count  == 3){
+        else if (gm.players.Count  == 3){
 
 			Debug.Log ("found playerCamera 1");
 			Debug.Log ("found playerCamera 2");

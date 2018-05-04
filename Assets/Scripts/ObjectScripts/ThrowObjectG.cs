@@ -22,7 +22,9 @@ public class ThrowObjectG : MonoBehaviour {
         player = GameObject.FindGameObjectWithTag("Player");
         playerCam = GameObject.FindGameObjectWithTag("MainCamera");
         getMass = GameObject.FindGameObjectWithTag("PhysicsObject");
+        rb = GetComponent<Rigidbody>();
         playerStrengthfactor = 1.0f; //sets the strength of the player at start. This value is public 
+
         throwforce = rb.mass * playerStrengthfactor; //throw force is always based on the mass of the object multiplied by the strength
                                                      //Note: Need to test how this reacts with objects of high weight and high strength of player
     }

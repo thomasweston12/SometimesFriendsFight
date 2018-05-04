@@ -11,6 +11,7 @@ public class pauseMenu_Script : MonoBehaviour {
     public GameObject pauseMenuUI;
     public Button resumeButton;
     public EventSystem pauseEventSystem;
+    public GameObject gm;
 
     private void Awake()
     {
@@ -21,6 +22,7 @@ public class pauseMenu_Script : MonoBehaviour {
     {
         //resumeButton = GameObject.Find("btnResume").GetComponent<Button>();
         //pauseEventSystem.SetSelectedGameObject(resumeButton);
+        gm = GameObject.Find("GameManagerObject");
         
     }
 
@@ -62,6 +64,7 @@ public class pauseMenu_Script : MonoBehaviour {
     public void QuitGameButtonOnClick()
     {
         this.Resume();
+        Destroy(gm);
         SceneManager.LoadScene("mainMenu_Scene", LoadSceneMode.Single);
     }
     
