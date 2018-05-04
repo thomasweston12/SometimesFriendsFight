@@ -30,7 +30,7 @@ public class ThumbstickLookP2_Script : MonoBehaviour
     }
 
 
-    void LateUpdate()
+    void FixedUpdate()
     {
         var md = new Vector2(Input.GetAxisRaw("P2GameLookHorizontal"), Input.GetAxisRaw("P2GameLookVertical"));
 

@@ -29,7 +29,7 @@ public class ThumbstickLookP1_Script : MonoBehaviour {
     }
 
 
-    void LateUpdate()
+    void FixedUpdate()
     {
         var md = new Vector2(Input.GetAxisRaw("P1GameLookHorizontal"), Input.GetAxisRaw("P1GameLookVertical"));
 
