@@ -20,6 +20,7 @@ public class FPSControllerP1_Script : MonoBehaviour {
     public int playerHealth = 100;
     private GameObject currentPlayer;
     private GameObject itemPickedUp;
+    private GameManager gm;
 
     public GameObject getMass;
     public float rbOfObject;
@@ -32,7 +33,7 @@ public class FPSControllerP1_Script : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-
+        gm = GameObject.Find("GameManagerObject").GetComponent<GameManager>();
         rb = GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
         anim = GetComponent<Animator>();
@@ -127,7 +128,15 @@ public class FPSControllerP1_Script : MonoBehaviour {
     private void PickUpItem()
     {
         RaycastHit hit;
-        Ray ray = cam.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
+        Ray ray = ray = cam.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
+        if (gm.players.Count == 1)
+            ray = cam.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
+        else if (gm.players.Count == 2)
+            ray = cam.ScreenPointToRay(new Vector3(Screen.width / 2, (Screen.height / 4)* 3));
+        else if (gm.players.Count > 2)
+            ray = cam.ScreenPointToRay(new Vector3(Screen.width / 4, (Screen.height / 4) * 3));
+
+
         Debug.DrawRay(ray.origin, ray.direction * 1000, Color.red, 20, true);
         //Debug.Log("drawing ray!");
 

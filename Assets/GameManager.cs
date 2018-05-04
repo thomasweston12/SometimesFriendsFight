@@ -340,32 +340,6 @@ public class GameManager : MonoBehaviour {
         }
 
 
-        if (currentScene.name != "mainMenu_Scene")
-        {
-            switch (players.Count)
-            {
-                case 1:
-                    Destroy(GameObject.Find("Player 2"));
-                    Destroy(GameObject.Find("Player 3"));
-                    Destroy(GameObject.Find("Player 4"));
-                    //Debug.Log("Destroying 2, 3, 4!");
-                    break;
-                case 2:
-                    Destroy(GameObject.Find("Player 3"));
-                    Destroy(GameObject.Find("Player 4"));
-                    //Debug.Log("Destroying 3, 4!");
-                    break;
-                case 3:
-                    Destroy(GameObject.Find("Player 4"));
-                    //Debug.Log("Destroying 4!");
-                    break;
-                default:
-                    Debug.Log("Destroying none because this is an error!");
-                    break;
-            }
-        }
-
-
 
 
     }

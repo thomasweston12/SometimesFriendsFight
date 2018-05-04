@@ -20,7 +20,7 @@ public class FPSControllerP2_Script : MonoBehaviour {
     public int playerHealth = 100;
     private GameObject currentPlayer;
     private GameObject itemPickedUp;
-
+    private GameManager gm;
 
     // Use this for initialization
     void Start()
@@ -113,7 +113,15 @@ public class FPSControllerP2_Script : MonoBehaviour {
     private void PickUpItem()
     {
         RaycastHit hit;
-        Ray ray = cam.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
+        Ray ray;
+        ray = cam.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 4));
+
+        if (gm.players.Count == 2)
+            ray = cam.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 4));
+        if (gm.players.Count > 2)
+            ray = cam.ScreenPointToRay(new Vector3((Screen.width / 4) * 3, (Screen.height / 4) * 3));
+
+
         Debug.DrawRay(ray.origin, ray.direction * 1000, Color.red, 20, true);
         //Debug.Log("drawing ray!");
 

@@ -21,12 +21,13 @@ public class FPSControllerP4_Script : MonoBehaviour
     public int playerHealth = 100;
     private GameObject currentPlayer;
     private GameObject itemPickedUp;
+    private GameManager gm;
 
 
     // Use this for initialization
     void Start()
     {
-
+        gm = GameObject.Find("GameManagerObject").GetComponent<GameManager>();
         rb = GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
         anim = GetComponent<Animator>();
@@ -114,9 +115,11 @@ public class FPSControllerP4_Script : MonoBehaviour
     private void PickUpItem()
     {
         RaycastHit hit;
-        Ray ray = cam.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
-        Debug.DrawRay(ray.origin, ray.direction * 1000, Color.red, 20, true);
-        //Debug.Log("drawing ray!");
+        Ray ray;
+        ray = cam.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 4));
+
+        if (gm.players.Count == 4)
+            ray = cam.ScreenPointToRay(new Vector3((Screen.width / 4) * 3, Screen.height / 4));
 
         if (Physics.Raycast(ray, out hit, dist))
         {
