@@ -18,7 +18,11 @@ public class timerText_Script : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        timerText.text = ("Time Left: " + (int)(gm.getGameTimer() - gm.getGameCurrentTime()));
+
+        if (gm.GetIsGameTimed() == true)
+            timerText.text = ("Time Left: " + (int)(gm.getGameTimer() - gm.getGameCurrentTime()));
+        else if (gm.GetIsGameTimed() == false)
+            timerText.gameObject.SetActive(false);
         //Debug.Log(gm.getGameCurrentTime().ToString());
 	}
 }

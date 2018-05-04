@@ -126,12 +126,12 @@ public class GameManager : MonoBehaviour {
 
     private int numberOfPlayers = 0;
 	private string mapChosen = "Map 1";
-    private bool isGameTimed = true;
+    private bool isGameTimed = false;
     //private int gameTimer = 120;
     private bool isScoreLimited = false;
     private int scoreLimit = 0;
 
-    private bool isTimerRunning;
+    private bool isTimerRunning = false;
     private float waitTime;
     private float timerCurrent;
 
@@ -153,6 +153,7 @@ public class GameManager : MonoBehaviour {
     public Button playGameButton;
     public Button settingsButton;
     public Button creditsButton;
+    public Button quitGameButton;
 
     public Button p1JoinButton;
     public Button p2JoinButton;
@@ -182,8 +183,10 @@ public class GameManager : MonoBehaviour {
     public CanvasGroup p3ControlsGroup;
     public CanvasGroup p4ControlsGroup;
 
-    public enum States {MainMenu, PlayGameMenu, SettingsMenu, CreditsMenu, P1Joined, P2Joined, P3Joined, P4Joined, GameStart, GameEnd }
+    public enum States {MainMenu, PlayGameMenu, SettingsMenu, CreditsMenu, P1Active, P1Joined, P2Active, P2Joined, P3Active, P3Joined, P4Active, P4Joined, GameStart, GameEnd }
+    public enum MenuContext {PlayerSetup, GameSetup}
     States currentState = States.MainMenu;
+    MenuContext menuContext = MenuContext.PlayerSetup;
 
 	// Use this for initialization
     void Start ()
@@ -201,10 +204,8 @@ public class GameManager : MonoBehaviour {
         p2ControlsGroup.alpha = 0;
         p3ControlsGroup.alpha = 0;
         p4ControlsGroup.alpha = 0;
-
         currentScene = SceneManager.GetActiveScene();
         string currentSceneName = currentScene.name;
-
         timerCurrent = 0;
         waitTime = 0;
         isTimerRunning = false;
@@ -219,6 +220,124 @@ public class GameManager : MonoBehaviour {
 	
     void Update ()
     {
+        if(Input.GetButtonDown("P1MenuBack") && currentState == States.PlayGameMenu)
+        {
+            currentState = States.MainMenu;
+            mainMenuMenuGroup.alpha = 100;
+            playGameMenuGroup.alpha = 0;
+            p1ControlsGroup.alpha = 0;
+            p1JoinButton.gameObject.SetActive(false);
+            playGameButton.Select();
+        }
+        else if(Input.GetButtonDown("P1MenuBack") && currentState == States.P1Active)
+        {
+            currentState = States.PlayGameMenu;
+            p1ControlsGroup.alpha = 0;
+            p1JoinButton.gameObject.SetActive(true);
+            p1JoinButton.Select();
+        }
+        else if(Input.GetButtonDown("P1MenuBack") && currentState == States.P1Joined)
+        {
+            RemoveLastPlayer();
+            currentState = States.P1Active;
+            Debug.Log(players.Count.ToString());
+            p1ControlsGroup.interactable = true;
+            p1MaxHealthSlider.Select();
+            p2JoinButton.gameObject.SetActive(false);
+
+        }
+        else if(Input.GetButtonDown("P1MenuBack") && currentState == States.P2Active)
+        {
+            currentState = States.P1Joined;
+            p2ControlsGroup.alpha = 0;
+            p2JoinButton.gameObject.SetActive(true);
+            p2JoinButton.Select();
+        }
+        else if (Input.GetButtonDown("P1MenuBack") && currentState == States.P2Joined)
+        {
+            RemoveLastPlayer();
+            currentState = States.P2Active;
+            Debug.Log(players.Count.ToString());
+            p2ControlsGroup.interactable = true;
+            p2MaxHealthSlider.Select();
+            p3JoinButton.gameObject.SetActive(false);
+
+        }
+        else if (Input.GetButtonDown("P1MenuBack") && currentState == States.P3Active)
+        {
+            currentState = States.P2Joined;
+            p3ControlsGroup.alpha = 0;
+            p3JoinButton.gameObject.SetActive(true);
+            p3JoinButton.Select();
+        }
+        else if (Input.GetButtonDown("P1MenuBack") && currentState == States.P3Joined)
+        {
+            RemoveLastPlayer();
+            currentState = States.P3Active;
+            Debug.Log(players.Count.ToString());
+            p3ControlsGroup.interactable = true;
+            p3MaxHealthSlider.Select();
+            p4JoinButton.gameObject.SetActive(false);
+        }
+        else if (Input.GetButtonDown("P1MenuBack") && currentState == States.P4Active)
+        {
+            currentState = States.P3Joined;
+            p4ControlsGroup.alpha = 0;
+            p4JoinButton.gameObject.SetActive(true);
+            p4JoinButton.Select();
+        }
+        else if (Input.GetButtonDown("P1MenuBack") && currentState == States.P4Joined)
+        {
+            RemoveLastPlayer();
+            currentState = States.P4Active;
+            Debug.Log(players.Count.ToString());
+            p4ControlsGroup.interactable = true;
+            p4MaxHealthSlider.Select();
+        }
+
+
+        if (currentScene.name == "mainMenu_Scene")
+        {
+            if (Input.GetButtonDown("P1MenuSwitchFocus") && menuContext == MenuContext.PlayerSetup)
+            {
+                mapDropdown.Select();
+                menuContext = MenuContext.GameSetup;
+            }
+            else if (Input.GetButtonDown("P1MenuSwitchFocus") && menuContext == MenuContext.GameSetup)
+            {
+                switch (currentState)
+                {
+                    case States.PlayGameMenu:
+                        p1JoinButton.Select();
+                        break;
+                    case States.P1Active:
+                        p1MaxHealthSlider.Select();
+                        break;
+                    case States.P1Joined:
+                        p2JoinButton.Select();
+                        break;
+                    case States.P2Active:
+                        p2MaxHealthSlider.Select();
+                        break;
+                    case States.P2Joined:
+                        p3JoinButton.Select();
+                        break;
+                    case States.P3Active:
+                        p3MaxHealthSlider.Select();
+                        break;
+                    case States.P3Joined:
+                        p4JoinButton.Select();
+                        break;
+                    case States.P4Active:
+                        p4MaxHealthSlider.Select();
+                        break;
+                }
+
+                menuContext = MenuContext.PlayerSetup;
+
+            }
+
+        }
 
 
         if (currentScene.name != "mainMenu_Scene")
@@ -256,10 +375,13 @@ public class GameManager : MonoBehaviour {
         if (isTimerRunning == true)
             timerCurrent += Time.deltaTime;
 
+        if (currentScene.name == "test_level_with_assets" && isGameTimed == false)
+            isTimerRunning = false;
+
         if (currentScene.name == "test_level_with_assets" && isGameTimed == true)
             isTimerRunning = true;
 
-        if (isTimerRunning == true && timerCurrent > waitTime)
+        if (isTimerRunning == true && timerCurrent > waitTime && isGameTimed == true)
         {
             isTimerRunning = false;
             waitTime = 0;
@@ -267,6 +389,7 @@ public class GameManager : MonoBehaviour {
             SceneManager.LoadScene("endGame_Scene", LoadSceneMode.Single);
 
         }
+
     }
 
     // Used to decide how many players to add to the game when starting the game.
@@ -473,6 +596,7 @@ public class GameManager : MonoBehaviour {
 
     public void startButtonOnClick()
     {
+        currentState = States.GameStart;
         if (GetMapChosen() == "Map 1")
             SceneManager.LoadScene("test_level_with_assets", LoadSceneMode.Single);
 
@@ -487,6 +611,9 @@ public class GameManager : MonoBehaviour {
         mainMenuMenuGroup.alpha = 0;
         playGameMenuGroup.alpha = 100;
         p1JoinButton.gameObject.SetActive(true);
+        p2JoinButton.gameObject.SetActive(false);
+        p3JoinButton.gameObject.SetActive(false);
+        p4JoinButton.gameObject.SetActive(false);
         p1JoinButton.Select();
     }
 
@@ -500,127 +627,139 @@ public class GameManager : MonoBehaviour {
         currentState = States.CreditsMenu;
     }
 
+    public void quitGameButtonOnClick()
+    {
+        Application.Quit();
+        players.Clear();
+    }
+
     public void colourSliderOnValueChanged()
     {
         p1SliderHandle.color = Color.HSVToRGB(p1ColourSlider.value, 1, 1);
-        players[0].SetPlayerColour(p1SliderHandle.color);
     }
 
     public void P2colourSliderOnValueChanged()
     {
         p2SliderHandle.color = Color.HSVToRGB(p2ColourSlider.value, 1, 1);
-        players[1].SetPlayerColour(p2SliderHandle.color);
     }
 
     public void P3colourSliderOnValueChanged()
     {
         p3SliderHandle.color = Color.HSVToRGB(p3ColourSlider.value, 1, 1);
-        players[2].SetPlayerColour(p3SliderHandle.color);
     }
 
     public void P4colourSliderOnValueChanged()
     {
         p4SliderHandle.color = Color.HSVToRGB(p4ColourSlider.value, 1, 1);
-        players[3].SetPlayerColour(p4SliderHandle.color);
     }
 
 
     public void P1MaxHealthSliderOnValueChanged()
     {
         p1MaxHealthLabel.SetText(p1MaxHealthSlider.value.ToString());
-        players[0].setMaxHealth((int)p1MaxHealthSlider.value);
     }
 
     public void P2MaxHealthSliderOnValueChanged()
     {
         p2MaxHealthLabel.SetText(p2MaxHealthSlider.value.ToString());
-        players[1].setMaxHealth((int)p2MaxHealthSlider.value);
     }
 
     public void P3MaxHealthSliderOnValueChanged()
     {
         p3MaxHealthLabel.SetText(p3MaxHealthSlider.value.ToString());
-        players[2].setMaxHealth((int)p3MaxHealthSlider.value);
     }
 
     public void P4MaxHealthSliderOnValueChanged()
     {
         p4MaxHealthLabel.SetText(p4MaxHealthSlider.value.ToString());
-        players[3].setMaxHealth((int)p4MaxHealthSlider.value);
     }
 
     public void p1JoinButtonOnClick()
     {
+        currentState = States.P1Active;
         p1JoinButton.gameObject.SetActive(false);
         p1ControlsGroup.alpha = 100;
         p1ControlsGroup.interactable = true;
-        AddPlayer();
         p1MaxHealthSlider.Select();
-        players[0].setPlayerName("Player 1");
-        Debug.Log(players.Count.ToString());
-        Debug.Log(currentState.ToString());
     }
 
     public void p2JoinButtonOnClick()
     {
+        currentState = States.P2Active;
         p2JoinButton.gameObject.SetActive(false);
         p2ControlsGroup.alpha = 100;
         p2ControlsGroup.interactable = true;
-        AddPlayer();
         p2MaxHealthSlider.Select();
-        players[1].setPlayerName("Player 2");
-        Debug.Log(players.Count.ToString());
-        Debug.Log(currentState.ToString());
     }
 
     public void p3JoinButtonOnClick()
     {
+        currentState = States.P3Active;
         p3JoinButton.gameObject.SetActive(false);
         p3ControlsGroup.alpha = 100;
         p3ControlsGroup.interactable = true;
-        AddPlayer();
         p3MaxHealthSlider.Select();
-        players[2].setPlayerName("Player 3");
-        Debug.Log(players.Count.ToString());
-        Debug.Log(currentState.ToString());
     }
 
     public void p4JoinButtonOnClick()
     {
+        currentState = States.P4Active;
         p4JoinButton.gameObject.SetActive(false);
         p4ControlsGroup.alpha = 100;
         p4ControlsGroup.interactable = true;
-        AddPlayer();
         p4MaxHealthSlider.Select();
-        players[3].setPlayerName("Player 4");
-        Debug.Log(players.Count.ToString());
-        Debug.Log(currentState.ToString());
     }
 
     public void doneButtonOnClick()
     {
         switch(currentState)
         {
-            case (States.PlayGameMenu):
+            case (States.P1Active):
                 currentState = States.P1Joined;
                 p1ControlsGroup.interactable = false;
+                p2JoinButton.gameObject.SetActive(true);
                 p2JoinButton.Select();
+                AddPlayer();
+                players[0].setPlayerName("Player 1");
+                players[0].SetPlayerColour(p1SliderHandle.color);
+                players[0].setMaxHealth((int)p1MaxHealthSlider.value);
+                Debug.Log(players.Count.ToString());
+                Debug.Log(currentState.ToString());
                 break;
-            case (States.P1Joined):
+            case (States.P2Active):
                 currentState = States.P2Joined;
                 p2ControlsGroup.interactable = false;
+                p3JoinButton.gameObject.SetActive(true);
                 p3JoinButton.Select();
+                AddPlayer();
+                players[1].setPlayerName("Player 2");
+                Debug.Log(players.Count.ToString());
+                Debug.Log(currentState.ToString());
+                players[1].SetPlayerColour(p2SliderHandle.color);
+                players[1].setMaxHealth((int)p2MaxHealthSlider.value);
                 break;
-            case (States.P2Joined):
+            case (States.P3Active):
                 currentState = States.P3Joined;
                 p3ControlsGroup.interactable = false;
+                p4JoinButton.gameObject.SetActive(true);
                 p4JoinButton.Select();
+                AddPlayer();
+                players[2].setPlayerName("Player 3");
+                Debug.Log(players.Count.ToString());
+                Debug.Log(currentState.ToString());
+                players[2].SetPlayerColour(p3SliderHandle.color);
+                players[2].setMaxHealth((int)p3MaxHealthSlider.value);
                 break;
-            case (States.P3Joined):
+            case (States.P4Active):
                 currentState = States.P4Joined;
                 p4ControlsGroup.interactable = false;
                 startButton.Select();
-
+                AddPlayer();
+                players[3].setPlayerName("Player 4");
+                Debug.Log(players.Count.ToString());
+                Debug.Log(currentState.ToString());
+                players[3].SetPlayerColour(p4SliderHandle.color);
+                players[3].setMaxHealth((int)p4MaxHealthSlider.value);
                 break;
             default:
                 //currentState = States.PlayGameMenu;
