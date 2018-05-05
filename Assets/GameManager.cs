@@ -165,6 +165,7 @@ public class GameManager : MonoBehaviour {
 
     public Button backSettingsButton;
     public Button applySettingsButton;
+    public Button backCreditsButton;
 
     public Slider p1ColourSlider;
     public Slider p2ColourSlider;
@@ -193,6 +194,7 @@ public class GameManager : MonoBehaviour {
     public CanvasGroup p3ControlsGroup;
     public CanvasGroup p4ControlsGroup;
     public CanvasGroup settingsMenuGroup;
+    public CanvasGroup creditsMenuGroup;
 
     public AudioClip menuHover;
     public AudioClip menuSelect;
@@ -222,6 +224,8 @@ public class GameManager : MonoBehaviour {
         p3ControlsGroup = GameObject.Find("P3Controls").GetComponent<CanvasGroup>();
         p4ControlsGroup = GameObject.Find("P4Controls").GetComponent<CanvasGroup>();
         settingsMenuGroup = GameObject.Find("SettingsScreen").GetComponent<CanvasGroup>();
+        creditsMenuGroup = GameObject.Find("CreditsScreen").GetComponent<CanvasGroup>();
+        creditsMenuGroup.alpha = 0;
         playGameMenuGroup.alpha = 0;
         p1ControlsGroup.alpha = 0;
         p2ControlsGroup.alpha = 0;
@@ -353,6 +357,15 @@ public class GameManager : MonoBehaviour {
             audioSource.clip = menuBack;
             audioSource.PlayOneShot(menuBack);
 
+        }
+        else if (Input.GetButtonDown("P1MenuBack") && currentState == States.CreditsMenu)
+        {
+            currentState = States.MainMenu;
+            mainMenuMenuGroup.alpha = 100;
+            creditsMenuGroup.alpha = 0;
+            playGameButton.Select();
+            audioSource.clip = menuBack;
+            audioSource.PlayOneShot(menuBack);
         }
 
 
@@ -681,6 +694,10 @@ public class GameManager : MonoBehaviour {
         soundEffectSlider.Select();
         applySettingsButton.interactable = false;
 
+        soundEffectSlider.value = AudioListener.volume * 100;
+        musicVolSlider.value = MusicSource.volume * 100;
+        uiVolSlider.value = UISource.volume * 100;
+
         audioSource.clip = menuSelect;
         audioSource.PlayOneShot(menuSelect);
     }
@@ -688,7 +705,9 @@ public class GameManager : MonoBehaviour {
     public void creditsButtonOnClick()
     {
         currentState = States.CreditsMenu;
-
+        mainMenuMenuGroup.alpha = 0;
+        creditsMenuGroup.alpha = 100;
+        backCreditsButton.Select();
         audioSource.clip = menuSelect;
         audioSource.PlayOneShot(menuSelect);
 
@@ -989,6 +1008,16 @@ public class GameManager : MonoBehaviour {
         audioSource.clip = menuBack;
         audioSource.PlayOneShot(menuBack);
 
+    }
+
+    public void CreditsBackButtonOnClick()
+    {
+        currentState = States.MainMenu;
+        mainMenuMenuGroup.alpha = 100;
+        creditsMenuGroup.alpha = 0;
+        playGameButton.Select();
+        audioSource.clip = menuBack;
+        audioSource.PlayOneShot(menuBack);
     }
 
     public void UIHoverSound()
