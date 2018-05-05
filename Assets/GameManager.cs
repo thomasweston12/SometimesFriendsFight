@@ -903,7 +903,7 @@ public class GameManager : MonoBehaviour {
 
     public void SoundEffectVolumeOnValueChanged()
     {
-        AudioListener.volume = soundEffectSlider.value / 100;
+        AudioListener.volume = soundEffectSlider.value / 20;
         audioSource.clip = sliderBar;
         audioSource.PlayOneShot(sliderBar);
 
@@ -911,7 +911,7 @@ public class GameManager : MonoBehaviour {
 
     public void UIVolumeOnValueChanged()
     {
-        UISource.volume = uiVolSlider.value / 100;
+        UISource.volume = uiVolSlider.value / 20;
         audioSource.clip = sliderBar;
         audioSource.PlayOneShot(sliderBar);
 
@@ -919,7 +919,7 @@ public class GameManager : MonoBehaviour {
 
     public void MusicVolumeOnValueChanged()
     {
-        MusicSource.volume = musicVolSlider.value / 100;
+        MusicSource.volume = musicVolSlider.value / 20;
         audioSource.clip = sliderBar;
         audioSource.PlayOneShot(sliderBar);
 
@@ -1004,6 +1004,8 @@ public class GameManager : MonoBehaviour {
 
         mainMenuMenuGroup.alpha = 100;
         settingsMenuGroup.alpha = 0;
+
+        playGameButton.Select();
 
         audioSource.clip = menuBack;
         audioSource.PlayOneShot(menuBack);
