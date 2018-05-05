@@ -17,10 +17,14 @@ public class FPSControllerP2_Script : MonoBehaviour {
     private bool isNear;
     private Camera cam;
     Vector3 screenCentre = new Vector3(Screen.width / 2, Screen.height / 2);
-    public int playerHealth = 100;
+    public int playerHealth;
     private GameObject currentPlayer;
     private GameObject itemPickedUp;
     private GameManager gm;
+
+    public float rbOfObject;
+    public float playerStrengthValue;
+    public float throwForce;
 
     // Use this for initialization
     void Start()
@@ -33,7 +37,9 @@ public class FPSControllerP2_Script : MonoBehaviour {
         Invoke("ResetIsPickingUp", 0);
         speed = defaultSpeed;
         cam = GetComponentInChildren<Camera>();
-
+        playerHealth = gm.players[1].getMaxHealth();
+        playerStrengthValue = 500.0f;
+    
     }
 
     // Update is called once per frame
@@ -95,6 +101,10 @@ public class FPSControllerP2_Script : MonoBehaviour {
         if (anim.GetBool("hasItem") == true)
             HoldingItem();
 
+        if (playerHealth == 0)
+        {
+            Destroy(this);
+        }
 
     }
 
@@ -182,14 +192,18 @@ public class FPSControllerP2_Script : MonoBehaviour {
         {
             itemPickedUp.GetComponentInParent<Rigidbody>().isKinematic = false;
             itemPickedUp.transform.parent = null;
-            itemPickedUp.GetComponentInParent<Rigidbody>().AddForce(cam.transform.forward * 5000);
+            rbOfObject = itemPickedUp.GetComponentInParent<Rigidbody>().mass;
+            throwForce = rbOfObject * playerStrengthValue;
+            itemPickedUp.GetComponentInParent<Rigidbody>().AddForce(cam.transform.forward * throwForce);
 
         }
         else if (itemPickedUp.GetComponent<Rigidbody>() != false)
         {
             itemPickedUp.GetComponent<Rigidbody>().isKinematic = false;
             itemPickedUp.transform.parent = null;
-            itemPickedUp.GetComponent<Rigidbody>().AddForce(cam.transform.forward * 5000);
+            rbOfObject = itemPickedUp.GetComponentInParent<Rigidbody>().mass;
+            throwForce = rbOfObject * playerStrengthValue;
+            itemPickedUp.GetComponent<Rigidbody>().AddForce(cam.transform.forward * throwForce);
 
         }
 
@@ -207,8 +221,5 @@ public class FPSControllerP2_Script : MonoBehaviour {
             anim.SetBool("isPickingUp", false);
             isTimerRunning = false;
         }
-
-
     }
-
 }
