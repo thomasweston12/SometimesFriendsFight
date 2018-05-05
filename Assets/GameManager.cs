@@ -148,6 +148,9 @@ public class GameManager : MonoBehaviour {
     public Dropdown timerDropdown;
     public Dropdown scoreDropdown;
 
+    public Dropdown resolutionDropdown;
+    public Dropdown qualityDropdown;
+
     public Button startButton;
 
     public Button playGameButton;
@@ -160,6 +163,9 @@ public class GameManager : MonoBehaviour {
     public Button p3JoinButton;
     public Button p4JoinButton;
 
+    public Button backSettingsButton;
+    public Button applySettingsButton;
+
     public Slider p1ColourSlider;
     public Slider p2ColourSlider;
     public Slider p3ColourSlider;
@@ -169,6 +175,10 @@ public class GameManager : MonoBehaviour {
     public Slider p2MaxHealthSlider;
     public Slider p3MaxHealthSlider;
     public Slider p4MaxHealthSlider;
+
+    public Slider soundEffectSlider;
+    public Slider uiVolSlider;
+    public Slider musicVolSlider;
 
     public UnityEngine.UI.Image p1SliderHandle;
     public UnityEngine.UI.Image p2SliderHandle;
@@ -182,12 +192,16 @@ public class GameManager : MonoBehaviour {
     public CanvasGroup p2ControlsGroup;
     public CanvasGroup p3ControlsGroup;
     public CanvasGroup p4ControlsGroup;
+    public CanvasGroup settingsMenuGroup;
 
     public AudioClip menuHover;
     public AudioClip menuSelect;
     public AudioClip menuBack;
     public AudioClip menuContextSwitch;
     public AudioClip sliderBar;
+
+    public AudioSource UISource;
+    public AudioSource MusicSource;
 
     public AudioSource audioSource;
 
@@ -207,11 +221,13 @@ public class GameManager : MonoBehaviour {
         p2ControlsGroup = GameObject.Find("P2Controls").GetComponent<CanvasGroup>();
         p3ControlsGroup = GameObject.Find("P3Controls").GetComponent<CanvasGroup>();
         p4ControlsGroup = GameObject.Find("P4Controls").GetComponent<CanvasGroup>();
+        settingsMenuGroup = GameObject.Find("SettingsScreen").GetComponent<CanvasGroup>();
         playGameMenuGroup.alpha = 0;
         p1ControlsGroup.alpha = 0;
         p2ControlsGroup.alpha = 0;
         p3ControlsGroup.alpha = 0;
         p4ControlsGroup.alpha = 0;
+        settingsMenuGroup.alpha = 0;
         currentScene = SceneManager.GetActiveScene();
         string currentSceneName = currentScene.name;
         timerCurrent = 0;
@@ -324,6 +340,16 @@ public class GameManager : MonoBehaviour {
             Debug.Log(players.Count.ToString());
             p4ControlsGroup.interactable = true;
             p4MaxHealthSlider.Select();
+            audioSource.clip = menuBack;
+            audioSource.PlayOneShot(menuBack);
+
+        }
+        else if (Input.GetButtonDown("P1MenuBack") && currentState == States.SettingsMenu)
+        {
+            currentState = States.MainMenu;
+            mainMenuMenuGroup.alpha = 100;
+            settingsMenuGroup.alpha = 0;
+            playGameButton.Select();
             audioSource.clip = menuBack;
             audioSource.PlayOneShot(menuBack);
 
@@ -650,6 +676,10 @@ public class GameManager : MonoBehaviour {
     public void settingsButtonOnClick()
     {
         currentState = States.SettingsMenu;
+        mainMenuMenuGroup.alpha = 0;
+        settingsMenuGroup.alpha = 100;
+        soundEffectSlider.Select();
+        applySettingsButton.interactable = false;
 
         audioSource.clip = menuSelect;
         audioSource.PlayOneShot(menuSelect);
@@ -852,6 +882,115 @@ public class GameManager : MonoBehaviour {
 
     }
 
+    public void SoundEffectVolumeOnValueChanged()
+    {
+        AudioListener.volume = soundEffectSlider.value / 100;
+        audioSource.clip = sliderBar;
+        audioSource.PlayOneShot(sliderBar);
+
+    }
+
+    public void UIVolumeOnValueChanged()
+    {
+        UISource.volume = uiVolSlider.value / 100;
+        audioSource.clip = sliderBar;
+        audioSource.PlayOneShot(sliderBar);
+
+    }
+
+    public void MusicVolumeOnValueChanged()
+    {
+        MusicSource.volume = musicVolSlider.value / 100;
+        audioSource.clip = sliderBar;
+        audioSource.PlayOneShot(sliderBar);
+
+    }
+
+    public void QualityDropdownOnValueChanged()
+    {
+        audioSource.clip = menuSelect;
+        audioSource.PlayOneShot(menuSelect);
+        if (applySettingsButton.interactable == false)
+            applySettingsButton.interactable = true;
+
+    }
+
+    public void ResolutionDropdownOnValueChanged()
+    {
+        audioSource.clip = menuSelect;
+        audioSource.PlayOneShot(menuSelect);
+        if (applySettingsButton.interactable == false)
+            applySettingsButton.interactable = true;
+
+    }
+
+    public void ApplyButonOnClick()
+    {
+        audioSource.clip = menuSelect;
+        audioSource.PlayOneShot(menuSelect);
+
+        switch (qualityDropdown.value)
+        {
+            case 0:
+                QualitySettings.SetQualityLevel(0);
+                break;
+            case 1:
+                QualitySettings.SetQualityLevel(1);
+                break;
+            case 2:
+                QualitySettings.SetQualityLevel(2);
+                break;
+            case 3:
+                QualitySettings.SetQualityLevel(3);
+                break;
+            case 4:
+                QualitySettings.SetQualityLevel(4);
+                break;
+            case 5:
+                QualitySettings.SetQualityLevel(5);
+                break;
+
+        }
+
+        switch (resolutionDropdown.value)
+        {
+            case 0:
+                Screen.SetResolution(800, 600, true);
+                break;
+            case 1:
+                Screen.SetResolution(1024, 768, true);
+                break;
+            case 2:
+                Screen.SetResolution(1280, 720, true);
+                break;
+            case 3:
+                Screen.SetResolution(1366, 768, true);
+                break;
+            case 4:
+                Screen.SetResolution(1600, 900, true);
+                break;
+            case 5:
+                Screen.SetResolution(1920, 1080, true);
+                break;
+        }
+
+        applySettingsButton.interactable = false;
+    }
+
+    public void SettingsBackOnClick()
+    {
+        currentState = States.MainMenu;
+        audioSource.clip = menuSelect;
+        audioSource.PlayOneShot(menuSelect);
+
+        mainMenuMenuGroup.alpha = 100;
+        settingsMenuGroup.alpha = 0;
+
+        audioSource.clip = menuBack;
+        audioSource.PlayOneShot(menuBack);
+
+    }
+
     public void UIHoverSound()
     {
         audioSource.clip = menuHover;
@@ -862,6 +1001,7 @@ public class GameManager : MonoBehaviour {
     {
         audioSource.clip = menuSelect;
         audioSource.PlayOneShot(menuSelect);
-
     }
+
+
 }
