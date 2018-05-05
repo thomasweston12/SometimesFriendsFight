@@ -740,6 +740,144 @@ public class GameManager : MonoBehaviour {
                 p1JoinButton.Select();
                 break;
         }
+        audioSource.clip = menuSelect;
+        audioSource.PlayOneShot(menuSelect);
+
+
+    }
+
+    public void SoundEffectVolumeOnValueChanged()
+    {
+        AudioListener.volume = soundEffectSlider.value / 20;
+        audioSource.clip = sliderBar;
+        audioSource.PlayOneShot(sliderBar);
+
+    }
+
+    public void UIVolumeOnValueChanged()
+    {
+        UISource.volume = uiVolSlider.value / 20;
+        audioSource.clip = sliderBar;
+        audioSource.PlayOneShot(sliderBar);
+
+    }
+
+    public void MusicVolumeOnValueChanged()
+    {
+        MusicSource.volume = musicVolSlider.value / 20;
+        audioSource.clip = sliderBar;
+        audioSource.PlayOneShot(sliderBar);
+
+    }
+
+    public void QualityDropdownOnValueChanged()
+    {
+        audioSource.clip = menuSelect;
+        audioSource.PlayOneShot(menuSelect);
+        if (applySettingsButton.interactable == false)
+            applySettingsButton.interactable = true;
+
+    }
+
+    public void ResolutionDropdownOnValueChanged()
+    {
+        audioSource.clip = menuSelect;
+        audioSource.PlayOneShot(menuSelect);
+        if (applySettingsButton.interactable == false)
+            applySettingsButton.interactable = true;
+
+    }
+
+    public void ApplyButonOnClick()
+    {
+        audioSource.clip = menuSelect;
+        audioSource.PlayOneShot(menuSelect);
+
+        switch (qualityDropdown.value)
+        {
+            case 0:
+                QualitySettings.SetQualityLevel(0);
+                break;
+            case 1:
+                QualitySettings.SetQualityLevel(1);
+                break;
+            case 2:
+                QualitySettings.SetQualityLevel(2);
+                break;
+            case 3:
+                QualitySettings.SetQualityLevel(3);
+                break;
+            case 4:
+                QualitySettings.SetQualityLevel(4);
+                break;
+            case 5:
+                QualitySettings.SetQualityLevel(5);
+                break;
+
+        }
+
+        switch (resolutionDropdown.value)
+        {
+            case 0:
+                Screen.SetResolution(800, 600, true);
+                break;
+            case 1:
+                Screen.SetResolution(1024, 768, true);
+                break;
+            case 2:
+                Screen.SetResolution(1280, 720, true);
+                break;
+            case 3:
+                Screen.SetResolution(1366, 768, true);
+                break;
+            case 4:
+                Screen.SetResolution(1600, 900, true);
+                break;
+            case 5:
+                Screen.SetResolution(1920, 1080, true);
+                break;
+        }
+
+        applySettingsButton.interactable = false;
+    }
+
+    public void SettingsBackOnClick()
+    {
+        currentState = States.MainMenu;
+        audioSource.clip = menuSelect;
+        audioSource.PlayOneShot(menuSelect);
+
+        mainMenuMenuGroup.alpha = 100;
+        settingsMenuGroup.alpha = 0;
+
+        playGameButton.Select();
+
+        audioSource.clip = menuBack;
+        audioSource.PlayOneShot(menuBack);
+
+    }
+
+    public void CreditsBackButtonOnClick()
+    {
+        currentState = States.MainMenu;
+        mainMenuMenuGroup.alpha = 100;
+        creditsMenuGroup.alpha = 0;
+        playGameButton.Select();
+        audioSource.clip = menuBack;
+        audioSource.PlayOneShot(menuBack);
+    }
+
+    public void UIHoverSound()
+    {
+        audioSource.clip = menuHover;
+        audioSource.PlayOneShot(menuHover);
+    }
+
+    public void UISelectSound()
+    {
+        audioSource.clip = menuSelect;
+        audioSource.PlayOneShot(menuSelect);
+    }
             
     }
 }
