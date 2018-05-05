@@ -23,6 +23,10 @@ public class FPSControllerP3_Script : MonoBehaviour
     private GameObject itemPickedUp;
     private GameManager gm;
 
+    public float rbOfObject;
+    public float playerStrengthValue;
+    public float throwForce;
+
     // Use this for initialization
     void Start()
     {
@@ -34,6 +38,8 @@ public class FPSControllerP3_Script : MonoBehaviour
         Invoke("ResetIsPickingUp", 0);
         speed = defaultSpeed;
         cam = GetComponentInChildren<Camera>();
+        playerHealth = gm.players[2].getMaxHealth();
+        playerStrengthValue = 500.0f;
 
     }
 
@@ -179,14 +185,18 @@ public class FPSControllerP3_Script : MonoBehaviour
         {
             itemPickedUp.GetComponentInParent<Rigidbody>().isKinematic = false;
             itemPickedUp.transform.parent = null;
-            itemPickedUp.GetComponentInParent<Rigidbody>().AddForce(cam.transform.forward * 5000);
+            rbOfObject = itemPickedUp.GetComponentInParent<Rigidbody>().mass;
+            throwForce = rbOfObject * playerStrengthValue;
+            itemPickedUp.GetComponentInParent<Rigidbody>().AddForce(cam.transform.forward * throwForce);
 
         }
         else if (itemPickedUp.GetComponent<Rigidbody>() != false)
         {
             itemPickedUp.GetComponent<Rigidbody>().isKinematic = false;
             itemPickedUp.transform.parent = null;
-            itemPickedUp.GetComponent<Rigidbody>().AddForce(cam.transform.forward * 5000);
+            rbOfObject = itemPickedUp.GetComponentInParent<Rigidbody>().mass;
+            throwForce = rbOfObject * playerStrengthValue;
+            itemPickedUp.GetComponent<Rigidbody>().AddForce(cam.transform.forward * throwForce);
 
         }
 
