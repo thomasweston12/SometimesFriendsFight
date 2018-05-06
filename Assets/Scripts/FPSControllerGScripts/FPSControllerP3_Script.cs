@@ -22,6 +22,20 @@ public class FPSControllerP3_Script : MonoBehaviour
     private GameObject currentPlayer;
     private GameObject itemPickedUp;
     private GameManager gm;
+    public AudioSource playerSounds;
+
+    public AudioClip footstepSound;
+    public AudioClip pickupSound;
+    public AudioClip dropSound;
+    public AudioClip jumpSound;
+    public AudioClip landSound;
+    public AudioClip throwSound;
+    public AudioClip hurtSound;
+    public AudioClip deathSound;
+
+    private SphereCollider leftFoot;
+    private SphereCollider rightFoot;
+    private Component[] feet;
 
     public float rbOfObject;
     public float playerStrengthValue;
@@ -30,6 +44,8 @@ public class FPSControllerP3_Script : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        playerSounds = this.gameObject.GetComponent<AudioSource>();
+
         gm = GameObject.Find("GameManagerObject").GetComponent<GameManager>();
         rb = GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
@@ -77,6 +93,9 @@ public class FPSControllerP3_Script : MonoBehaviour
 
         if (Input.GetButton("P3GameJump") && anim.GetBool("isJumping") == false)
         {
+            playerSounds.clip = jumpSound;
+            playerSounds.PlayOneShot(jumpSound);
+
             rb.AddForce(0.0f, 600.0f, 0.0f, ForceMode.Impulse);
             isJumping = true;
             anim.SetBool("isJumping", true);
@@ -107,6 +126,9 @@ public class FPSControllerP3_Script : MonoBehaviour
 
     private void ResetIsJumping()
     {
+        playerSounds.clip = landSound;
+        playerSounds.PlayOneShot(landSound);
+
         anim.SetBool("isJumping", false);
     }
 
@@ -133,6 +155,9 @@ public class FPSControllerP3_Script : MonoBehaviour
             if (hit.collider.gameObject.tag == "PhysicsObject") //hit.collider.GetComponent<Transform>().parent.tag
             {
                 Debug.Log("found an object!");
+
+                playerSounds.clip = pickupSound;
+                playerSounds.PlayOneShot(pickupSound);
 
                 anim.SetBool("isPickingUp", true);
                 anim.SetBool("hasItem", true);
@@ -166,12 +191,20 @@ public class FPSControllerP3_Script : MonoBehaviour
         anim.SetBool("hasItem", false);
 
         if (itemPickedUp.GetComponentInParent<Rigidbody>() != null)
+        {
             itemPickedUp.GetComponentInParent<Rigidbody>().isKinematic = false;
+            playerSounds.clip = dropSound;
+            playerSounds.PlayOneShot(dropSound);
+
+        }
         else if (itemPickedUp.GetComponent<Rigidbody>() != false)
+        {
+            itemPickedUp.GetComponentInParent<Rigidbody>().isKinematic = false;
+            playerSounds.clip = dropSound;
+            playerSounds.PlayOneShot(dropSound);
             itemPickedUp.GetComponent<Rigidbody>().isKinematic = false;
 
-        itemPickedUp.transform.parent = null;
-        itemPickedUp = null;
+        }
 
 
     }
@@ -180,6 +213,8 @@ public class FPSControllerP3_Script : MonoBehaviour
     {
         anim.SetTrigger("throw");
         anim.SetBool("hasItem", false);
+        playerSounds.clip = throwSound;
+        playerSounds.PlayOneShot(throwSound);
 
         if (itemPickedUp.GetComponentInParent<Rigidbody>() != null)
         {
