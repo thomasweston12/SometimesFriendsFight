@@ -8,13 +8,20 @@ public class objectManager : MonoBehaviour
     public int objectHealth;
     public int objectDmg;
     public int playerNumThrown;
-    public GameObject playerHit;
     public int totalDmg;
     public Rigidbody rb;
+
+    public ScoreManager playerScore;
+    
 
     //needed to stop multiple collisions
     private bool hasHit;
     static float hitDelay = 0.4f;
+
+    void Start()
+    {
+        playerScore = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
+    }
 
     void OnCollisionEnter(Collision collision)
     {
@@ -29,11 +36,17 @@ public class objectManager : MonoBehaviour
                         case "Player 2":
                             if (hasHit == false)
                             {
-                                  Debug.Log("Hit player 2");
+                                Debug.Log("Hit player 2");
                                 totalDmg = objectDmg;
                                 collision.gameObject.GetComponent<FPSControllerP2_Script>().playerHealth -= totalDmg;
                                 hasHit = true;
                                 StartCoroutine("resetHit");
+                                Debug.Log(playerNumThrown);
+                                if (collision.gameObject.GetComponent<FPSControllerP2_Script>().playerHealth == 0)
+                                {
+                                    playerScore.player1Score += 1;
+                                    Debug.Log(playerScore.player1Score);
+                                }
                                 playerNumThrown = 0;
                             }
                             break;
@@ -46,6 +59,7 @@ public class objectManager : MonoBehaviour
                                 
                                 hasHit = true;
                                 StartCoroutine("resetHit");
+                               
                                 playerNumThrown = 0;
                             }
                             break;
@@ -55,9 +69,10 @@ public class objectManager : MonoBehaviour
                                 Debug.Log("Hit player 4");
                                 totalDmg = objectDmg;
                                 collision.gameObject.GetComponent<FPSControllerP4_Script>().playerHealth -= totalDmg;
-                                
+                               
                                 hasHit = true;
                                 StartCoroutine("resetHit");
+                                
                                 playerNumThrown = 0;
                             }
                             break;
@@ -76,6 +91,7 @@ public class objectManager : MonoBehaviour
                                 
                                 hasHit = true;
                                 StartCoroutine("resetHit");
+                               
                                 playerNumThrown = 0;
                             }
                             break;
@@ -88,6 +104,7 @@ public class objectManager : MonoBehaviour
                                 
                                 hasHit = true;
                                 StartCoroutine("resetHit");
+                                
                                 playerNumThrown = 0;
                             }
                             break;
@@ -100,6 +117,7 @@ public class objectManager : MonoBehaviour
                                 
                                 hasHit = true;
                                 StartCoroutine("resetHit");
+                               
                                 playerNumThrown = 0;
                             }
                             break;
@@ -118,6 +136,7 @@ public class objectManager : MonoBehaviour
                                 
                                 hasHit = true;
                                 StartCoroutine("resetHit");
+                                
                                 playerNumThrown = 0;
                             }
                             break;
@@ -130,6 +149,7 @@ public class objectManager : MonoBehaviour
                                 
                                 hasHit = true;
                                 StartCoroutine("resetHit");
+                               
                                 playerNumThrown = 0;
                             }
                             break;
@@ -142,6 +162,7 @@ public class objectManager : MonoBehaviour
                                 
                                 hasHit = true;
                                 StartCoroutine("resetHit");
+                                
                                 playerNumThrown = 0;
                             }
                             break;
@@ -160,6 +181,7 @@ public class objectManager : MonoBehaviour
                                 
                                 hasHit = true;
                                 StartCoroutine("resetHit");
+                                
                                 playerNumThrown = 0;
                             }
                             break;
@@ -172,6 +194,7 @@ public class objectManager : MonoBehaviour
                                 
                                 hasHit = true;
                                 StartCoroutine("resetHit");
+                                
                                 playerNumThrown = 0;
                             }
                             break;
@@ -184,6 +207,7 @@ public class objectManager : MonoBehaviour
                                 
                                 hasHit = true;
                                 StartCoroutine("resetHit");
+                                
                                 playerNumThrown = 0;
                             }
                             break;
