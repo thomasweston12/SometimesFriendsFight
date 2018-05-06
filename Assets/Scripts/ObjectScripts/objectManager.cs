@@ -20,20 +20,21 @@ public class objectManager : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            switch (GameObject.FindGameObjectWithTag("Player").name)
+            switch (playerNumThrown)
             {
-                case "Player 1":
+                case 1:
                     Debug.Log("found stage one");
                     switch (collision.gameObject.name)
                     {
                         case "Player 2":
                             if (hasHit == false)
                             {
-                                Debug.Log("Hit player 2");
+                                  Debug.Log("Hit player 2");
                                 totalDmg = objectDmg;
                                 collision.gameObject.GetComponent<FPSControllerP2_Script>().playerHealth -= totalDmg;
                                 hasHit = true;
                                 StartCoroutine("resetHit");
+                                playerNumThrown = 0;
                             }
                             break;
                         case "Player 3":
@@ -42,8 +43,10 @@ public class objectManager : MonoBehaviour
                                 Debug.Log("Hit player 3");
                                 totalDmg = objectDmg;
                                 collision.gameObject.GetComponent<FPSControllerP3_Script>().playerHealth -= totalDmg;
+                                
                                 hasHit = true;
                                 StartCoroutine("resetHit");
+                                playerNumThrown = 0;
                             }
                             break;
                         case "Player 4":
@@ -52,13 +55,15 @@ public class objectManager : MonoBehaviour
                                 Debug.Log("Hit player 4");
                                 totalDmg = objectDmg;
                                 collision.gameObject.GetComponent<FPSControllerP4_Script>().playerHealth -= totalDmg;
+                                
                                 hasHit = true;
                                 StartCoroutine("resetHit");
+                                playerNumThrown = 0;
                             }
                             break;
                     }
                     break;
-                case "Player 2":
+                case 2:
                     Debug.Log("found stage one");
                     switch (collision.gameObject.name)
                     {
@@ -68,8 +73,10 @@ public class objectManager : MonoBehaviour
                                 Debug.Log("Hit player 2");
                                 totalDmg = objectDmg;
                                 collision.gameObject.GetComponent<FPSControllerP1_Script>().playerHealth -= totalDmg;
+                                
                                 hasHit = true;
                                 StartCoroutine("resetHit");
+                                playerNumThrown = 0;
                             }
                             break;
                         case "Player 3":
@@ -78,8 +85,10 @@ public class objectManager : MonoBehaviour
                                 Debug.Log("Hit player 3");
                                 totalDmg = objectDmg;
                                 collision.gameObject.GetComponent<FPSControllerP3_Script>().playerHealth -= totalDmg;
+                                
                                 hasHit = true;
                                 StartCoroutine("resetHit");
+                                playerNumThrown = 0;
                             }
                             break;
                         case "Player 4":
@@ -88,13 +97,15 @@ public class objectManager : MonoBehaviour
                                 Debug.Log("Hit player 4");
                                 totalDmg = objectDmg;
                                 collision.gameObject.GetComponent<FPSControllerP4_Script>().playerHealth -= totalDmg;
+                                
                                 hasHit = true;
                                 StartCoroutine("resetHit");
+                                playerNumThrown = 0;
                             }
                             break;
                     }
                     break;
-                case "Player 3":
+                case 3:
                     Debug.Log("found stage one");
                     switch (collision.gameObject.name)
                     {
@@ -104,8 +115,10 @@ public class objectManager : MonoBehaviour
                                 Debug.Log("Hit player 1");
                                 totalDmg = objectDmg;
                                 collision.gameObject.GetComponent<FPSControllerP1_Script>().playerHealth -= totalDmg;
+                                
                                 hasHit = true;
                                 StartCoroutine("resetHit");
+                                playerNumThrown = 0;
                             }
                             break;
                         case "Player 3":
@@ -114,8 +127,10 @@ public class objectManager : MonoBehaviour
                                 Debug.Log("Hit player 2");
                                 totalDmg = objectDmg;
                                 collision.gameObject.GetComponent<FPSControllerP2_Script>().playerHealth -= totalDmg;
+                                
                                 hasHit = true;
                                 StartCoroutine("resetHit");
+                                playerNumThrown = 0;
                             }
                             break;
                         case "Player 4":
@@ -124,13 +139,15 @@ public class objectManager : MonoBehaviour
                                 Debug.Log("Hit player 4");
                                 totalDmg = objectDmg;
                                 collision.gameObject.GetComponent<FPSControllerP4_Script>().playerHealth -= totalDmg;
+                                
                                 hasHit = true;
                                 StartCoroutine("resetHit");
+                                playerNumThrown = 0;
                             }
                             break;
                     }
                     break;
-                case "Player 4":
+                case 4:
                     Debug.Log("found stage one");
                     switch (collision.gameObject.name)
                     {
@@ -140,8 +157,10 @@ public class objectManager : MonoBehaviour
                                 Debug.Log("Hit player 1");
                                 totalDmg = objectDmg;
                                 collision.gameObject.GetComponent<FPSControllerP1_Script>().playerHealth -= totalDmg;
+                                
                                 hasHit = true;
                                 StartCoroutine("resetHit");
+                                playerNumThrown = 0;
                             }
                             break;
                         case "Player 2":
@@ -150,8 +169,10 @@ public class objectManager : MonoBehaviour
                                 Debug.Log("Hit player 3");
                                 totalDmg = objectDmg;
                                 collision.gameObject.GetComponent<FPSControllerP2_Script>().playerHealth -= totalDmg;
+                                
                                 hasHit = true;
                                 StartCoroutine("resetHit");
+                                playerNumThrown = 0;
                             }
                             break;
                         case "Player 3":
@@ -160,8 +181,10 @@ public class objectManager : MonoBehaviour
                                 Debug.Log("Hit player 3");
                                 totalDmg = objectDmg;
                                 collision.gameObject.GetComponent<FPSControllerP3_Script>().playerHealth -= totalDmg;
+                                
                                 hasHit = true;
                                 StartCoroutine("resetHit");
+                                playerNumThrown = 0;
                             }
                             break;
                     }
