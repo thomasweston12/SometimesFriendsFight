@@ -5,7 +5,17 @@ licenseType: Free
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - rb: {instanceID: 0}
+  - playerSounds: {instanceID: 0}
+  - footstepSound: {fileID: 8300000, guid: 8bc94ec6ed537e743b481638bdcd503d, type: 3}
+  - pickupSound: {fileID: 8300000, guid: 1b711515362ec784e83e05e0dff5a825, type: 3}
+  - dropSound: {fileID: 8300000, guid: 3fb4e9592985c9d4faea541601be895b, type: 3}
+  - jumpSound: {fileID: 8300000, guid: 5897aeed9b676024fbb8c694b421a861, type: 3}
+  - landSound: {fileID: 8300000, guid: 3b09d59f4499d45428baa7a21e954296, type: 3}
+  - throwSound: {fileID: 8300000, guid: 95d30fa1a5d46b5428251834c22cc76f, type: 3}
+  - hurtSound: {instanceID: 0}
+  - deathSound: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
