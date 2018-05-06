@@ -26,6 +26,8 @@ public class FPSControllerP1_Script : MonoBehaviour {
     public float playerStrengthValue;
     public float throwForce;
 
+    public int score; 
+
 
     // Use this for initialization
     void Start()
@@ -200,6 +202,7 @@ public class FPSControllerP1_Script : MonoBehaviour {
             rbOfObject = itemPickedUp.GetComponentInParent<Rigidbody>().mass;
             throwForce = rbOfObject * playerStrengthValue;
             itemPickedUp.GetComponentInParent<Rigidbody>().AddForce(cam.transform.forward * throwForce);
+            itemPickedUp.GetComponentInParent<objectManager>().playerNumThrown = 1;
          
         }
         else if (itemPickedUp.GetComponent<Rigidbody>() != false)
@@ -209,6 +212,7 @@ public class FPSControllerP1_Script : MonoBehaviour {
             rbOfObject = itemPickedUp.GetComponentInParent<Rigidbody>().mass;
             throwForce = rbOfObject * playerStrengthValue;
             itemPickedUp.GetComponent<Rigidbody>().AddForce(cam.transform.forward * throwForce);
+            itemPickedUp.GetComponentInParent<objectManager>().playerNumThrown = 1;
 
         }
 
