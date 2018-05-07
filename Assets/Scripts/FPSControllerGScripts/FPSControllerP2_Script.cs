@@ -47,7 +47,6 @@ public class FPSControllerP2_Script : MonoBehaviour {
     void Start()
     {
         playerSounds = this.gameObject.GetComponent<AudioSource>();
-
         rb = GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
         anim = GetComponent<Animator>();
@@ -55,7 +54,7 @@ public class FPSControllerP2_Script : MonoBehaviour {
         Invoke("ResetIsPickingUp", 0);
         speed = defaultSpeed;
         cam = GetComponentInChildren<Camera>();
-        playerHealth = gm.players[1].getMaxHealth();
+        playerHealth = 100;
         playerStrengthValue = 500.0f;
     
     }
