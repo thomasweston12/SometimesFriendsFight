@@ -627,7 +627,10 @@ public class GameManager : MonoBehaviour {
             SceneManager.LoadScene("test_level_with_assets", LoadSceneMode.Single);
 
         if (GetMapChosen() == "Map 2")
-            SceneManager.LoadScene("gameManagerTestLevel_Scene", LoadSceneMode.Single);
+            SceneManager.LoadScene("level_3", LoadSceneMode.Single);
+
+		if (GetMapChosen () == "Map 3")
+			SceneManager.LoadScene ("level_2", LoadSceneMode.Single);
 
         audioSource.clip = menuSelect;
         audioSource.PlayOneShot(menuSelect);
