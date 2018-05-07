@@ -42,10 +42,12 @@ public class objectManager : MonoBehaviour
                                 hasHit = true;
                                 StartCoroutine("resetHit");
                                 Debug.Log(playerNumThrown);
-                                if (collision.gameObject.GetComponent<FPSControllerP2_Script>().playerHealth == 0)
+                                if (collision.gameObject.GetComponent<FPSControllerP2_Script>().playerHealth <= 0)
                                 {
                                     playerScore.player1Score += 1;
                                     Debug.Log(playerScore.player1Score);
+                                    hasHit = true;
+                                    StartCoroutine("resetHit");
                                 }
                                 playerNumThrown = 0;
                             }
@@ -59,7 +61,12 @@ public class objectManager : MonoBehaviour
                                 
                                 hasHit = true;
                                 StartCoroutine("resetHit");
-                               
+                                if (collision.gameObject.GetComponent<FPSControllerP3_Script>().playerHealth == 0)
+                                {
+                                    playerScore.player1Score += 1;
+                                    Debug.Log(playerScore.player1Score);
+                                }
+
                                 playerNumThrown = 0;
                             }
                             break;
@@ -72,7 +79,11 @@ public class objectManager : MonoBehaviour
                                
                                 hasHit = true;
                                 StartCoroutine("resetHit");
-                                
+                                if (collision.gameObject.GetComponent<FPSControllerP4_Script>().playerHealth == 0)
+                                {
+                                    playerScore.player1Score += 1;
+                                    Debug.Log(playerScore.player1Score);
+                                }
                                 playerNumThrown = 0;
                             }
                             break;
@@ -91,7 +102,11 @@ public class objectManager : MonoBehaviour
                                 
                                 hasHit = true;
                                 StartCoroutine("resetHit");
-                               
+                                if (collision.gameObject.GetComponent<FPSControllerP1_Script>().playerHealth == 0)
+                                {
+                                    playerScore.player2Score += 1;
+                                    Debug.Log(playerScore.player2Score);
+                                }
                                 playerNumThrown = 0;
                             }
                             break;
@@ -104,7 +119,11 @@ public class objectManager : MonoBehaviour
                                 
                                 hasHit = true;
                                 StartCoroutine("resetHit");
-                                
+                                if (collision.gameObject.GetComponent<FPSControllerP3_Script>().playerHealth == 0)
+                                {
+                                    playerScore.player2Score += 1;
+                                    Debug.Log(playerScore.player2Score);
+                                }
                                 playerNumThrown = 0;
                             }
                             break;
@@ -136,7 +155,11 @@ public class objectManager : MonoBehaviour
                                 
                                 hasHit = true;
                                 StartCoroutine("resetHit");
-                                
+                                if (collision.gameObject.GetComponent<FPSControllerP1_Script>().playerHealth == 0)
+                                {
+                                    playerScore.player3Score += 1;
+                                    Debug.Log(playerScore.player2Score);
+                                }
                                 playerNumThrown = 0;
                             }
                             break;
@@ -149,7 +172,11 @@ public class objectManager : MonoBehaviour
                                 
                                 hasHit = true;
                                 StartCoroutine("resetHit");
-                               
+                                if (collision.gameObject.GetComponent<FPSControllerP2_Script>().playerHealth == 0)
+                                {
+                                    playerScore.player3Score += 1;
+                                    Debug.Log(playerScore.player2Score);
+                                }
                                 playerNumThrown = 0;
                             }
                             break;
@@ -162,7 +189,11 @@ public class objectManager : MonoBehaviour
                                 
                                 hasHit = true;
                                 StartCoroutine("resetHit");
-                                
+                                if (collision.gameObject.GetComponent<FPSControllerP4_Script>().playerHealth == 0)
+                                {
+                                    playerScore.player3Score += 1;
+                                    Debug.Log(playerScore.player2Score);
+                                }
                                 playerNumThrown = 0;
                             }
                             break;
@@ -181,7 +212,11 @@ public class objectManager : MonoBehaviour
                                 
                                 hasHit = true;
                                 StartCoroutine("resetHit");
-                                
+                                if (collision.gameObject.GetComponent<FPSControllerP1_Script>().playerHealth == 0)
+                                {
+                                    playerScore.player4Score += 1;
+                                    Debug.Log(playerScore.player2Score);
+                                }
                                 playerNumThrown = 0;
                             }
                             break;
@@ -194,7 +229,11 @@ public class objectManager : MonoBehaviour
                                 
                                 hasHit = true;
                                 StartCoroutine("resetHit");
-                                
+                                if (collision.gameObject.GetComponent<FPSControllerP2_Script>().playerHealth == 0)
+                                {
+                                    playerScore.player4Score += 1;
+                                    Debug.Log(playerScore.player2Score);
+                                }
                                 playerNumThrown = 0;
                             }
                             break;
@@ -207,7 +246,11 @@ public class objectManager : MonoBehaviour
                                 
                                 hasHit = true;
                                 StartCoroutine("resetHit");
-                                
+                                if (collision.gameObject.GetComponent<FPSControllerP3_Script>().playerHealth == 0)
+                                {
+                                    playerScore.player4Score += 1;
+                                    Debug.Log(playerScore.player2Score);
+                                }
                                 playerNumThrown = 0;
                             }
                             break;
