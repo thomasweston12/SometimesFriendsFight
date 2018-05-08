@@ -48,6 +48,8 @@ public class FPSControllerP2_Script : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
+        gm = GameObject.Find("GameManagerObject").GetComponent<GameManager>();
+
         playerSounds = this.gameObject.GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
@@ -138,10 +140,7 @@ public class FPSControllerP2_Script : MonoBehaviour {
         if (anim.GetBool("hasItem") == true)
             HoldingItem();
 
-        if (playerHealth == 0)
-        {
-            Destroy(this);
-        }
+
 
     }
 
@@ -307,4 +306,13 @@ public class FPSControllerP2_Script : MonoBehaviour {
         playerStrengthValue = 500.0f;
         Debug.Log("Rage over");
     }
+
+    private void OnEnable()
+    {
+        gm = GameObject.Find("GameManagerObject").GetComponent<GameManager>();
+
+        this.playerHealth = gm.players[1].getMaxHealth();
+        Debug.Log(this.playerHealth);
+    }
+
 }

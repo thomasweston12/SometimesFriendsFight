@@ -49,8 +49,9 @@ public class FPSControllerP3_Script : MonoBehaviour
     void Start()
     {
         playerSounds = this.gameObject.GetComponent<AudioSource>();
-
         gm = GameObject.Find("GameManagerObject").GetComponent<GameManager>();
+
+
         rb = GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
         anim = GetComponent<Animator>();
@@ -301,5 +302,13 @@ public class FPSControllerP3_Script : MonoBehaviour
         playerStrengthValue = 500.0f;
         Debug.Log("Rage over");
     }
+
+    private void OnEnable()
+    {
+        gm = GameObject.Find("GameManagerObject").GetComponent<GameManager>();
+        this.playerHealth = gm.players[2].getMaxHealth();
+        Debug.Log(this.playerHealth);
+    }
+
 
 }

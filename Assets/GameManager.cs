@@ -15,7 +15,7 @@ using TMPro;
 
 public class PlayerManager {
     private int playerNumber = 0;
-    private int maxHealth = 100;
+    public int maxHealth = 100;
     private int damageModifier = 1;
     private int currentScore = 0;
     private string playerName = "tERRance";
@@ -44,7 +44,7 @@ public class PlayerManager {
 
     public int getMaxHealth()
     {
-        return maxHealth;
+        return this.maxHealth;
     }
 
     public void setPlayerScore(int score)
@@ -828,6 +828,7 @@ public class GameManager : MonoBehaviour {
                 players[0].SetPlayerColour(p1SliderHandle.color);
                 players[0].setMaxHealth((int)p1MaxHealthSlider.value);
                 Debug.Log(players.Count.ToString());
+                Debug.Log(players[0].getMaxHealth());
                 Debug.Log(currentState.ToString());
                 break;
             case (States.P2Active):
@@ -1070,7 +1071,7 @@ public class GameManager : MonoBehaviour {
         int index = UnityEngine.Random.Range(0, respawnPoints.Length);
         Vector3 respawnLocation = respawnPoints[index].transform.position;
         player.gameObject.transform.position = respawnLocation;
-        player.gameObject.GetComponentInChildren<ParticleSystem>().Stop();
+        //player.gameObject.GetComponentInChildren<ParticleSystem>().Stop();
         //player.gameObject.GetComponentInChildren<ParticleSystem>().r
     }
 

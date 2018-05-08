@@ -87,7 +87,7 @@ public class FPSControllerP1_Script : MonoBehaviour {
     // Update is called once per frame
     void FixedUpdate()
     {
-        Debug.Log(playerStrengthValue);
+        //Debug.Log(playerStrengthValue);
 
         if (rageValue >= 100)
         {
@@ -160,10 +160,6 @@ public class FPSControllerP1_Script : MonoBehaviour {
         if (anim.GetBool("hasItem") == true)
             HoldingItem();
 
-        if(playerHealth == 0)
-        {
-            Destroy(this);
-        }
     }
 
     private void ResetIsJumping()
@@ -334,7 +330,13 @@ public class FPSControllerP1_Script : MonoBehaviour {
         rageValue = 0;
         rageModeOn = false;
         playerStrengthValue = 500.0f;
-        Debug.Log("Rage over");
+        //Debug.Log("Rage over");
     }
 
+    private void OnEnable()
+    {
+        gm = GameObject.Find("GameManagerObject").GetComponent<GameManager>();
+        this.playerHealth = gm.players[0].getMaxHealth();
+        Debug.Log(this.playerHealth);
+    }
 }

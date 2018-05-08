@@ -139,11 +139,6 @@ public class FPSControllerP4_Script : MonoBehaviour
         if (anim.GetBool("hasItem") == true)
             HoldingItem();
 
-        if (playerHealth == 0)
-        {
-            Destroy(this);
-        }
-
     }
 
     private void ResetIsJumping()
@@ -302,6 +297,13 @@ public class FPSControllerP4_Script : MonoBehaviour
         rageModeOn = false;
         playerStrengthValue = 500.0f;
         Debug.Log("Rage over");
+    }
+
+    private void OnEnable()
+    {
+        gm = GameObject.Find("GameManagerObject").GetComponent<GameManager>();
+        this.playerHealth = gm.players[3].getMaxHealth();
+        Debug.Log(this.playerHealth);
     }
 
 }
