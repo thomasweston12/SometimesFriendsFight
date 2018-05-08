@@ -185,6 +185,11 @@ public class GameManager : MonoBehaviour {
     public AudioSource UISource;
     public AudioSource MusicSource;
 
+    public ParticleSystem p1DeathPop;
+    public ParticleSystem p2DeathPop;
+    public ParticleSystem p3DeathPop;
+    public ParticleSystem p4DeathPop;
+
     public enum States {MainMenu, PlayGameMenu, SettingsMenu, CreditsMenu, P1Active, P1Joined, P2Active, P2Joined, P3Active, P3Joined, P4Active, P4Joined, GameStart, GameEnd }
     public enum MenuContext {PlayerSetup, GameSetup}
     States currentState = States.MainMenu;
@@ -1012,6 +1017,39 @@ public class GameManager : MonoBehaviour {
         // Play Death Sound
 
         // Start Particle Effect Here:
+        switch (player.gameObject.name)
+        {
+            case "Player 1":
+                p1DeathPop = GameObject.Find("DeathParticles").GetComponentInChildren<ParticleSystem>();
+                p1DeathPop.transform.position = player.transform.position;
+                //p1DeathPop.gameObject.SetActive(true);
+                p1DeathPop.Play();
+                Debug.Log("Player 1 Particle");
+                break;
+            case "Player 2":
+                p2DeathPop = GameObject.Find("DeathParticles").GetComponentInChildren<ParticleSystem>();
+                p2DeathPop.transform.position = player.transform.position;
+                //p2DeathPop.gameObject.SetActive(true);
+                p2DeathPop.Play();
+                Debug.Log("Player 2 Particle");
+                break;
+            case "Player 3":
+                p3DeathPop = GameObject.Find("DeathParticles").GetComponentInChildren<ParticleSystem>();
+                p3DeathPop.transform.position = player.transform.position;
+                //p3DeathPop.gameObject.SetActive(true);
+                p3DeathPop.Play();
+                Debug.Log("Player 3 Particle");
+                break;
+            case "Player 4":
+                p4DeathPop = GameObject.Find("DeathParticles").GetComponentInChildren<ParticleSystem>();
+                p4DeathPop.transform.position = player.transform.position;
+                //p4DeathPop.gameObject.SetActive(true);
+                p4DeathPop.Play();
+                Debug.Log("Player 4 Particle");
+
+                break;
+        }
+
 
         // Disable player character for a number of seconds and then respawn
         respawnPoints = GameObject.FindGameObjectsWithTag("Respawn");
@@ -1032,6 +1070,8 @@ public class GameManager : MonoBehaviour {
         int index = UnityEngine.Random.Range(0, respawnPoints.Length);
         Vector3 respawnLocation = respawnPoints[index].transform.position;
         player.gameObject.transform.position = respawnLocation;
+        player.gameObject.GetComponentInChildren<ParticleSystem>().Stop();
+        //player.gameObject.GetComponentInChildren<ParticleSystem>().r
     }
 
 
