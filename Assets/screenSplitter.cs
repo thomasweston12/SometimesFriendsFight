@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class screenSplitter : MonoBehaviour {
 
-	private Camera pCam1, pCam2, pCam3, pCam4;
+	public Camera pCam1, pCam2, pCam3, pCam4;
 
 
 	// Use this for initialization
@@ -14,10 +14,10 @@ public class screenSplitter : MonoBehaviour {
 
 
 		GameManager gm = GameObject.Find ("GameManagerObject").GetComponent<GameManager> ();
-		pCam1 = GameObject.Find ("playerCharacterCamera1").GetComponent<Camera> ();
-		pCam2 = GameObject.Find ("playerCharacterCamera2").GetComponent<Camera> ();
-		pCam3 = GameObject.Find ("playerCharacterCamera3").GetComponent<Camera> ();
-		pCam4 = GameObject.Find ("playerCharacterCamera4").GetComponent<Camera> ();
+		//pCam1 = GameObject.Find ("playerCharacterCamera1").GetComponent<Camera> ();
+		//pCam2 = GameObject.Find ("playerCharacterCamera2").GetComponent<Camera> ();
+		//pCam3 = GameObject.Find ("playerCharacterCamera3").GetComponent<Camera> ();
+		//pCam4 = GameObject.Find ("playerCharacterCamera4").GetComponent<Camera> ();
         //playerCharacterCamera = GameObject.Find ("platerCharacterCamera").getComponent<playerCharacterCamera> ();
 
         //cam = Camera.playerCharacterCamera;

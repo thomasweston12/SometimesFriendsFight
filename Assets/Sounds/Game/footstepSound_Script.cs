@@ -30,7 +30,7 @@ public class footstepSound_Script : MonoBehaviour {
             footStepSounds.volume = Random.Range(0.2f, 0.4f);
 
             footStepSounds.PlayOneShot(footsteps);
-            Debug.Log("Footstep!");
+            //Debug.Log("Footstep!");
 
         }
 

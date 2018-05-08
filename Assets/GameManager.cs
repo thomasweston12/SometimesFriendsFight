@@ -102,9 +102,15 @@ public class GameManager : MonoBehaviour {
     private bool isScoreLimited = false;
     private int scoreLimit = 0;
 
+    private bool spawnPointsSet = false;
+
     private bool isTimerRunning = false;
     private float waitTime;
     private float timerCurrent;
+
+    //Vector3 respawnLocation = new Vector3(-29, -3, 22);
+    private GameObject[] respawnPoints;
+    public int respawnTime = 3;
 
 
     public TextMeshProUGUI p1MaxHealthLabel;
@@ -172,6 +178,7 @@ public class GameManager : MonoBehaviour {
     public AudioClip menuBack;
     public AudioClip menuContextSwitch;
     public AudioClip sliderBar;
+    public AudioClip deathSound;
 
 
     public AudioSource audioSource;
@@ -208,9 +215,13 @@ public class GameManager : MonoBehaviour {
         timerCurrent = 0;
         waitTime = 0;
         isTimerRunning = false;
+        respawnPoints = GameObject.FindGameObjectsWithTag("Respawn");
+
 
         Debug.Log(currentState.ToString());
     }
+
+    
 
 	void Awake () {
         // Don't let this script (inside a game object) get destroyed when other scenes are loaded.
@@ -992,6 +1003,41 @@ public class GameManager : MonoBehaviour {
     {
         audioSource.clip = menuSelect;
         audioSource.PlayOneShot(menuSelect);
-    }          
+    }
 
+
+    public void PlayerDeath(GameObject player)
+    {
+
+        // Play Death Sound
+
+        // Start Particle Effect Here:
+
+        // Disable player character for a number of seconds and then respawn
+        respawnPoints = GameObject.FindGameObjectsWithTag("Respawn");
+        audioSource = GameObject.Find("audioSource").GetComponent<AudioSource>();
+        audioSource.clip = deathSound;
+        audioSource.PlayOneShot(deathSound);
+        player.gameObject.SetActive(false);
+        StartCoroutine(ResetDead(player));
+
+
+    }
+
+    IEnumerator ResetDead(GameObject player)
+    {
+        yield return new WaitForSeconds(respawnTime);
+        player.gameObject.SetActive(true);
+        Debug.Log("Number of respawn points: " + respawnPoints.Length);
+        int index = UnityEngine.Random.Range(0, respawnPoints.Length);
+        Vector3 respawnLocation = respawnPoints[index].transform.position;
+        player.gameObject.transform.position = respawnLocation;
+    }
+
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        Debug.Log("OnSceneLoaded: " + scene.name);
+        Debug.Log(mode);
+    }
 }
