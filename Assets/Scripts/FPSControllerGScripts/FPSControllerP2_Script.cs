@@ -18,11 +18,6 @@ public class FPSControllerP2_Script : MonoBehaviour {
     private Camera cam;
     Vector3 screenCentre = new Vector3(Screen.width / 2, Screen.height / 2);
     public int playerHealth;
-    public int respawnTime = 3;
-    public bool isDead;
-    //Vector3 respawnLocation = new Vector3(-29, -3, 22);
-    GameObject[] respawnPoints;
-
     private GameObject currentPlayer;
     private GameObject itemPickedUp;
     private GameManager gm;
@@ -47,6 +42,8 @@ public class FPSControllerP2_Script : MonoBehaviour {
     public float throwForce;
 
     public int score;
+    public int rageValue;
+    public bool rageModeOn;
 
     // Use this for initialization
     void Start()
@@ -59,15 +56,27 @@ public class FPSControllerP2_Script : MonoBehaviour {
         Invoke("ResetIsPickingUp", 0);
         speed = defaultSpeed;
         cam = GetComponentInChildren<Camera>();
-        //playerHealth = gm.players[1].getMaxHealth();
         playerHealth = 100;
         playerStrengthValue = 500.0f;
-    
+
+        rageModeOn = false;
+        rageValue = 0;
+
+        InvokeRepeating("RageDegrade", 1.0f, 15.0f);
+
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+
+        if (rageValue >= 100)
+        {
+            Debug.Log(rageValue);
+            playerStrengthValue = 1000.0f;
+            rageModeOn = true;
+            StartCoroutine(ResetRage());
+        }
 
         if (isTimerRunning == true)
         {
@@ -129,10 +138,10 @@ public class FPSControllerP2_Script : MonoBehaviour {
         if (anim.GetBool("hasItem") == true)
             HoldingItem();
 
-        //if (playerHealth == 0)
-        //{
-        //    Destroy(this);
-        //}
+        if (playerHealth == 0)
+        {
+            Destroy(this);
+        }
 
     }
 
@@ -171,20 +180,38 @@ public class FPSControllerP2_Script : MonoBehaviour {
             if (hit.collider.gameObject.tag == "PhysicsObject") //hit.collider.GetComponent<Transform>().parent.tag
             {
                 Debug.Log("found an object!");
+                if (hit.collider.gameObject.GetComponentInParent<Rigidbody>().mass < 100)
+                {
+                    playerSounds.clip = pickupSound;
+                    playerSounds.PlayOneShot(pickupSound);
 
-                playerSounds.clip = pickupSound;
-                playerSounds.PlayOneShot(pickupSound);
+                    anim.SetBool("isPickingUp", true);
+                    anim.SetBool("hasItem", true);
+                    Invoke("ResetIsPickingUp", 0.4f);
+                    //hit.collider.GetComponent<ThrowObjectG>().PickedUp();
+                    if (hit.collider.GetComponentInParent<Rigidbody>() != null)
+                        hit.collider.GetComponentInParent<Rigidbody>().isKinematic = true;
+                    else if (hit.collider.GetComponent<Rigidbody>() != null)
+                        hit.collider.GetComponent<Rigidbody>().isKinematic = true;
 
-                anim.SetBool("isPickingUp", true);
-                anim.SetBool("hasItem", true);
-                Invoke("ResetIsPickingUp", 0.4f);
-                //hit.collider.GetComponent<ThrowObjectG>().PickedUp();
-                if (hit.collider.GetComponentInParent<Rigidbody>() != null)
-                    hit.collider.GetComponentInParent<Rigidbody>().isKinematic = true;
-                else if (hit.collider.GetComponent<Rigidbody>() != null)
-                    hit.collider.GetComponent<Rigidbody>().isKinematic = true;
+                    itemPickedUp = hit.collider.gameObject.transform.parent.gameObject;
+                }
+                else if (hit.collider.GetComponentInParent<Rigidbody>().mass >= 100 && rageModeOn == true)
+                {
+                    playerSounds.clip = pickupSound;
+                    playerSounds.PlayOneShot(pickupSound);
 
-                itemPickedUp = hit.collider.gameObject.transform.parent.gameObject;
+                    anim.SetBool("isPickingUp", true);
+                    anim.SetBool("hasItem", true);
+                    Invoke("ResetIsPickingUp", 0.4f);
+                    //hit.collider.GetComponent<ThrowObjectG>().PickedUp();
+                    if (hit.collider.GetComponentInParent<Rigidbody>() != null)
+                        hit.collider.GetComponentInParent<Rigidbody>().isKinematic = true;
+                    else if (hit.collider.GetComponent<Rigidbody>() != null)
+                        hit.collider.GetComponent<Rigidbody>().isKinematic = true;
+
+                    itemPickedUp = hit.collider.gameObject.transform.parent.gameObject;
+                }
             }
             else
             {
@@ -267,35 +294,17 @@ public class FPSControllerP2_Script : MonoBehaviour {
         }
     }
 
-    private void OnDisable()
+    void RageDegrade()
     {
-        playerSounds.clip = deathSound;
-        playerSounds.PlayOneShot(deathSound);
-
-        //PARTICLE EFFECT HERE
-
-        //new WaitForSeconds(respawnTime);
-        //this.gameObject.SetActive(true);
-        //this.gameObject.transform.position = respawnLocation;
-        //isDead = false;
-        //this.playerHealth = 100;
-
+        rageValue -= 5;
     }
 
-    private void OnEnable()
+    IEnumerator ResetRage()
     {
-        this.playerHealth = 100;
-
+        yield return new WaitForSeconds(15);
+        rageValue = 0;
+        rageModeOn = false;
+        playerStrengthValue = 500.0f;
+        Debug.Log("Rage over");
     }
-
-
-    //IEnumerator resetDead()
-    //{
-    //    yield return new WaitForSeconds(respawnTime);
-    //    isDead = false;
-    //    this.gameObject.transform.position = respawnLocation;
-    //    this.playerHealth = 100;
-    //    this.gameObject.SetActive(true);
-
-    //}
 }
