@@ -335,6 +335,7 @@ public class FPSControllerP1_Script : MonoBehaviour {
 
     private void OnEnable()
     {
+        gm.scoreManager = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
         gm = GameObject.Find("GameManagerObject").GetComponent<GameManager>();
         this.playerHealth = gm.players[0].getMaxHealth();
         Debug.Log(this.playerHealth);

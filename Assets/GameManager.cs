@@ -190,6 +190,8 @@ public class GameManager : MonoBehaviour {
     public ParticleSystem p3DeathPop;
     public ParticleSystem p4DeathPop;
 
+    public ScoreManager scoreManager;
+
     public enum States {MainMenu, PlayGameMenu, SettingsMenu, CreditsMenu, P1Active, P1Joined, P2Active, P2Joined, P3Active, P3Joined, P4Active, P4Joined, GameStart, GameEnd }
     public enum MenuContext {PlayerSetup, GameSetup}
     States currentState = States.MainMenu;
@@ -409,18 +411,60 @@ public class GameManager : MonoBehaviour {
         if (isTimerRunning == true)
             timerCurrent += Time.deltaTime;
 
-        if (currentScene.name == "test_level_with_assets" && isGameTimed == false)
+        // Cancel timer if game not timed
+        if (currentScene.name == "test_level_with_assets" || currentScene.name == "level_2" || currentScene.name == "level_3" && isGameTimed == false)
             isTimerRunning = false;
 
-        if (currentScene.name == "test_level_with_assets" && isGameTimed == true)
+        // if in-game map, then start the timer
+        if (currentScene.name == "test_level_with_assets" || currentScene.name == "level_2" || currentScene.name == "level_3" && isGameTimed == true)
             isTimerRunning = true;
 
-        if (isTimerRunning == true && timerCurrent > waitTime && isGameTimed == true)
+
+        // GAME END TESTS:
+        // Time's up, non score limited, game ends
+        if (isTimerRunning == true && timerCurrent > waitTime && isGameTimed == true && isScoreLimited == false)
+        {
+            isTimerRunning = false;
+            waitTime = 0;
+            timerCurrent = 0;
+            
+            CanvasGroup scoreboard = GameObject.Find("ScoreBoard").GetComponent<CanvasGroup>();
+            scoreboard.alpha = 1;
+            StartCoroutine("EndGame");
+
+        }
+        // Time's up, score limited but hasn't reached score limit, game ends
+        else if ((isTimerRunning == true && timerCurrent > waitTime && isGameTimed == true) && isScoreLimited == true)
+        {
+            isTimerRunning = false;
+            waitTime = 0;
+            timerCurrent = 0;
+            CanvasGroup scoreboard = GameObject.Find("ScoreBoard").GetComponent<CanvasGroup>();
+            scoreboard.alpha = 1;
+            scoreboard.GetComponentInParent<ScoreBoard_Script>().EndGame();
+
+        }
+        // Timed game and score limited game, times not up but target score reached, game ends
+        else if ((isScoreLimited == true && isGameTimed == true) && (scoreManager.player1Score >= scoreLimit || scoreManager.player1Score >= scoreLimit || scoreManager.player3Score >= scoreLimit || scoreManager.player4Score >= scoreLimit))
         {
             isTimerRunning = false;
             waitTime = 0;
             timerCurrent = 0;
             SceneManager.LoadScene("endGame_Scene", LoadSceneMode.Single);
+            CanvasGroup scoreboard = GameObject.Find("ScoreBoard").GetComponent<CanvasGroup>();
+            scoreboard.alpha = 1;
+            StartCoroutine("EndGame");
+
+        }
+        // Untimed game, but score limited and target score reached, game ends
+        else if ((isGameTimed == false && isScoreLimited == true) && (scoreManager.player1Score >= scoreLimit || scoreManager.player2Score>= scoreLimit || scoreManager.player3Score >= scoreLimit || scoreManager.player4Score >= scoreLimit))
+        {
+            isTimerRunning = false;
+            waitTime = 0;
+            timerCurrent = 0;
+            CanvasGroup scoreboard = GameObject.Find("ScoreBoard").GetComponent<CanvasGroup>();
+            scoreboard.alpha = 1;
+            StartCoroutine("EndGame");
 
         }
 
@@ -594,32 +638,32 @@ public class GameManager : MonoBehaviour {
                 break;
             case 1:
                 setIsScoreLimited(true);
-                setScoreLimit(100);
+                setScoreLimit(10);
                 Debug.Log(getIsScoreLimited() + ", " + getScoreLimit());
                 break;
             case 2:
                 setIsScoreLimited(true);
-                setScoreLimit(200);
+                setScoreLimit(15);
                 Debug.Log(getIsScoreLimited() + ", " + getScoreLimit());
                 break;
             case 3:
                 setIsScoreLimited(true);
-                setScoreLimit(500);
+                setScoreLimit(20);
                 Debug.Log(getIsScoreLimited() + ", " + getScoreLimit());
                 break;
             case 4:
                 setIsScoreLimited(true);
-                setScoreLimit(1000);
+                setScoreLimit(25);
                 Debug.Log(getIsScoreLimited() + ", " + getScoreLimit());
                 break;
             case 5:
                 setIsScoreLimited(true);
-                setScoreLimit(2000);
+                setScoreLimit(30);
                 Debug.Log(getIsScoreLimited() + ", " + getScoreLimit());
                 break;
             case 6:
                 setIsScoreLimited(true);
-                setScoreLimit(5000);
+                setScoreLimit(50);
                 Debug.Log(getIsScoreLimited() + ", " + getScoreLimit());
                 break;
 
@@ -1081,4 +1125,6 @@ public class GameManager : MonoBehaviour {
         Debug.Log("OnSceneLoaded: " + scene.name);
         Debug.Log(mode);
     }
+
+
 }

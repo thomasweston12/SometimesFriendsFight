@@ -76,4 +76,12 @@ public class ScoreBoard_Script : MonoBehaviour {
         scoreBoardUI.GetComponent<CanvasGroup>().alpha = 0;
 
     }
+
+    public void EndGame()
+    {
+        new WaitForSeconds(7);
+        Destroy(GameObject.Find("GameManagerObject"));
+        SceneManager.LoadScene("mainMenu_Scene");
+
+    }
 }
