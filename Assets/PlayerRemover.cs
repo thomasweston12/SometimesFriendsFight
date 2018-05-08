@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class PlayerRemover : MonoBehaviour {
 
@@ -11,6 +13,11 @@ public class PlayerRemover : MonoBehaviour {
     public Material player3Material;
     public Material player4Material;
 
+    public TextMeshProUGUI p1Score;
+    public TextMeshProUGUI p2Score;
+    public TextMeshProUGUI p3Score;
+    public TextMeshProUGUI p4Score;
+
     Color p1Color;
     Color p2Color;
     Color p3Color;
@@ -20,6 +27,11 @@ public class PlayerRemover : MonoBehaviour {
 	void Awake () {
 
         gm = GameObject.Find("GameManagerObject").GetComponent<GameManager>();
+        p1Score = GameObject.Find("P1Score").GetComponent<TextMeshProUGUI>();
+        p2Score = GameObject.Find("P2Score").GetComponent<TextMeshProUGUI>();
+        p3Score = GameObject.Find("P3Score").GetComponent<TextMeshProUGUI>();
+        p4Score = GameObject.Find("P4Score").GetComponent<TextMeshProUGUI>();
+
 
         p1Color = new Color(1, 1, 1);
         p2Color = new Color(1, 1, 1);
@@ -37,6 +49,11 @@ public class PlayerRemover : MonoBehaviour {
                 p1Color = gm.players[0].GetPlayerColour();
                 player1Material.color = p1Color;
 
+                p2Score.gameObject.SetActive(false);
+                p3Score.gameObject.SetActive(false);
+                p4Score.gameObject.SetActive(false);
+
+
                 break;
             case 2:
                 Destroy(GameObject.Find("Player 3"));
@@ -48,6 +65,10 @@ public class PlayerRemover : MonoBehaviour {
 
                 p2Color = gm.players[1].GetPlayerColour();
                 player2Material.color = p2Color;
+
+                p3Score.gameObject.SetActive(false);
+                p4Score.gameObject.SetActive(false);
+
 
                 break;
             case 3:
@@ -62,6 +83,9 @@ public class PlayerRemover : MonoBehaviour {
                 
                 p3Color = gm.players[2].GetPlayerColour();
                 player3Material.color = p3Color;
+
+                p4Score.gameObject.SetActive(false);
+
 
                 break;
             case 4:
