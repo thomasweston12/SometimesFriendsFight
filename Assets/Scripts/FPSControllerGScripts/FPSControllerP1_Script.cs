@@ -17,7 +17,11 @@ public class FPSControllerP1_Script : MonoBehaviour {
     private bool isNear;
     private Camera cam;
     Vector3 screenCentre = new Vector3(Screen.width / 2, Screen.height / 2);
+    Vector3 respawnLocation = new Vector3(-29, -3, 22);
     public int playerHealth;
+    public int respawnTime = 3;
+    public bool isDead;
+
     private GameObject currentPlayer;
     private GameObject itemPickedUp;
     private GameManager gm;
@@ -145,10 +149,10 @@ public class FPSControllerP1_Script : MonoBehaviour {
         if (anim.GetBool("hasItem") == true)
             HoldingItem();
 
-        if(playerHealth == 0)
-        {
-            Destroy(this);
-        }
+        //if(playerHealth == 0)
+        //{
+        //    Destroy(this);
+        //}
     }
 
     private void ResetIsJumping()
@@ -289,5 +293,37 @@ public class FPSControllerP1_Script : MonoBehaviour {
 
 
     }
+
+    private void OnDisable()
+    {
+        playerSounds.clip = deathSound;
+        playerSounds.PlayOneShot(deathSound);
+
+        //PARTICLE EFFECT HERE
+
+        //new WaitForSeconds(respawnTime);
+        //this.gameObject.SetActive(true);
+        //this.gameObject.transform.position = respawnLocation;
+        //isDead = false;
+        //this.playerHealth = 100;
+
+    }
+
+    private void OnEnable()
+    {
+        this.playerHealth = 100;
+
+    }
+
+
+    //IEnumerator resetDead()
+    //{
+    //    yield return new WaitForSeconds(respawnTime);
+    //    isDead = false;
+    //    this.gameObject.transform.position = respawnLocation;
+    //    this.playerHealth = 100;
+    //    this.gameObject.SetActive(true);
+
+    //}
 
 }
