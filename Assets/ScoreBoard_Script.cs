@@ -21,10 +21,10 @@ public class ScoreBoard_Script : MonoBehaviour {
     void Start () {
         scoreBoardUI = GameObject.Find("ScoreBoard").GetComponent<CanvasGroup>();
         scoreBoardUI.alpha = 0;
-        p1Score = GameObject.Find("P1Score").GetComponent<TextMeshProUGUI>();
-        p2Score = GameObject.Find("P2Score").GetComponent<TextMeshProUGUI>();
-        p3Score = GameObject.Find("P3Score").GetComponent<TextMeshProUGUI>();
-        p4Score = GameObject.Find("P4Score").GetComponent<TextMeshProUGUI>();
+       // p1Score = GameObject.Find("P1Score").GetComponent<TextMeshProUGUI>();
+       // p2Score = GameObject.Find("P2Score").GetComponent<TextMeshProUGUI>();
+       // p3Score = GameObject.Find("P3Score").GetComponent<TextMeshProUGUI>();
+       // p4Score = GameObject.Find("P4Score").GetComponent<TextMeshProUGUI>();
         sm = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
     }
 
