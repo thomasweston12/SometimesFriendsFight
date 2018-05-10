@@ -37,6 +37,7 @@ public class FPSControllerP4_Script : MonoBehaviour
     private SphereCollider rightFoot;
     private Component[] feet;
 
+	private ScoreManager scoreManager;
 
     public float rbOfObject;
     public float playerStrengthValue;
@@ -52,18 +53,18 @@ public class FPSControllerP4_Script : MonoBehaviour
         playerSounds = this.gameObject.GetComponent<AudioSource>();
 
         gm = GameObject.Find("GameManagerObject").GetComponent<GameManager>();
-        rb = GetComponent<Rigidbody>();
+        this.rb = GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
-        anim = GetComponent<Animator>();
+        this.anim = GetComponent<Animator>();
         Invoke("ResetIsJumping", 0);
         Invoke("ResetIsPickingUp", 0);
-        speed = defaultSpeed;
-        cam = GetComponentInChildren<Camera>();
+        this.speed = defaultSpeed;
+        this.cam = GetComponentInChildren<Camera>();
 
-        playerHealth = gm.players[3].getMaxHealth();
-        playerStrengthValue = 500.0f;
-        rageModeOn = false;
-        rageValue = 0;
+        this.playerHealth = gm.players[3].getMaxHealth();
+        this.playerStrengthValue = 500.0f;
+        this.rageModeOn = false;
+        this.rageValue = 0;
 
         InvokeRepeating("RageDegrade", 1.0f, 15.0f);
 
@@ -73,31 +74,31 @@ public class FPSControllerP4_Script : MonoBehaviour
     void FixedUpdate()
     {
 
-        if (rageValue >= 100)
+        if (this.rageValue >= 100)
         {
             Debug.Log(rageValue);
-            playerStrengthValue = 1000.0f;
-            rageModeOn = true;
+            this.playerStrengthValue = 1000.0f;
+            this.rageModeOn = true;
             StartCoroutine(ResetRage());
         }
 
         if (isTimerRunning == true)
         {
-            PickupTimer();
+            this.PickupTimer();
         }
 
-        float ForwardBack = Input.GetAxis("P4GameForwardsBackwards") * speed;
-        float strafe = Input.GetAxis("P4GameStrafeRightLeft") * speed;
+        float ForwardBack = Input.GetAxis("P4GameForwardsBackwards") * this.speed;
+        float strafe = Input.GetAxis("P4GameStrafeRightLeft") * this.speed;
         //ForwardBack *= Time.deltaTime;
         //strafe *= Time.deltaTime;
 
         if (ForwardBack > speed)
             ForwardBack = speed;
 
-        if (strafe > speed)
-            strafe = speed;
+        if (strafe > this.speed)
+            strafe = this.speed;
 
-        transform.Translate(strafe, 0, ForwardBack);
+        this.transform.Translate(strafe, 0, ForwardBack);
 
         // Multiplied the second argument as a quick fix to solve the difference between the speeds in the Animator Controller,
         // and the speed of the actual character model. Makes the transition between different animations actually work. - Thomas Weston.
@@ -105,53 +106,53 @@ public class FPSControllerP4_Script : MonoBehaviour
         // Also I messed something up in the animator and I don't know how to fix it, so assume ForwardBack is strafe speed and
         // strafe is forwards and backwards speed, sorry! - Thomas Weston.
 
-        anim.SetFloat("speed", strafe * 6);
-        anim.SetFloat("strafeSpeed", ForwardBack * 6);
-        AnimatorStateInfo stateInfo = anim.GetCurrentAnimatorStateInfo(0);
+        this.anim.SetFloat("speed", strafe * 6);
+        this.anim.SetFloat("strafeSpeed", ForwardBack * 6);
+        AnimatorStateInfo stateInfo = this.anim.GetCurrentAnimatorStateInfo(0);
 
-        if (Input.GetButton("P4GameJump") && anim.GetBool("isJumping") == false)
+        if (Input.GetButton("P4GameJump") && this.anim.GetBool("isJumping") == false)
         {
-            playerSounds.clip = jumpSound;
-            playerSounds.PlayOneShot(jumpSound);
+            this.playerSounds.clip = jumpSound;
+            this.playerSounds.PlayOneShot(jumpSound);
 
-            rb.AddForce(0.0f, 600.0f, 0.0f, ForceMode.Impulse);
-            isJumping = true;
-            anim.SetBool("isJumping", true);
+            this.rb.AddForce(0.0f, 600.0f, 0.0f, ForceMode.Impulse);
+            this.isJumping = true;
+            this.anim.SetBool("isJumping", true);
             Invoke("ResetIsJumping", 1.0f);
 
         }
 
-        if (Input.GetButton("P4GamePickup") && anim.GetBool("isPickingUp") == false && anim.GetBool("isJumping") == false && anim.GetBool("hasItem") == false)
+        if (Input.GetButton("P4GamePickup") && this.anim.GetBool("isPickingUp") == false && this.anim.GetBool("isJumping") == false && anim.GetBool("hasItem") == false)
         {
-            PickUpItem();
+            this.PickUpItem();
         }
 
-        if (Input.GetButton("P4GameDropItem") && anim.GetBool("isPickingUp") == false)
+        if (Input.GetButton("P4GameDropItem") && this.anim.GetBool("isPickingUp") == false)
         {
-            DropItem();
+            this.DropItem();
         }
 
-        if (Input.GetAxisRaw("P4GameThrowItem") > 0.1 && anim.GetBool("hasItem") == true && anim.GetBool("isPickingUp") == false)
+        if (Input.GetAxisRaw("P4GameThrowItem") > 0.1 && this.anim.GetBool("hasItem") == true && this.anim.GetBool("isPickingUp") == false)
         {
-            ThrowObject();
+            this.ThrowObject();
         }
 
-        if (anim.GetBool("hasItem") == true)
-            HoldingItem();
+        if (this.anim.GetBool("hasItem") == true)
+            this.HoldingItem();
 
     }
 
     private void ResetIsJumping()
     {
-        playerSounds.clip = landSound;
-        playerSounds.PlayOneShot(landSound);
+        this.playerSounds.clip = landSound;
+        this.playerSounds.PlayOneShot(landSound);
 
-        anim.SetBool("isJumping", false);
+        this.anim.SetBool("isJumping", false);
     }
 
     private void ResetIsPickingUp()
     {
-        anim.SetBool("isPickingUp", false);
+        this.anim.SetBool("isPickingUp", false);
 
 
     }
@@ -172,11 +173,11 @@ public class FPSControllerP4_Script : MonoBehaviour
                 Debug.Log("found an object!");
                 if (hit.collider.gameObject.GetComponentInParent<Rigidbody>().mass < 100)
                 {
-                    playerSounds.clip = pickupSound;
-                    playerSounds.PlayOneShot(pickupSound);
+                    this.playerSounds.clip = pickupSound;
+                    this.playerSounds.PlayOneShot(pickupSound);
 
-                    anim.SetBool("isPickingUp", true);
-                    anim.SetBool("hasItem", true);
+                    this.anim.SetBool("isPickingUp", true);
+                    this.anim.SetBool("hasItem", true);
                     Invoke("ResetIsPickingUp", 0.4f);
                     //hit.collider.GetComponent<ThrowObjectG>().PickedUp();
                     if (hit.collider.GetComponentInParent<Rigidbody>() != null)
@@ -184,15 +185,15 @@ public class FPSControllerP4_Script : MonoBehaviour
                     else if (hit.collider.GetComponent<Rigidbody>() != null)
                         hit.collider.GetComponent<Rigidbody>().isKinematic = true;
 
-                    itemPickedUp = hit.collider.gameObject.transform.parent.gameObject;
+                    this.itemPickedUp = hit.collider.gameObject.transform.parent.gameObject;
                 }
                 else if (hit.collider.GetComponentInParent<Rigidbody>().mass >= 100 && rageModeOn == true)
                 {
-                    playerSounds.clip = pickupSound;
-                    playerSounds.PlayOneShot(pickupSound);
+                    this.playerSounds.clip = pickupSound;
+                    this.playerSounds.PlayOneShot(pickupSound);
 
-                    anim.SetBool("isPickingUp", true);
-                    anim.SetBool("hasItem", true);
+                    this.anim.SetBool("isPickingUp", true);
+                    this.anim.SetBool("hasItem", true);
                     Invoke("ResetIsPickingUp", 0.4f);
                     //hit.collider.GetComponent<ThrowObjectG>().PickedUp();
                     if (hit.collider.GetComponentInParent<Rigidbody>() != null)
@@ -200,7 +201,7 @@ public class FPSControllerP4_Script : MonoBehaviour
                     else if (hit.collider.GetComponent<Rigidbody>() != null)
                         hit.collider.GetComponent<Rigidbody>().isKinematic = true;
 
-                    itemPickedUp = hit.collider.gameObject.transform.parent.gameObject;
+                    this.itemPickedUp = hit.collider.gameObject.transform.parent.gameObject;
                 }
             }
             else
@@ -216,92 +217,95 @@ public class FPSControllerP4_Script : MonoBehaviour
 
     private void HoldingItem()
     {
-        itemPickedUp.transform.parent = cam.transform;
+        this.itemPickedUp.transform.parent = cam.transform;
     }
 
     private void DropItem()
     {
-        anim.SetBool("hasItem", false);
+        this.anim.SetBool("hasItem", false);
 
-        if (itemPickedUp.GetComponentInParent<Rigidbody>() != null)
+        if (this.itemPickedUp.GetComponentInParent<Rigidbody>() != null)
         {
-            itemPickedUp.GetComponentInParent<Rigidbody>().isKinematic = false;
-            playerSounds.clip = dropSound;
-            playerSounds.PlayOneShot(dropSound);
+            this.itemPickedUp.GetComponentInParent<Rigidbody>().isKinematic = false;
+            this.playerSounds.clip = dropSound;
+            this.playerSounds.PlayOneShot(dropSound);
 
         }
-        else if (itemPickedUp.GetComponent<Rigidbody>() != false)
+        else if (this.itemPickedUp.GetComponent<Rigidbody>() != false)
         {
-            itemPickedUp.GetComponentInParent<Rigidbody>().isKinematic = false;
-            playerSounds.clip = dropSound;
-            playerSounds.PlayOneShot(dropSound);
-            itemPickedUp.GetComponent<Rigidbody>().isKinematic = false;
+            this.itemPickedUp.GetComponentInParent<Rigidbody>().isKinematic = false;
+            this.playerSounds.clip = dropSound;
+            this.playerSounds.PlayOneShot(dropSound);
+            this.itemPickedUp.GetComponent<Rigidbody>().isKinematic = false;
 
         }
 
+		this.itemPickedUp.transform.parent = null;
+		this.itemPickedUp = null;
     }
 
     private void ThrowObject()
     {
-        anim.SetTrigger("throw");
-        anim.SetBool("hasItem", false);
-        playerSounds.clip = throwSound;
-        playerSounds.PlayOneShot(throwSound);
+        this.anim.SetTrigger("throw");
+        this.anim.SetBool("hasItem", false);
+        this.playerSounds.clip = throwSound;
+        this.playerSounds.PlayOneShot(throwSound);
 
-        if (itemPickedUp.GetComponentInParent<Rigidbody>() != null)
+        if (this.itemPickedUp.GetComponentInParent<Rigidbody>() != null)
         {
-            itemPickedUp.GetComponentInParent<Rigidbody>().isKinematic = false;
-            itemPickedUp.transform.parent = null;
-            rbOfObject = itemPickedUp.GetComponentInParent<Rigidbody>().mass;
-            throwForce = rbOfObject * playerStrengthValue;
-            itemPickedUp.GetComponentInParent<Rigidbody>().AddForce(cam.transform.forward * throwForce);
-            itemPickedUp.GetComponentInParent<objectManager>().playerNumThrown = 4;
+            this.itemPickedUp.GetComponentInParent<Rigidbody>().isKinematic = false;
+            this.itemPickedUp.transform.parent = null;
+            this.rbOfObject = itemPickedUp.GetComponentInParent<Rigidbody>().mass;
+            this.throwForce = rbOfObject * playerStrengthValue;
+            this.itemPickedUp.GetComponentInParent<Rigidbody>().AddForce(cam.transform.forward * throwForce);
+            this.itemPickedUp.GetComponentInParent<objectManager>().playerNumThrown = 4;
         }
-        else if (itemPickedUp.GetComponent<Rigidbody>() != false)
+        else if (this.itemPickedUp.GetComponent<Rigidbody>() != false)
         {
-            itemPickedUp.GetComponent<Rigidbody>().isKinematic = false;
-            itemPickedUp.transform.parent = null;
-            rbOfObject = itemPickedUp.GetComponentInParent<Rigidbody>().mass;
-            throwForce = rbOfObject * playerStrengthValue;
-            itemPickedUp.GetComponent<Rigidbody>().AddForce(cam.transform.forward * throwForce);
-            itemPickedUp.GetComponentInParent<objectManager>().playerNumThrown = 4;
+            this.itemPickedUp.GetComponent<Rigidbody>().isKinematic = false;
+            this.itemPickedUp.transform.parent = null;
+            this.rbOfObject = itemPickedUp.GetComponentInParent<Rigidbody>().mass;
+            this.throwForce = rbOfObject * playerStrengthValue;
+            this.itemPickedUp.GetComponent<Rigidbody>().AddForce(cam.transform.forward * throwForce);
+            this.itemPickedUp.GetComponentInParent<objectManager>().playerNumThrown = 4;
         }
 
-        itemPickedUp = null;
+        this.itemPickedUp = null;
 
     }
 
 
     void PickupTimer()
     {
-        timer += Time.deltaTime;
+        this.timer += Time.deltaTime;
         if (timer > waitTime)
         {
 
-            timer = 0f;
-            speed = defaultSpeed;
-            anim.SetBool("isPickingUp", false);
-            isTimerRunning = false;
+            this.timer = 0f;
+            this.speed = defaultSpeed;
+            this.anim.SetBool("isPickingUp", false);
+            this.isTimerRunning = false;
         }
     }
 
     void RageDegrade()
     {
-        rageValue -= 5;
+        this.rageValue -= 5;
     }
 
     IEnumerator ResetRage()
     {
         yield return new WaitForSeconds(15);
-        rageValue = 0;
-        rageModeOn = false;
-        playerStrengthValue = 500.0f;
+        this.rageValue = 0;
+        this.rageModeOn = false;
+        this.playerStrengthValue = 500.0f;
         Debug.Log("Rage over");
     }
 
     private void OnEnable()
     {
         gm = GameObject.Find("GameManagerObject").GetComponent<GameManager>();
+		scoreManager = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
         this.playerHealth = gm.players[3].getMaxHealth();
         Debug.Log(this.playerHealth);
     }

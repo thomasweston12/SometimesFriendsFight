@@ -127,7 +127,6 @@ GameObject:
   - component: {fileID: 3003111}
   - component: {fileID: 3003110}
   - component: {fileID: 3003109}
-  - component: {fileID: 3003108}
   - component: {fileID: 3003115}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (2)
@@ -136,18 +135,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &3003108
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 3003107}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &3003109
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -270,10 +257,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1001 &9337546
 Prefab:
   m_ObjectHideFlags: 0
@@ -624,6 +611,11 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300032, guid: fe8bb5221257840c2805e380fc94544a, type: 3}
+--- !u!20 &53100474 stripped
+Camera:
+  m_PrefabParentObject: {fileID: 20528638567036790, guid: de693555cb318344ea5166e4ed095f47,
+    type: 2}
+  m_PrefabInternal: {fileID: 1072820810}
 --- !u!4 &59596627 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4680207322652306, guid: b3760008fe34d4e339d2e0c241afdadb,
@@ -893,7 +885,6 @@ GameObject:
   - component: {fileID: 96994383}
   - component: {fileID: 96994382}
   - component: {fileID: 96994381}
-  - component: {fileID: 96994380}
   - component: {fileID: 96994387}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (47)
@@ -902,18 +893,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &96994380
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 96994379}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &96994381
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1036,10 +1015,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1 &100945508
 GameObject:
   m_ObjectHideFlags: 0
@@ -1315,7 +1294,6 @@ GameObject:
   - component: {fileID: 141169736}
   - component: {fileID: 141169735}
   - component: {fileID: 141169734}
-  - component: {fileID: 141169733}
   - component: {fileID: 141169740}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (3)
@@ -1324,18 +1302,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &141169733
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 141169732}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &141169734
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1458,10 +1424,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1001 &142823359
 Prefab:
   m_ObjectHideFlags: 0
@@ -1745,7 +1711,6 @@ GameObject:
   - component: {fileID: 147972652}
   - component: {fileID: 147972651}
   - component: {fileID: 147972650}
-  - component: {fileID: 147972649}
   - component: {fileID: 147972656}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (4)
@@ -1754,18 +1719,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &147972649
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 147972648}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &147972650
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1888,10 +1841,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1 &149706482
 GameObject:
   m_ObjectHideFlags: 0
@@ -1906,7 +1859,6 @@ GameObject:
   - component: {fileID: 149706486}
   - component: {fileID: 149706485}
   - component: {fileID: 149706484}
-  - component: {fileID: 149706483}
   - component: {fileID: 149706490}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (67)
@@ -1915,18 +1867,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &149706483
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 149706482}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &149706484
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2049,10 +1989,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1 &155323304
 GameObject:
   m_ObjectHideFlags: 0
@@ -2297,7 +2237,6 @@ GameObject:
   - component: {fileID: 173191735}
   - component: {fileID: 173191734}
   - component: {fileID: 173191733}
-  - component: {fileID: 173191732}
   - component: {fileID: 173191739}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (54)
@@ -2306,18 +2245,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &173191732
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 173191731}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &173191733
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2440,10 +2367,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1001 &186331358
 Prefab:
   m_ObjectHideFlags: 0
@@ -2657,7 +2584,6 @@ GameObject:
   - component: {fileID: 193374549}
   - component: {fileID: 193374548}
   - component: {fileID: 193374547}
-  - component: {fileID: 193374546}
   - component: {fileID: 193374553}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (23)
@@ -2666,18 +2592,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &193374546
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 193374545}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &193374547
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2800,10 +2714,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1 &196738163
 GameObject:
   m_ObjectHideFlags: 0
@@ -2818,7 +2732,6 @@ GameObject:
   - component: {fileID: 196738167}
   - component: {fileID: 196738166}
   - component: {fileID: 196738165}
-  - component: {fileID: 196738164}
   - component: {fileID: 196738171}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (84)
@@ -2827,18 +2740,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &196738164
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 196738163}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &196738165
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2961,10 +2862,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1 &198365414
 GameObject:
   m_ObjectHideFlags: 0
@@ -2979,7 +2880,6 @@ GameObject:
   - component: {fileID: 198365418}
   - component: {fileID: 198365417}
   - component: {fileID: 198365416}
-  - component: {fileID: 198365415}
   - component: {fileID: 198365422}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (71)
@@ -2988,18 +2888,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &198365415
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 198365414}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &198365416
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3122,10 +3010,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1 &198626659
 GameObject:
   m_ObjectHideFlags: 0
@@ -3140,7 +3028,6 @@ GameObject:
   - component: {fileID: 198626663}
   - component: {fileID: 198626662}
   - component: {fileID: 198626661}
-  - component: {fileID: 198626660}
   - component: {fileID: 198626667}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (82)
@@ -3149,18 +3036,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &198626660
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 198626659}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &198626661
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3283,10 +3158,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1001 &211323354
 Prefab:
   m_ObjectHideFlags: 0
@@ -4138,7 +4013,6 @@ GameObject:
   - component: {fileID: 275206853}
   - component: {fileID: 275206852}
   - component: {fileID: 275206851}
-  - component: {fileID: 275206850}
   - component: {fileID: 275206857}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (38)
@@ -4147,18 +4021,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &275206850
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 275206849}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &275206851
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4281,10 +4143,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1 &279865057
 GameObject:
   m_ObjectHideFlags: 0
@@ -4398,7 +4260,6 @@ GameObject:
   - component: {fileID: 292600451}
   - component: {fileID: 292600450}
   - component: {fileID: 292600449}
-  - component: {fileID: 292600448}
   - component: {fileID: 292600455}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (43)
@@ -4407,18 +4268,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &292600448
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 292600447}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &292600449
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4541,10 +4390,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1001 &293095533
 Prefab:
   m_ObjectHideFlags: 0
@@ -4657,7 +4506,6 @@ GameObject:
   - component: {fileID: 302922469}
   - component: {fileID: 302922468}
   - component: {fileID: 302922467}
-  - component: {fileID: 302922466}
   - component: {fileID: 302922473}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (55)
@@ -4666,18 +4514,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &302922466
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 302922465}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &302922467
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4800,10 +4636,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1001 &304673971
 Prefab:
   m_ObjectHideFlags: 0
@@ -4984,7 +4820,6 @@ GameObject:
   - component: {fileID: 329542122}
   - component: {fileID: 329542121}
   - component: {fileID: 329542120}
-  - component: {fileID: 329542119}
   - component: {fileID: 329542126}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (59)
@@ -4993,18 +4828,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &329542119
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 329542118}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &329542120
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5127,10 +4950,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1 &332661267
 GameObject:
   m_ObjectHideFlags: 0
@@ -5348,7 +5171,6 @@ GameObject:
   - component: {fileID: 353256658}
   - component: {fileID: 353256657}
   - component: {fileID: 353256656}
-  - component: {fileID: 353256655}
   - component: {fileID: 353256662}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (8)
@@ -5357,18 +5179,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &353256655
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 353256654}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &353256656
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5491,10 +5301,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1001 &358021794
 Prefab:
   m_ObjectHideFlags: 0
@@ -5617,7 +5427,6 @@ GameObject:
   - component: {fileID: 371032479}
   - component: {fileID: 371032478}
   - component: {fileID: 371032477}
-  - component: {fileID: 371032476}
   - component: {fileID: 371032483}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (11)
@@ -5626,18 +5435,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &371032476
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 371032475}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &371032477
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5760,10 +5557,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1001 &376002213
 Prefab:
   m_ObjectHideFlags: 0
@@ -6066,7 +5863,6 @@ GameObject:
   - component: {fileID: 396244008}
   - component: {fileID: 396244007}
   - component: {fileID: 396244006}
-  - component: {fileID: 396244005}
   - component: {fileID: 396244012}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (80)
@@ -6075,18 +5871,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &396244005
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 396244004}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &396244006
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6209,10 +5993,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1001 &400317495
 Prefab:
   m_ObjectHideFlags: 0
@@ -6264,6 +6048,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4290688307024122, guid: d027155411bca0040b04dd7c73f012de,
     type: 2}
   m_PrefabInternal: {fileID: 400317495}
+--- !u!114 &400317497 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114406156009030674, guid: d027155411bca0040b04dd7c73f012de,
+    type: 2}
+  m_PrefabInternal: {fileID: 400317495}
+  m_Script: {fileID: 11500000, guid: 96a72d8f07f2bad4882c772466f00501, type: 3}
 --- !u!1001 &406644654
 Prefab:
   m_ObjectHideFlags: 0
@@ -6378,7 +6168,6 @@ GameObject:
   - component: {fileID: 412351511}
   - component: {fileID: 412351510}
   - component: {fileID: 412351509}
-  - component: {fileID: 412351508}
   - component: {fileID: 412351515}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (49)
@@ -6387,18 +6176,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &412351508
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 412351507}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &412351509
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6521,10 +6298,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1 &419001960
 GameObject:
   m_ObjectHideFlags: 0
@@ -6539,7 +6316,6 @@ GameObject:
   - component: {fileID: 419001964}
   - component: {fileID: 419001963}
   - component: {fileID: 419001962}
-  - component: {fileID: 419001961}
   - component: {fileID: 419001968}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (51)
@@ -6548,18 +6324,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &419001961
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 419001960}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &419001962
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6682,10 +6446,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1 &426177874
 GameObject:
   m_ObjectHideFlags: 0
@@ -6700,7 +6464,6 @@ GameObject:
   - component: {fileID: 426177878}
   - component: {fileID: 426177877}
   - component: {fileID: 426177876}
-  - component: {fileID: 426177875}
   - component: {fileID: 426177882}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (81)
@@ -6709,18 +6472,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &426177875
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 426177874}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &426177876
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6843,10 +6594,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1 &441908973
 GameObject:
   m_ObjectHideFlags: 0
@@ -6861,7 +6612,6 @@ GameObject:
   - component: {fileID: 441908977}
   - component: {fileID: 441908976}
   - component: {fileID: 441908975}
-  - component: {fileID: 441908974}
   - component: {fileID: 441908981}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (69)
@@ -6870,18 +6620,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &441908974
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 441908973}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &441908975
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7004,10 +6742,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1 &442524963
 GameObject:
   m_ObjectHideFlags: 0
@@ -7402,7 +7140,6 @@ GameObject:
   - component: {fileID: 473488132}
   - component: {fileID: 473488131}
   - component: {fileID: 473488130}
-  - component: {fileID: 473488129}
   - component: {fileID: 473488136}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (16)
@@ -7411,18 +7148,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &473488129
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 473488128}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &473488130
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7545,10 +7270,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1001 &483771501
 Prefab:
   m_ObjectHideFlags: 0
@@ -7613,7 +7338,6 @@ GameObject:
   - component: {fileID: 510961013}
   - component: {fileID: 510961012}
   - component: {fileID: 510961011}
-  - component: {fileID: 510961010}
   - component: {fileID: 510961017}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (36)
@@ -7622,18 +7346,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &510961010
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 510961009}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &510961011
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7756,10 +7468,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1 &514832845
 GameObject:
   m_ObjectHideFlags: 0
@@ -7774,7 +7486,6 @@ GameObject:
   - component: {fileID: 514832849}
   - component: {fileID: 514832848}
   - component: {fileID: 514832847}
-  - component: {fileID: 514832846}
   - component: {fileID: 514832853}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (60)
@@ -7783,18 +7494,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &514832846
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 514832845}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &514832847
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7917,10 +7616,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1 &520971006
 GameObject:
   m_ObjectHideFlags: 0
@@ -8073,7 +7772,6 @@ GameObject:
   - component: {fileID: 525997743}
   - component: {fileID: 525997742}
   - component: {fileID: 525997741}
-  - component: {fileID: 525997740}
   - component: {fileID: 525997747}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (83)
@@ -8082,18 +7780,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &525997740
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 525997739}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &525997741
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8216,10 +7902,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1001 &534264639
 Prefab:
   m_ObjectHideFlags: 0
@@ -8353,7 +8039,6 @@ GameObject:
   - component: {fileID: 537108104}
   - component: {fileID: 537108103}
   - component: {fileID: 537108102}
-  - component: {fileID: 537108101}
   - component: {fileID: 537108108}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (50)
@@ -8362,18 +8047,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &537108101
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 537108100}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &537108102
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8496,10 +8169,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1 &563814967
 GameObject:
   m_ObjectHideFlags: 0
@@ -8514,7 +8187,6 @@ GameObject:
   - component: {fileID: 563814971}
   - component: {fileID: 563814970}
   - component: {fileID: 563814969}
-  - component: {fileID: 563814968}
   - component: {fileID: 563814975}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (29)
@@ -8523,18 +8195,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &563814968
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 563814967}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &563814969
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8657,10 +8317,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1 &573885702
 GameObject:
   m_ObjectHideFlags: 0
@@ -8675,8 +8335,8 @@ GameObject:
   - component: {fileID: 573885706}
   - component: {fileID: 573885705}
   - component: {fileID: 573885704}
-  - component: {fileID: 573885703}
   - component: {fileID: 573885710}
+  - component: {fileID: 573885703}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (63)
   m_TagString: Untagged
@@ -8687,15 +8347,25 @@ GameObject:
 --- !u!114 &573885703
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 573885702}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: f6ca80f184eff9e4283d162f56570d74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectHealth: 0
+  objectDmg: 0
+  playerNumThrown: 0
+  totalDmg: 0
+  rb: {fileID: 0}
+  playerScore: {fileID: 0}
+  gm: {fileID: 0}
+  player1: {fileID: 0}
+  player2: {fileID: 0}
+  player3: {fileID: 0}
+  player4: {fileID: 0}
 --- !u!65 &573885704
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8818,10 +8488,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1 &585296817
 GameObject:
   m_ObjectHideFlags: 0
@@ -8919,6 +8589,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b3760008fe34d4e339d2e0c241afdadb, type: 2}
   m_IsPrefabParent: 0
+--- !u!20 &598231963 stripped
+Camera:
+  m_PrefabParentObject: {fileID: 20216851190725328, guid: 95857c94af2ace344969ff21053fb14d,
+    type: 2}
+  m_PrefabInternal: {fileID: 671590179}
 --- !u!1 &603045377
 GameObject:
   m_ObjectHideFlags: 0
@@ -8933,7 +8608,6 @@ GameObject:
   - component: {fileID: 603045381}
   - component: {fileID: 603045380}
   - component: {fileID: 603045379}
-  - component: {fileID: 603045378}
   - component: {fileID: 603045385}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (48)
@@ -8942,18 +8616,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &603045378
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 603045377}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &603045379
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9076,10 +8738,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1 &609135144
 GameObject:
   m_ObjectHideFlags: 0
@@ -9094,7 +8756,6 @@ GameObject:
   - component: {fileID: 609135148}
   - component: {fileID: 609135147}
   - component: {fileID: 609135146}
-  - component: {fileID: 609135145}
   - component: {fileID: 609135152}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (44)
@@ -9103,18 +8764,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &609135145
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 609135144}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &609135146
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9237,10 +8886,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1001 &610249095
 Prefab:
   m_ObjectHideFlags: 0
@@ -9802,7 +9451,6 @@ GameObject:
   - component: {fileID: 667419851}
   - component: {fileID: 667419850}
   - component: {fileID: 667419849}
-  - component: {fileID: 667419848}
   - component: {fileID: 667419855}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (58)
@@ -9811,18 +9459,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &667419848
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 667419847}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &667419849
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9945,10 +9581,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1001 &671590179
 Prefab:
   m_ObjectHideFlags: 0
@@ -10008,6 +9644,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4797746985901838, guid: 95857c94af2ace344969ff21053fb14d,
     type: 2}
   m_PrefabInternal: {fileID: 671590179}
+--- !u!114 &671590181 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114922298160603944, guid: 95857c94af2ace344969ff21053fb14d,
+    type: 2}
+  m_PrefabInternal: {fileID: 671590179}
+  m_Script: {fileID: 11500000, guid: 9f52af59769f5bc40acd4d160a182822, type: 3}
 --- !u!1001 &673427216
 Prefab:
   m_ObjectHideFlags: 0
@@ -10198,7 +9840,6 @@ GameObject:
   - component: {fileID: 697324551}
   - component: {fileID: 697324550}
   - component: {fileID: 697324549}
-  - component: {fileID: 697324548}
   - component: {fileID: 697324555}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (7)
@@ -10207,18 +9848,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &697324548
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 697324547}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &697324549
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10341,10 +9970,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1 &699124210
 GameObject:
   m_ObjectHideFlags: 0
@@ -10730,170 +10359,14 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 128.683
       objectReference: {fileID: 0}
+    - target: {fileID: 64994138192138708, guid: 4aea02f1940044a5e94bac46a389ebbc,
+        type: 2}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4aea02f1940044a5e94bac46a389ebbc, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &738837233
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 1215104418952578, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 738837240}
-  - component: {fileID: 738837239}
-  - component: {fileID: 738837238}
-  - component: {fileID: 738837237}
-  - component: {fileID: 738837236}
-  - component: {fileID: 738837235}
-  - component: {fileID: 738837234}
-  - component: {fileID: 738837241}
-  m_Layer: 0
-  m_Name: Crate_physicsObj_prefab
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &738837234
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 738837233}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!65 &738837235
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 65116529424901742, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 738837233}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.4999998, y: 1.5, z: 1.5}
-  m_Center: {x: 0.000019907871, y: -0.0026415586, z: 0.7523054}
---- !u!54 &738837236
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 54493655380246676, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 738837233}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &738837237
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64142604588669664, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 738837233}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300032, guid: fe8bb5221257840c2805e380fc94544a, type: 3}
---- !u!23 &738837238
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 23969161792756876, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 738837233}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_Materials:
-  - {fileID: 2100000, guid: c8b8b01a306984adb983e9cf5b6a7183, type: 2}
-  - {fileID: 2100000, guid: f3ae9a89ece11493aad097a2c8a9ed4d, type: 2}
-  - {fileID: 2100000, guid: 9cb3de8a2adf8498db8984d27f58e0be, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!33 &738837239
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 33661071032766122, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 738837233}
-  m_Mesh: {fileID: 4300032, guid: fe8bb5221257840c2805e380fc94544a, type: 3}
---- !u!4 &738837240
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 4402462750241454, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 738837233}
-  m_LocalRotation: {x: -0.63697815, y: 0.30701607, z: 0.30701604, w: 0.63697815}
-  m_LocalPosition: {x: 29.424004, y: 2.9550018, z: 122.184}
-  m_LocalScale: {x: 0.39563888, y: 0.39563894, z: 0.39563888}
-  m_Children:
-  - {fileID: 748433672}
-  m_Father: {fileID: 0}
-  m_RootOrder: 281
-  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: 51.467003}
---- !u!114 &738837241
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 738837233}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6ca80f184eff9e4283d162f56570d74, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectHealth: 0
-  objectDmg: 50
-  playerNumThrown: 0
-  totalDmg: 0
-  rb: {fileID: 0}
-  playerScore: {fileID: 0}
-  gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
 --- !u!1001 &740072358
 Prefab:
   m_ObjectHideFlags: 0
@@ -11144,52 +10617,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9bf1d632befaa430f9e80abc3dbb7364, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &748433671
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 1966987371826446, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 748433672}
-  - component: {fileID: 748433673}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: PhysicsObject
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &748433672
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 4898566943314172, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 748433671}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 738837240}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &748433673
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64641215413490192, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 748433671}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300032, guid: fe8bb5221257840c2805e380fc94544a, type: 3}
 --- !u!1 &751037979
 GameObject:
   m_ObjectHideFlags: 0
@@ -11400,6 +10827,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 64965015971518486, guid: 1ae916d7bc6f64ed6b792ee6032db21c,
+        type: 2}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1ae916d7bc6f64ed6b792ee6032db21c, type: 2}
   m_IsPrefabParent: 0
@@ -11468,7 +10900,6 @@ GameObject:
   - component: {fileID: 772687840}
   - component: {fileID: 772687839}
   - component: {fileID: 772687838}
-  - component: {fileID: 772687837}
   - component: {fileID: 772687844}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (46)
@@ -11477,18 +10908,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &772687837
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 772687836}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &772687838
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11611,10 +11030,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1001 &777721406
 Prefab:
   m_ObjectHideFlags: 0
@@ -11721,7 +11140,6 @@ GameObject:
   - component: {fileID: 780791449}
   - component: {fileID: 780791448}
   - component: {fileID: 780791447}
-  - component: {fileID: 780791446}
   - component: {fileID: 780791453}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (28)
@@ -11730,18 +11148,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &780791446
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 780791445}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &780791447
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11864,10 +11270,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1001 &781949102
 Prefab:
   m_ObjectHideFlags: 0
@@ -12510,7 +11916,6 @@ GameObject:
   - component: {fileID: 815290336}
   - component: {fileID: 815290335}
   - component: {fileID: 815290334}
-  - component: {fileID: 815290333}
   - component: {fileID: 815290340}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (85)
@@ -12519,18 +11924,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &815290333
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 815290332}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &815290334
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12653,10 +12046,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1001 &817821219
 Prefab:
   m_ObjectHideFlags: 0
@@ -12930,7 +12323,6 @@ GameObject:
   - component: {fileID: 839294489}
   - component: {fileID: 839294488}
   - component: {fileID: 839294487}
-  - component: {fileID: 839294486}
   - component: {fileID: 839294493}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (75)
@@ -12939,18 +12331,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &839294486
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 839294485}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &839294487
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13073,10 +12453,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1 &839968959
 GameObject:
   m_ObjectHideFlags: 0
@@ -13297,7 +12677,6 @@ GameObject:
   - component: {fileID: 872122005}
   - component: {fileID: 872122004}
   - component: {fileID: 872122003}
-  - component: {fileID: 872122002}
   - component: {fileID: 872122009}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (42)
@@ -13306,18 +12685,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &872122002
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 872122001}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &872122003
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13440,10 +12807,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1001 &878387006
 Prefab:
   m_ObjectHideFlags: 0
@@ -13662,7 +13029,6 @@ GameObject:
   - component: {fileID: 894430247}
   - component: {fileID: 894430246}
   - component: {fileID: 894430245}
-  - component: {fileID: 894430244}
   - component: {fileID: 894430251}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (86)
@@ -13671,18 +13037,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &894430244
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 894430243}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &894430245
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13805,10 +13159,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1 &898587710 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1715125131798218, guid: 58f14a7ea93be45af844577c263b9d3c,
@@ -13886,7 +13240,6 @@ GameObject:
   - component: {fileID: 906415412}
   - component: {fileID: 906415411}
   - component: {fileID: 906415410}
-  - component: {fileID: 906415409}
   - component: {fileID: 906415416}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (72)
@@ -13895,18 +13248,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &906415409
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 906415408}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &906415410
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14029,10 +13370,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1 &909727884
 GameObject:
   m_ObjectHideFlags: 0
@@ -14651,7 +13992,6 @@ GameObject:
   - component: {fileID: 990532746}
   - component: {fileID: 990532745}
   - component: {fileID: 990532744}
-  - component: {fileID: 990532743}
   - component: {fileID: 990532750}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (33)
@@ -14660,18 +14000,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &990532743
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 990532742}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &990532744
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14794,10 +14122,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1001 &996069024
 Prefab:
   m_ObjectHideFlags: 0
@@ -15028,7 +14356,6 @@ GameObject:
   - component: {fileID: 1000412999}
   - component: {fileID: 1000412998}
   - component: {fileID: 1000412997}
-  - component: {fileID: 1000412996}
   - component: {fileID: 1000413003}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (5)
@@ -15037,18 +14364,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1000412996
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1000412995}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1000412997
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15171,10 +14486,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1 &1005631218
 GameObject:
   m_ObjectHideFlags: 0
@@ -15299,6 +14614,28 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1015496891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1015496888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6ca80f184eff9e4283d162f56570d74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectHealth: 0
+  objectDmg: 100
+  playerNumThrown: 0
+  totalDmg: 0
+  rb: {fileID: 0}
+  playerScore: {fileID: 0}
+  gm: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1 &1021419771
 GameObject:
   m_ObjectHideFlags: 0
@@ -15601,6 +14938,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4873882697786286, guid: de693555cb318344ea5166e4ed095f47,
     type: 2}
   m_PrefabInternal: {fileID: 1072820810}
+--- !u!114 &1072820812 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114056314062726570, guid: de693555cb318344ea5166e4ed095f47,
+    type: 2}
+  m_PrefabInternal: {fileID: 1072820810}
+  m_Script: {fileID: 11500000, guid: a627f0a06eb094a4eadf12fa1621aace, type: 3}
 --- !u!1001 &1073252624
 Prefab:
   m_ObjectHideFlags: 0
@@ -15824,7 +15167,6 @@ GameObject:
   - component: {fileID: 1088677562}
   - component: {fileID: 1088677561}
   - component: {fileID: 1088677560}
-  - component: {fileID: 1088677559}
   - component: {fileID: 1088677566}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (17)
@@ -15833,18 +15175,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1088677559
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1088677558}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1088677560
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15967,10 +15297,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1001 &1096933742
 Prefab:
   m_ObjectHideFlags: 0
@@ -16119,9 +15449,41 @@ Prefab:
       propertyPath: m_Name
       value: Crate_004 (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 64965015971518486, guid: 1ae916d7bc6f64ed6b792ee6032db21c,
+        type: 2}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1ae916d7bc6f64ed6b792ee6032db21c, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1108557191 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1021327707795386, guid: 1ae916d7bc6f64ed6b792ee6032db21c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1108557190}
+--- !u!114 &1108557192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1108557191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6ca80f184eff9e4283d162f56570d74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectHealth: 0
+  objectDmg: 100
+  playerNumThrown: 0
+  totalDmg: 0
+  rb: {fileID: 0}
+  playerScore: {fileID: 0}
+  gm: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1 &1109655307
 GameObject:
   m_ObjectHideFlags: 0
@@ -16378,7 +15740,6 @@ GameObject:
   - component: {fileID: 1145984424}
   - component: {fileID: 1145984423}
   - component: {fileID: 1145984422}
-  - component: {fileID: 1145984421}
   - component: {fileID: 1145984428}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (27)
@@ -16387,18 +15748,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1145984421
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1145984420}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1145984422
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16521,10 +15870,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1 &1149232113
 GameObject:
   m_ObjectHideFlags: 0
@@ -16539,7 +15888,6 @@ GameObject:
   - component: {fileID: 1149232117}
   - component: {fileID: 1149232116}
   - component: {fileID: 1149232115}
-  - component: {fileID: 1149232114}
   - component: {fileID: 1149232121}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (41)
@@ -16548,18 +15896,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1149232114
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1149232113}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1149232115
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16682,10 +16018,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1 &1150899461
 GameObject:
   m_ObjectHideFlags: 0
@@ -17259,7 +16595,6 @@ GameObject:
   - component: {fileID: 1189287006}
   - component: {fileID: 1189287005}
   - component: {fileID: 1189287004}
-  - component: {fileID: 1189287003}
   - component: {fileID: 1189287010}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (39)
@@ -17268,18 +16603,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1189287003
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1189287002}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1189287004
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17402,10 +16725,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1001 &1191440877
 Prefab:
   m_ObjectHideFlags: 0
@@ -17571,7 +16894,6 @@ GameObject:
   - component: {fileID: 1199603586}
   - component: {fileID: 1199603585}
   - component: {fileID: 1199603584}
-  - component: {fileID: 1199603583}
   - component: {fileID: 1199603590}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (45)
@@ -17580,18 +16902,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1199603583
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1199603582}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1199603584
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17714,10 +17024,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1 &1200002383
 GameObject:
   m_ObjectHideFlags: 0
@@ -17743,15 +17053,25 @@ GameObject:
 --- !u!114 &1200002384
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1200002383}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: f6ca80f184eff9e4283d162f56570d74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectHealth: 0
+  objectDmg: 50
+  playerNumThrown: 0
+  totalDmg: 0
+  rb: {fileID: 0}
+  playerScore: {fileID: 0}
+  gm: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!65 &1200002385
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17953,6 +17273,43 @@ GameObject:
   m_PrefabParentObject: {fileID: 1979795443169824, guid: 4aea02f1940044a5e94bac46a389ebbc,
     type: 2}
   m_PrefabInternal: {fileID: 738609933}
+--- !u!54 &1207363422
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1207363421}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &1207363423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1207363421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6ca80f184eff9e4283d162f56570d74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectHealth: 0
+  objectDmg: 100
+  playerNumThrown: 0
+  totalDmg: 0
+  rb: {fileID: 0}
+  playerScore: {fileID: 0}
+  gm: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!65 &1207363426
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18029,7 +17386,6 @@ GameObject:
   - component: {fileID: 1225281603}
   - component: {fileID: 1225281602}
   - component: {fileID: 1225281601}
-  - component: {fileID: 1225281600}
   - component: {fileID: 1225281607}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (37)
@@ -18038,18 +17394,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1225281600
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1225281599}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1225281601
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18172,10 +17516,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1 &1225301299
 GameObject:
   m_ObjectHideFlags: 0
@@ -18190,7 +17534,6 @@ GameObject:
   - component: {fileID: 1225301303}
   - component: {fileID: 1225301302}
   - component: {fileID: 1225301301}
-  - component: {fileID: 1225301300}
   - component: {fileID: 1225301307}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (24)
@@ -18199,18 +17542,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1225301300
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1225301299}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1225301301
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18333,10 +17664,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1001 &1233817340
 Prefab:
   m_ObjectHideFlags: 0
@@ -18413,6 +17744,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 64965015971518486, guid: 1ae916d7bc6f64ed6b792ee6032db21c,
+        type: 2}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1ae916d7bc6f64ed6b792ee6032db21c, type: 2}
   m_IsPrefabParent: 0
@@ -18435,7 +17771,6 @@ GameObject:
   - component: {fileID: 1234120761}
   - component: {fileID: 1234120760}
   - component: {fileID: 1234120759}
-  - component: {fileID: 1234120758}
   - component: {fileID: 1234120765}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (65)
@@ -18444,18 +17779,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1234120758
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1234120757}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1234120759
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18578,10 +17901,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1 &1236759231
 GameObject:
   m_ObjectHideFlags: 0
@@ -18596,7 +17919,6 @@ GameObject:
   - component: {fileID: 1236759235}
   - component: {fileID: 1236759234}
   - component: {fileID: 1236759233}
-  - component: {fileID: 1236759232}
   - component: {fileID: 1236759239}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (66)
@@ -18605,18 +17927,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1236759232
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1236759231}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1236759233
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18739,10 +18049,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1001 &1236924956
 Prefab:
   m_ObjectHideFlags: 0
@@ -19020,7 +18330,6 @@ GameObject:
   - component: {fileID: 1270235472}
   - component: {fileID: 1270235471}
   - component: {fileID: 1270235470}
-  - component: {fileID: 1270235469}
   - component: {fileID: 1270235476}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (52)
@@ -19029,18 +18338,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1270235469
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1270235468}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1270235470
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19163,10 +18460,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1 &1270379975 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1715125131798218, guid: 58f14a7ea93be45af844577c263b9d3c,
@@ -19244,7 +18541,6 @@ GameObject:
   - component: {fileID: 1273586728}
   - component: {fileID: 1273586727}
   - component: {fileID: 1273586726}
-  - component: {fileID: 1273586725}
   - component: {fileID: 1273586732}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (76)
@@ -19253,18 +18549,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1273586725
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1273586724}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1273586726
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19387,10 +18671,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1001 &1274571425
 Prefab:
   m_ObjectHideFlags: 0
@@ -19551,7 +18835,6 @@ GameObject:
   - component: {fileID: 1286977803}
   - component: {fileID: 1286977802}
   - component: {fileID: 1286977801}
-  - component: {fileID: 1286977800}
   - component: {fileID: 1286977807}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (18)
@@ -19560,18 +18843,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1286977800
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1286977799}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1286977801
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19694,10 +18965,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1001 &1287407442
 Prefab:
   m_ObjectHideFlags: 0
@@ -19766,7 +19037,6 @@ GameObject:
   - component: {fileID: 1294154563}
   - component: {fileID: 1294154562}
   - component: {fileID: 1294154561}
-  - component: {fileID: 1294154560}
   - component: {fileID: 1294154567}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (15)
@@ -19775,18 +19045,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1294154560
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1294154559}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1294154561
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19909,10 +19167,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1 &1295947019
 GameObject:
   m_ObjectHideFlags: 0
@@ -19927,7 +19185,6 @@ GameObject:
   - component: {fileID: 1295947023}
   - component: {fileID: 1295947022}
   - component: {fileID: 1295947021}
-  - component: {fileID: 1295947020}
   - component: {fileID: 1295947027}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (30)
@@ -19936,18 +19193,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1295947020
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1295947019}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1295947021
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20070,10 +19315,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1 &1297582180
 GameObject:
   m_ObjectHideFlags: 0
@@ -20580,9 +19825,7 @@ GameObject:
   - component: {fileID: 1338071971}
   - component: {fileID: 1338071970}
   - component: {fileID: 1338071969}
-  - component: {fileID: 1338071968}
   - component: {fileID: 1338071976}
-  - component: {fileID: 1338071975}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (62)
   m_TagString: Untagged
@@ -20590,18 +19833,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1338071968
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1338071967}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1338071969
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20706,28 +19937,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 47
   m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: 30.759}
---- !u!114 &1338071975
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1338071967}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6ca80f184eff9e4283d162f56570d74, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectHealth: 0
-  objectDmg: 0
-  playerNumThrown: 0
-  totalDmg: 0
-  rb: {fileID: 0}
-  playerScore: {fileID: 0}
-  gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
 --- !u!114 &1338071976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20746,10 +19955,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1001 &1340573569
 Prefab:
   m_ObjectHideFlags: 0
@@ -21011,9 +20220,41 @@ Prefab:
       propertyPath: m_Name
       value: Crate_004 (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 64965015971518486, guid: 1ae916d7bc6f64ed6b792ee6032db21c,
+        type: 2}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1ae916d7bc6f64ed6b792ee6032db21c, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1387750502 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1021327707795386, guid: 1ae916d7bc6f64ed6b792ee6032db21c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1387750501}
+--- !u!114 &1387750503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1387750502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6ca80f184eff9e4283d162f56570d74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectHealth: 0
+  objectDmg: 100
+  playerNumThrown: 0
+  totalDmg: 0
+  rb: {fileID: 0}
+  playerScore: {fileID: 0}
+  gm: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1 &1390096231
 GameObject:
   m_ObjectHideFlags: 0
@@ -21028,7 +20269,6 @@ GameObject:
   - component: {fileID: 1390096235}
   - component: {fileID: 1390096234}
   - component: {fileID: 1390096233}
-  - component: {fileID: 1390096232}
   - component: {fileID: 1390096239}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (35)
@@ -21037,18 +20277,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1390096232
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1390096231}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1390096233
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21171,10 +20399,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1001 &1393628266
 Prefab:
   m_ObjectHideFlags: 0
@@ -21231,7 +20459,6 @@ GameObject:
   - component: {fileID: 1394779101}
   - component: {fileID: 1394779100}
   - component: {fileID: 1394779099}
-  - component: {fileID: 1394779098}
   - component: {fileID: 1394779105}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (79)
@@ -21240,18 +20467,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1394779098
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1394779097}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1394779099
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21374,10 +20589,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1 &1395356695
 GameObject:
   m_ObjectHideFlags: 0
@@ -21392,7 +20607,6 @@ GameObject:
   - component: {fileID: 1395356699}
   - component: {fileID: 1395356698}
   - component: {fileID: 1395356697}
-  - component: {fileID: 1395356696}
   - component: {fileID: 1395356703}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (78)
@@ -21401,18 +20615,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1395356696
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1395356695}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1395356697
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21535,10 +20737,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1 &1396147237
 GameObject:
   m_ObjectHideFlags: 0
@@ -21699,7 +20901,6 @@ GameObject:
   - component: {fileID: 1404753633}
   - component: {fileID: 1404753632}
   - component: {fileID: 1404753631}
-  - component: {fileID: 1404753630}
   - component: {fileID: 1404753637}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (32)
@@ -21708,18 +20909,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1404753630
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1404753629}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1404753631
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21842,10 +21031,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1 &1407447563
 GameObject:
   m_ObjectHideFlags: 0
@@ -22145,7 +21334,6 @@ GameObject:
   - component: {fileID: 1424814187}
   - component: {fileID: 1424814186}
   - component: {fileID: 1424814185}
-  - component: {fileID: 1424814184}
   - component: {fileID: 1424814191}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (64)
@@ -22154,18 +21342,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1424814184
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1424814183}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1424814185
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22288,10 +21464,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1001 &1432914463
 Prefab:
   m_ObjectHideFlags: 0
@@ -22477,6 +21653,28 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1453530173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1453530170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6ca80f184eff9e4283d162f56570d74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectHealth: 0
+  objectDmg: 100
+  playerNumThrown: 0
+  totalDmg: 0
+  rb: {fileID: 0}
+  playerScore: {fileID: 0}
+  gm: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1001 &1453729061
 Prefab:
   m_ObjectHideFlags: 0
@@ -22537,7 +21735,6 @@ GameObject:
   - component: {fileID: 1464875304}
   - component: {fileID: 1464875303}
   - component: {fileID: 1464875302}
-  - component: {fileID: 1464875301}
   - component: {fileID: 1464875308}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (31)
@@ -22546,18 +21743,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1464875301
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1464875300}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1464875302
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22680,10 +21865,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1001 &1469809510
 Prefab:
   m_ObjectHideFlags: 0
@@ -24051,7 +23236,6 @@ GameObject:
   - component: {fileID: 1587671471}
   - component: {fileID: 1587671470}
   - component: {fileID: 1587671469}
-  - component: {fileID: 1587671468}
   - component: {fileID: 1587671475}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (68)
@@ -24060,18 +23244,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1587671468
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1587671467}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1587671469
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24194,10 +23366,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1 &1587992738
 GameObject:
   m_ObjectHideFlags: 0
@@ -24212,7 +23384,6 @@ GameObject:
   - component: {fileID: 1587992742}
   - component: {fileID: 1587992741}
   - component: {fileID: 1587992740}
-  - component: {fileID: 1587992739}
   - component: {fileID: 1587992746}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (40)
@@ -24221,18 +23392,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1587992739
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1587992738}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1587992740
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24355,10 +23514,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1 &1595717891
 GameObject:
   m_ObjectHideFlags: 0
@@ -24419,7 +23578,6 @@ GameObject:
   - component: {fileID: 1601973086}
   - component: {fileID: 1601973085}
   - component: {fileID: 1601973084}
-  - component: {fileID: 1601973083}
   - component: {fileID: 1601973090}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (57)
@@ -24428,18 +23586,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1601973083
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1601973082}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1601973084
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24562,10 +23708,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1001 &1608887592
 Prefab:
   m_ObjectHideFlags: 0
@@ -25176,7 +24322,6 @@ GameObject:
   - component: {fileID: 1646052873}
   - component: {fileID: 1646052872}
   - component: {fileID: 1646052871}
-  - component: {fileID: 1646052870}
   - component: {fileID: 1646052877}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (20)
@@ -25185,18 +24330,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1646052870
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1646052869}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1646052871
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25319,10 +24452,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1001 &1649961828
 Prefab:
   m_ObjectHideFlags: 0
@@ -25945,7 +25078,6 @@ GameObject:
   - component: {fileID: 1712296128}
   - component: {fileID: 1712296127}
   - component: {fileID: 1712296126}
-  - component: {fileID: 1712296125}
   - component: {fileID: 1712296132}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (61)
@@ -25954,18 +25086,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1712296125
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1712296124}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1712296126
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26088,10 +25208,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1001 &1712599625
 Prefab:
   m_ObjectHideFlags: 0
@@ -26211,7 +25331,6 @@ GameObject:
   - component: {fileID: 1717163975}
   - component: {fileID: 1717163974}
   - component: {fileID: 1717163973}
-  - component: {fileID: 1717163972}
   - component: {fileID: 1717163979}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (12)
@@ -26220,18 +25339,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1717163972
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1717163971}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1717163973
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26354,10 +25461,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1001 &1719890628
 Prefab:
   m_ObjectHideFlags: 0
@@ -26531,7 +25638,6 @@ GameObject:
   - component: {fileID: 1726808089}
   - component: {fileID: 1726808088}
   - component: {fileID: 1726808087}
-  - component: {fileID: 1726808086}
   - component: {fileID: 1726808093}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (10)
@@ -26540,18 +25646,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1726808086
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1726808085}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1726808087
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26674,10 +25768,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1 &1727170045
 GameObject:
   m_ObjectHideFlags: 0
@@ -26692,7 +25786,6 @@ GameObject:
   - component: {fileID: 1727170049}
   - component: {fileID: 1727170048}
   - component: {fileID: 1727170047}
-  - component: {fileID: 1727170046}
   - component: {fileID: 1727170053}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (25)
@@ -26701,18 +25794,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1727170046
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1727170045}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1727170047
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26835,10 +25916,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1 &1737739509
 GameObject:
   m_ObjectHideFlags: 0
@@ -26991,7 +26072,6 @@ GameObject:
   - component: {fileID: 1767364986}
   - component: {fileID: 1767364985}
   - component: {fileID: 1767364984}
-  - component: {fileID: 1767364983}
   - component: {fileID: 1767364990}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (9)
@@ -27000,18 +26080,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1767364983
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1767364982}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1767364984
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27134,10 +26202,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1 &1775063863
 GameObject:
   m_ObjectHideFlags: 0
@@ -27181,7 +26249,6 @@ GameObject:
   - component: {fileID: 1776635966}
   - component: {fileID: 1776635965}
   - component: {fileID: 1776635964}
-  - component: {fileID: 1776635963}
   - component: {fileID: 1776635970}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (19)
@@ -27190,18 +26257,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1776635963
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1776635962}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1776635964
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27324,10 +26379,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1 &1779794009
 GameObject:
   m_ObjectHideFlags: 0
@@ -27488,7 +26543,6 @@ GameObject:
   - component: {fileID: 1792647133}
   - component: {fileID: 1792647132}
   - component: {fileID: 1792647131}
-  - component: {fileID: 1792647130}
   - component: {fileID: 1792647137}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (74)
@@ -27497,18 +26551,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1792647130
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1792647129}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1792647131
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27631,10 +26673,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1 &1793244514
 GameObject:
   m_ObjectHideFlags: 0
@@ -27918,7 +26960,6 @@ GameObject:
   - component: {fileID: 1824635895}
   - component: {fileID: 1824635894}
   - component: {fileID: 1824635893}
-  - component: {fileID: 1824635892}
   - component: {fileID: 1824635899}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (53)
@@ -27927,18 +26968,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1824635892
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1824635891}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1824635893
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28061,10 +27090,77 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
+--- !u!1001 &1828757852
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4402462750241454, guid: 587333be5213fb642b74e275e9abc993, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 29.424004
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402462750241454, guid: 587333be5213fb642b74e275e9abc993, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 2.9550018
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402462750241454, guid: 587333be5213fb642b74e275e9abc993, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 122.184
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402462750241454, guid: 587333be5213fb642b74e275e9abc993, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0.63697815
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402462750241454, guid: 587333be5213fb642b74e275e9abc993, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0.30701607
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402462750241454, guid: 587333be5213fb642b74e275e9abc993, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0.30701604
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402462750241454, guid: 587333be5213fb642b74e275e9abc993, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.63697815
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402462750241454, guid: 587333be5213fb642b74e275e9abc993, type: 2}
+      propertyPath: m_RootOrder
+      value: 281
+      objectReference: {fileID: 0}
+    - target: {fileID: 114186061601292348, guid: 587333be5213fb642b74e275e9abc993,
+        type: 2}
+      propertyPath: player1
+      value: 
+      objectReference: {fileID: 1072820812}
+    - target: {fileID: 114186061601292348, guid: 587333be5213fb642b74e275e9abc993,
+        type: 2}
+      propertyPath: player2
+      value: 
+      objectReference: {fileID: 1884916041}
+    - target: {fileID: 114186061601292348, guid: 587333be5213fb642b74e275e9abc993,
+        type: 2}
+      propertyPath: player3
+      value: 
+      objectReference: {fileID: 671590181}
+    - target: {fileID: 114186061601292348, guid: 587333be5213fb642b74e275e9abc993,
+        type: 2}
+      propertyPath: player4
+      value: 
+      objectReference: {fileID: 400317497}
+    - target: {fileID: 114186061601292348, guid: 587333be5213fb642b74e275e9abc993,
+        type: 2}
+      propertyPath: objectDmg
+      value: 50
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 587333be5213fb642b74e275e9abc993, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1829759986
 GameObject:
   m_ObjectHideFlags: 0
@@ -28168,7 +27264,6 @@ GameObject:
   - component: {fileID: 1831676173}
   - component: {fileID: 1831676172}
   - component: {fileID: 1831676171}
-  - component: {fileID: 1831676170}
   - component: {fileID: 1831676177}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (14)
@@ -28177,18 +27272,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1831676170
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1831676169}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1831676171
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28311,10 +27394,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1 &1833294099
 GameObject:
   m_ObjectHideFlags: 0
@@ -28421,7 +27504,6 @@ GameObject:
   - component: {fileID: 1838948969}
   - component: {fileID: 1838948968}
   - component: {fileID: 1838948967}
-  - component: {fileID: 1838948966}
   - component: {fileID: 1838948973}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (70)
@@ -28430,18 +27512,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1838948966
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1838948965}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1838948967
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28564,10 +27634,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1 &1839626698
 GameObject:
   m_ObjectHideFlags: 0
@@ -28582,7 +27652,6 @@ GameObject:
   - component: {fileID: 1839626702}
   - component: {fileID: 1839626701}
   - component: {fileID: 1839626700}
-  - component: {fileID: 1839626699}
   - component: {fileID: 1839626706}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (26)
@@ -28591,18 +27660,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1839626699
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1839626698}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1839626700
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28725,10 +27782,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1 &1845591995
 GameObject:
   m_ObjectHideFlags: 0
@@ -29076,6 +28133,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4860006913013706, guid: 2dbe629e13c737d40a38708cdb1543b6,
     type: 2}
   m_PrefabInternal: {fileID: 1884916039}
+--- !u!114 &1884916041 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114660713891291960, guid: 2dbe629e13c737d40a38708cdb1543b6,
+    type: 2}
+  m_PrefabInternal: {fileID: 1884916039}
+  m_Script: {fileID: 11500000, guid: f70387c7a9c276f428da224ed936179d, type: 3}
 --- !u!1001 &1890002352
 Prefab:
   m_ObjectHideFlags: 0
@@ -29356,7 +28419,6 @@ GameObject:
   - component: {fileID: 1899436619}
   - component: {fileID: 1899436618}
   - component: {fileID: 1899436617}
-  - component: {fileID: 1899436616}
   - component: {fileID: 1899436623}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (21)
@@ -29365,18 +28427,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1899436616
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1899436615}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1899436617
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29499,10 +28549,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1 &1909621595
 GameObject:
   m_ObjectHideFlags: 0
@@ -29734,9 +28784,189 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6400010, guid: fe8bb5221257840c2805e380fc94544a, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6400006, guid: fe8bb5221257840c2805e380fc94544a, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6400008, guid: fe8bb5221257840c2805e380fc94544a, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6400012, guid: fe8bb5221257840c2805e380fc94544a, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fe8bb5221257840c2805e380fc94544a, type: 3}
   m_IsPrefabParent: 0
+--- !u!1 &1936270646 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100014, guid: fe8bb5221257840c2805e380fc94544a, type: 3}
+  m_PrefabInternal: {fileID: 1936270645}
+--- !u!1 &1936270647 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100012, guid: fe8bb5221257840c2805e380fc94544a, type: 3}
+  m_PrefabInternal: {fileID: 1936270645}
+--- !u!1 &1936270648 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100010, guid: fe8bb5221257840c2805e380fc94544a, type: 3}
+  m_PrefabInternal: {fileID: 1936270645}
+--- !u!1 &1936270649 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100008, guid: fe8bb5221257840c2805e380fc94544a, type: 3}
+  m_PrefabInternal: {fileID: 1936270645}
+--- !u!54 &1936270650
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1936270646}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &1936270651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1936270646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6ca80f184eff9e4283d162f56570d74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectHealth: 0
+  objectDmg: 100
+  playerNumThrown: 0
+  totalDmg: 0
+  rb: {fileID: 0}
+  playerScore: {fileID: 0}
+  gm: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
+--- !u!54 &1936270652
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1936270647}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &1936270653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1936270647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6ca80f184eff9e4283d162f56570d74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectHealth: 0
+  objectDmg: 100
+  playerNumThrown: 0
+  totalDmg: 0
+  rb: {fileID: 0}
+  playerScore: {fileID: 0}
+  gm: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
+--- !u!54 &1936270654
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1936270648}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &1936270655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1936270648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6ca80f184eff9e4283d162f56570d74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectHealth: 0
+  objectDmg: 100
+  playerNumThrown: 0
+  totalDmg: 0
+  rb: {fileID: 0}
+  playerScore: {fileID: 0}
+  gm: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
+--- !u!54 &1936270656
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1936270649}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &1936270657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1936270649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6ca80f184eff9e4283d162f56570d74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectHealth: 0
+  objectDmg: 100
+  playerNumThrown: 0
+  totalDmg: 0
+  rb: {fileID: 0}
+  playerScore: {fileID: 0}
+  gm: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1 &1936791903
 GameObject:
   m_ObjectHideFlags: 0
@@ -29917,6 +29147,11 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300032, guid: fe8bb5221257840c2805e380fc94544a, type: 3}
+--- !u!20 &1966608526 stripped
+Camera:
+  m_PrefabParentObject: {fileID: 20703763480000248, guid: 2dbe629e13c737d40a38708cdb1543b6,
+    type: 2}
+  m_PrefabInternal: {fileID: 1884916039}
 --- !u!1001 &1976985772
 Prefab:
   m_ObjectHideFlags: 0
@@ -30086,7 +29321,6 @@ GameObject:
   - component: {fileID: 1985944013}
   - component: {fileID: 1985944012}
   - component: {fileID: 1985944011}
-  - component: {fileID: 1985944010}
   - component: {fileID: 1985944017}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (6)
@@ -30095,18 +29329,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1985944010
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1985944009}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1985944011
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30229,10 +29451,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1001 &1988696604
 Prefab:
   m_ObjectHideFlags: 0
@@ -30460,7 +29682,6 @@ GameObject:
   - component: {fileID: 2001349947}
   - component: {fileID: 2001349946}
   - component: {fileID: 2001349945}
-  - component: {fileID: 2001349944}
   - component: {fileID: 2001349951}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (22)
@@ -30469,18 +29690,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2001349944
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2001349943}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &2001349945
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30603,10 +29812,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1 &2001365679
 GameObject:
   m_ObjectHideFlags: 0
@@ -30824,7 +30033,6 @@ GameObject:
   - component: {fileID: 2018648498}
   - component: {fileID: 2018648497}
   - component: {fileID: 2018648496}
-  - component: {fileID: 2018648495}
   - component: {fileID: 2018648502}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (34)
@@ -30833,18 +30041,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2018648495
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2018648494}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &2018648496
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30967,10 +30163,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1001 &2018672050
 Prefab:
   m_ObjectHideFlags: 0
@@ -31114,7 +30310,6 @@ GameObject:
   - component: {fileID: 2032074936}
   - component: {fileID: 2032074935}
   - component: {fileID: 2032074934}
-  - component: {fileID: 2032074933}
   - component: {fileID: 2032074940}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (13)
@@ -31123,18 +30318,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2032074933
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2032074932}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &2032074934
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31257,10 +30440,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1001 &2032276946
 Prefab:
   m_ObjectHideFlags: 0
@@ -31441,7 +30624,6 @@ GameObject:
   - component: {fileID: 2052814085}
   - component: {fileID: 2052814084}
   - component: {fileID: 2052814083}
-  - component: {fileID: 2052814082}
   - component: {fileID: 2052814089}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (73)
@@ -31450,18 +30632,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2052814082
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2052814081}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &2052814083
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31584,10 +30754,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1 &2062273101
 GameObject:
   m_ObjectHideFlags: 0
@@ -31704,7 +30874,6 @@ GameObject:
   - component: {fileID: 2069348751}
   - component: {fileID: 2069348750}
   - component: {fileID: 2069348749}
-  - component: {fileID: 2069348748}
   - component: {fileID: 2069348755}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (1)
@@ -31713,18 +30882,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2069348748
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2069348747}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &2069348749
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31847,10 +31004,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1001 &2072742421
 Prefab:
   m_ObjectHideFlags: 0
@@ -32332,7 +31489,6 @@ GameObject:
   - component: {fileID: 2121202932}
   - component: {fileID: 2121202931}
   - component: {fileID: 2121202930}
-  - component: {fileID: 2121202929}
   - component: {fileID: 2121202936}
   m_Layer: 0
   m_Name: Crate_physicsObj_prefab (77)
@@ -32341,18 +31497,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2121202929
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346632106002834, guid: 587333be5213fb642b74e275e9abc993,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2121202928}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &2121202930
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32475,10 +31619,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerScore: {fileID: 0}
   gm: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1072820812}
+  player2: {fileID: 1884916041}
+  player3: {fileID: 671590181}
+  player4: {fileID: 400317497}
 --- !u!1001 &2121672849
 Prefab:
   m_ObjectHideFlags: 0
@@ -32525,6 +31669,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b3760008fe34d4e339d2e0c241afdadb, type: 2}
   m_IsPrefabParent: 0
+--- !u!20 &2127194931 stripped
+Camera:
+  m_PrefabParentObject: {fileID: 20309957684177672, guid: d027155411bca0040b04dd7c73f012de,
+    type: 2}
+  m_PrefabInternal: {fileID: 400317495}
 --- !u!1001 &2132069278
 Prefab:
   m_ObjectHideFlags: 0
@@ -32564,9 +31713,136 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114849122258592136, guid: 09f294927e13e08449bad8ffbada93dc,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114849122258592136, guid: 09f294927e13e08449bad8ffbada93dc,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114621412335077074, guid: 09f294927e13e08449bad8ffbada93dc,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114621412335077074, guid: 09f294927e13e08449bad8ffbada93dc,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114225160836759764, guid: 09f294927e13e08449bad8ffbada93dc,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114225160836759764, guid: 09f294927e13e08449bad8ffbada93dc,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114468294437558574, guid: 09f294927e13e08449bad8ffbada93dc,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114468294437558574, guid: 09f294927e13e08449bad8ffbada93dc,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114025327848834618, guid: 09f294927e13e08449bad8ffbada93dc,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114025327848834618, guid: 09f294927e13e08449bad8ffbada93dc,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114565803519709894, guid: 09f294927e13e08449bad8ffbada93dc,
+        type: 2}
+      propertyPath: pCam1
+      value: 
+      objectReference: {fileID: 53100474}
+    - target: {fileID: 114565803519709894, guid: 09f294927e13e08449bad8ffbada93dc,
+        type: 2}
+      propertyPath: pCam2
+      value: 
+      objectReference: {fileID: 1966608526}
+    - target: {fileID: 114565803519709894, guid: 09f294927e13e08449bad8ffbada93dc,
+        type: 2}
+      propertyPath: pCam3
+      value: 
+      objectReference: {fileID: 598231963}
+    - target: {fileID: 114565803519709894, guid: 09f294927e13e08449bad8ffbada93dc,
+        type: 2}
+      propertyPath: pCam4
+      value: 
+      objectReference: {fileID: 2127194931}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 09f294927e13e08449bad8ffbada93dc, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &2132069279 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114712408171053588, guid: 09f294927e13e08449bad8ffbada93dc,
+    type: 2}
+  m_PrefabInternal: {fileID: 2132069278}
+  m_Script: {fileID: 11500000, guid: 23e765458e6eedf47b6d2ba9c5597282, type: 3}
+--- !u!114 &2132069280 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114621412335077074, guid: 09f294927e13e08449bad8ffbada93dc,
+    type: 2}
+  m_PrefabInternal: {fileID: 2132069278}
+  m_Script: {fileID: 1453722849, guid: 89f0137620f6af44b9ba852b4190e64e, type: 3}
+--- !u!1 &2132069281 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1380325127943966, guid: 09f294927e13e08449bad8ffbada93dc,
+    type: 2}
+  m_PrefabInternal: {fileID: 2132069278}
+--- !u!114 &2132069282 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114225160836759764, guid: 09f294927e13e08449bad8ffbada93dc,
+    type: 2}
+  m_PrefabInternal: {fileID: 2132069278}
+  m_Script: {fileID: 1453722849, guid: 89f0137620f6af44b9ba852b4190e64e, type: 3}
+--- !u!114 &2132069283 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114468294437558574, guid: 09f294927e13e08449bad8ffbada93dc,
+    type: 2}
+  m_PrefabInternal: {fileID: 2132069278}
+  m_Script: {fileID: 1453722849, guid: 89f0137620f6af44b9ba852b4190e64e, type: 3}
+--- !u!114 &2132069284 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114025327848834618, guid: 09f294927e13e08449bad8ffbada93dc,
+    type: 2}
+  m_PrefabInternal: {fileID: 2132069278}
+  m_Script: {fileID: 1453722849, guid: 89f0137620f6af44b9ba852b4190e64e, type: 3}
+--- !u!114 &2132069285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2132069281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cf08c3a5d8a3044b839788300831d7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreBoardUI: {fileID: 2132069286}
+  p1Score: {fileID: 2132069284}
+  p2Score: {fileID: 2132069283}
+  p3Score: {fileID: 2132069282}
+  p4Score: {fileID: 2132069280}
+  sm: {fileID: 2132069279}
+--- !u!225 &2132069286 stripped
+CanvasGroup:
+  m_PrefabParentObject: {fileID: 225915935953496494, guid: 09f294927e13e08449bad8ffbada93dc,
+    type: 2}
+  m_PrefabInternal: {fileID: 2132069278}
 --- !u!1001 &2135085493
 Prefab:
   m_ObjectHideFlags: 0
